@@ -255,6 +255,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "PyxisairFlightReservationSystem";
             this.Text = "Pyxisair Flight Reservation System";
+            this.Load += new System.EventHandler(this.PyxisairFlightReservationSystem_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.menuStrip2.ResumeLayout(false);
