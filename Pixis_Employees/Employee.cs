@@ -20,15 +20,26 @@ namespace Pixis_Employees
             pfrs = form;
         }
 
-        private void Employee_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             pfrs.Show();
             this.Close();
+        }
+
+        private void btnDisplay_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            AddUpdate addUpdate = new AddUpdate();
+            addUpdate.ShowDialog();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
