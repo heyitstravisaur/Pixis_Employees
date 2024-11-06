@@ -43,5 +43,10 @@ namespace Pixis_Employees
             addUpdate.ShowDialog();
             //going to send a name for the title
         }
+
+        private void Employee_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
