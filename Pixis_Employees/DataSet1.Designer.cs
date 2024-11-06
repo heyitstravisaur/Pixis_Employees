@@ -30,6 +30,14 @@ namespace Pixis_Employees {
         
         private ZIPCODEDataTable tableZIPCODE;
         
+        private AIRPLANEDataTable tableAIRPLANE;
+        
+        private AIRPORTDataTable tableAIRPORT;
+        
+        private CREWDataTable tableCREW;
+        
+        private FLIGHTDataTable tableFLIGHT;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -66,6 +74,18 @@ namespace Pixis_Employees {
                 }
                 if ((ds.Tables["ZIPCODE"] != null)) {
                     base.Tables.Add(new ZIPCODEDataTable(ds.Tables["ZIPCODE"]));
+                }
+                if ((ds.Tables["AIRPLANE"] != null)) {
+                    base.Tables.Add(new AIRPLANEDataTable(ds.Tables["AIRPLANE"]));
+                }
+                if ((ds.Tables["AIRPORT"] != null)) {
+                    base.Tables.Add(new AIRPORTDataTable(ds.Tables["AIRPORT"]));
+                }
+                if ((ds.Tables["CREW"] != null)) {
+                    base.Tables.Add(new CREWDataTable(ds.Tables["CREW"]));
+                }
+                if ((ds.Tables["FLIGHT"] != null)) {
+                    base.Tables.Add(new FLIGHTDataTable(ds.Tables["FLIGHT"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -112,6 +132,46 @@ namespace Pixis_Employees {
         public ZIPCODEDataTable ZIPCODE {
             get {
                 return this.tableZIPCODE;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public AIRPLANEDataTable AIRPLANE {
+            get {
+                return this.tableAIRPLANE;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public AIRPORTDataTable AIRPORT {
+            get {
+                return this.tableAIRPORT;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public CREWDataTable CREW {
+            get {
+                return this.tableCREW;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public FLIGHTDataTable FLIGHT {
+            get {
+                return this.tableFLIGHT;
             }
         }
         
@@ -191,6 +251,18 @@ namespace Pixis_Employees {
                 if ((ds.Tables["ZIPCODE"] != null)) {
                     base.Tables.Add(new ZIPCODEDataTable(ds.Tables["ZIPCODE"]));
                 }
+                if ((ds.Tables["AIRPLANE"] != null)) {
+                    base.Tables.Add(new AIRPLANEDataTable(ds.Tables["AIRPLANE"]));
+                }
+                if ((ds.Tables["AIRPORT"] != null)) {
+                    base.Tables.Add(new AIRPORTDataTable(ds.Tables["AIRPORT"]));
+                }
+                if ((ds.Tables["CREW"] != null)) {
+                    base.Tables.Add(new CREWDataTable(ds.Tables["CREW"]));
+                }
+                if ((ds.Tables["FLIGHT"] != null)) {
+                    base.Tables.Add(new FLIGHTDataTable(ds.Tables["FLIGHT"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -242,6 +314,30 @@ namespace Pixis_Employees {
                     this.tableZIPCODE.InitVars();
                 }
             }
+            this.tableAIRPLANE = ((AIRPLANEDataTable)(base.Tables["AIRPLANE"]));
+            if ((initTable == true)) {
+                if ((this.tableAIRPLANE != null)) {
+                    this.tableAIRPLANE.InitVars();
+                }
+            }
+            this.tableAIRPORT = ((AIRPORTDataTable)(base.Tables["AIRPORT"]));
+            if ((initTable == true)) {
+                if ((this.tableAIRPORT != null)) {
+                    this.tableAIRPORT.InitVars();
+                }
+            }
+            this.tableCREW = ((CREWDataTable)(base.Tables["CREW"]));
+            if ((initTable == true)) {
+                if ((this.tableCREW != null)) {
+                    this.tableCREW.InitVars();
+                }
+            }
+            this.tableFLIGHT = ((FLIGHTDataTable)(base.Tables["FLIGHT"]));
+            if ((initTable == true)) {
+                if ((this.tableFLIGHT != null)) {
+                    this.tableFLIGHT.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -258,6 +354,14 @@ namespace Pixis_Employees {
             base.Tables.Add(this.tableJOBTYPE);
             this.tableZIPCODE = new ZIPCODEDataTable();
             base.Tables.Add(this.tableZIPCODE);
+            this.tableAIRPLANE = new AIRPLANEDataTable();
+            base.Tables.Add(this.tableAIRPLANE);
+            this.tableAIRPORT = new AIRPORTDataTable();
+            base.Tables.Add(this.tableAIRPORT);
+            this.tableCREW = new CREWDataTable();
+            base.Tables.Add(this.tableCREW);
+            this.tableFLIGHT = new FLIGHTDataTable();
+            base.Tables.Add(this.tableFLIGHT);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -275,6 +379,30 @@ namespace Pixis_Employees {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private bool ShouldSerializeZIPCODE() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private bool ShouldSerializeAIRPLANE() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private bool ShouldSerializeAIRPORT() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private bool ShouldSerializeCREW() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private bool ShouldSerializeFLIGHT() {
             return false;
         }
         
@@ -341,6 +469,18 @@ namespace Pixis_Employees {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public delegate void ZIPCODERowChangeEventHandler(object sender, ZIPCODERowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public delegate void AIRPLANERowChangeEventHandler(object sender, AIRPLANERowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public delegate void AIRPORTRowChangeEventHandler(object sender, AIRPORTRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public delegate void CREWRowChangeEventHandler(object sender, CREWRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public delegate void FLIGHTRowChangeEventHandler(object sender, FLIGHTRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -1504,6 +1644,1661 @@ namespace Pixis_Employees {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class AIRPLANEDataTable : global::System.Data.TypedTableBase<AIRPLANERow> {
+            
+            private global::System.Data.DataColumn columnPLANENO;
+            
+            private global::System.Data.DataColumn columnMAXDIST;
+            
+            private global::System.Data.DataColumn columnFCLASS;
+            
+            private global::System.Data.DataColumn columnCCLASS;
+            
+            private global::System.Data.DataColumn columnPAVAIL;
+            
+            private global::System.Data.DataColumn columnMAINTMILES;
+            
+            private global::System.Data.DataColumn columnPLANEMODEL;
+            
+            private global::System.Data.DataColumn columnPMAKE;
+            
+            private global::System.Data.DataColumn columnAPARCD;
+            
+            private global::System.Data.DataColumn columnAPACTDT;
+            
+            private global::System.Data.DataColumn columnAPIACTDT;
+            
+            private global::System.Data.DataColumn columnSTATUS;
+            
+            private global::System.Data.DataColumn columnDATEMAINT;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public AIRPLANEDataTable() {
+                this.TableName = "AIRPLANE";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal AIRPLANEDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected AIRPLANEDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PLANENOColumn {
+                get {
+                    return this.columnPLANENO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn MAXDISTColumn {
+                get {
+                    return this.columnMAXDIST;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn FCLASSColumn {
+                get {
+                    return this.columnFCLASS;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CCLASSColumn {
+                get {
+                    return this.columnCCLASS;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PAVAILColumn {
+                get {
+                    return this.columnPAVAIL;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn MAINTMILESColumn {
+                get {
+                    return this.columnMAINTMILES;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PLANEMODELColumn {
+                get {
+                    return this.columnPLANEMODEL;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PMAKEColumn {
+                get {
+                    return this.columnPMAKE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn APARCDColumn {
+                get {
+                    return this.columnAPARCD;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn APACTDTColumn {
+                get {
+                    return this.columnAPACTDT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn APIACTDTColumn {
+                get {
+                    return this.columnAPIACTDT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn STATUSColumn {
+                get {
+                    return this.columnSTATUS;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn DATEMAINTColumn {
+                get {
+                    return this.columnDATEMAINT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public AIRPLANERow this[int index] {
+                get {
+                    return ((AIRPLANERow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event AIRPLANERowChangeEventHandler AIRPLANERowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event AIRPLANERowChangeEventHandler AIRPLANERowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event AIRPLANERowChangeEventHandler AIRPLANERowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event AIRPLANERowChangeEventHandler AIRPLANERowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void AddAIRPLANERow(AIRPLANERow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public AIRPLANERow AddAIRPLANERow(string PLANENO, int MAXDIST, int FCLASS, int CCLASS, string PAVAIL, int MAINTMILES, string PLANEMODEL, string PMAKE, string APARCD, string APACTDT, string APIACTDT, string STATUS, string DATEMAINT) {
+                AIRPLANERow rowAIRPLANERow = ((AIRPLANERow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        PLANENO,
+                        MAXDIST,
+                        FCLASS,
+                        CCLASS,
+                        PAVAIL,
+                        MAINTMILES,
+                        PLANEMODEL,
+                        PMAKE,
+                        APARCD,
+                        APACTDT,
+                        APIACTDT,
+                        STATUS,
+                        DATEMAINT};
+                rowAIRPLANERow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowAIRPLANERow);
+                return rowAIRPLANERow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public AIRPLANERow FindByPLANENO(string PLANENO) {
+                return ((AIRPLANERow)(this.Rows.Find(new object[] {
+                            PLANENO})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                AIRPLANEDataTable cln = ((AIRPLANEDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new AIRPLANEDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal void InitVars() {
+                this.columnPLANENO = base.Columns["PLANENO"];
+                this.columnMAXDIST = base.Columns["MAXDIST"];
+                this.columnFCLASS = base.Columns["FCLASS"];
+                this.columnCCLASS = base.Columns["CCLASS"];
+                this.columnPAVAIL = base.Columns["PAVAIL"];
+                this.columnMAINTMILES = base.Columns["MAINTMILES"];
+                this.columnPLANEMODEL = base.Columns["PLANEMODEL"];
+                this.columnPMAKE = base.Columns["PMAKE"];
+                this.columnAPARCD = base.Columns["APARCD"];
+                this.columnAPACTDT = base.Columns["APACTDT"];
+                this.columnAPIACTDT = base.Columns["APIACTDT"];
+                this.columnSTATUS = base.Columns["STATUS"];
+                this.columnDATEMAINT = base.Columns["DATEMAINT"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            private void InitClass() {
+                this.columnPLANENO = new global::System.Data.DataColumn("PLANENO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPLANENO);
+                this.columnMAXDIST = new global::System.Data.DataColumn("MAXDIST", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMAXDIST);
+                this.columnFCLASS = new global::System.Data.DataColumn("FCLASS", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFCLASS);
+                this.columnCCLASS = new global::System.Data.DataColumn("CCLASS", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCCLASS);
+                this.columnPAVAIL = new global::System.Data.DataColumn("PAVAIL", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPAVAIL);
+                this.columnMAINTMILES = new global::System.Data.DataColumn("MAINTMILES", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMAINTMILES);
+                this.columnPLANEMODEL = new global::System.Data.DataColumn("PLANEMODEL", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPLANEMODEL);
+                this.columnPMAKE = new global::System.Data.DataColumn("PMAKE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPMAKE);
+                this.columnAPARCD = new global::System.Data.DataColumn("APARCD", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAPARCD);
+                this.columnAPACTDT = new global::System.Data.DataColumn("APACTDT", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAPACTDT);
+                this.columnAPIACTDT = new global::System.Data.DataColumn("APIACTDT", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAPIACTDT);
+                this.columnSTATUS = new global::System.Data.DataColumn("STATUS", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSTATUS);
+                this.columnDATEMAINT = new global::System.Data.DataColumn("DATEMAINT", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDATEMAINT);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnPLANENO}, true));
+                this.columnPLANENO.AllowDBNull = false;
+                this.columnPLANENO.Unique = true;
+                this.columnPLANENO.MaxLength = 10;
+                this.columnMAXDIST.AllowDBNull = false;
+                this.columnFCLASS.AllowDBNull = false;
+                this.columnCCLASS.AllowDBNull = false;
+                this.columnPAVAIL.AllowDBNull = false;
+                this.columnPAVAIL.MaxLength = 1;
+                this.columnMAINTMILES.AllowDBNull = false;
+                this.columnPLANEMODEL.AllowDBNull = false;
+                this.columnPLANEMODEL.MaxLength = 20;
+                this.columnPMAKE.AllowDBNull = false;
+                this.columnPMAKE.MaxLength = 30;
+                this.columnAPARCD.MaxLength = 3;
+                this.columnAPACTDT.MaxLength = 10;
+                this.columnAPIACTDT.MaxLength = 10;
+                this.columnSTATUS.MaxLength = 10;
+                this.columnDATEMAINT.AllowDBNull = false;
+                this.columnDATEMAINT.MaxLength = 10;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public AIRPLANERow NewAIRPLANERow() {
+                return ((AIRPLANERow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new AIRPLANERow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(AIRPLANERow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.AIRPLANERowChanged != null)) {
+                    this.AIRPLANERowChanged(this, new AIRPLANERowChangeEvent(((AIRPLANERow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.AIRPLANERowChanging != null)) {
+                    this.AIRPLANERowChanging(this, new AIRPLANERowChangeEvent(((AIRPLANERow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.AIRPLANERowDeleted != null)) {
+                    this.AIRPLANERowDeleted(this, new AIRPLANERowChangeEvent(((AIRPLANERow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.AIRPLANERowDeleting != null)) {
+                    this.AIRPLANERowDeleting(this, new AIRPLANERowChangeEvent(((AIRPLANERow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void RemoveAIRPLANERow(AIRPLANERow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSet1 ds = new DataSet1();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "AIRPLANEDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class AIRPORTDataTable : global::System.Data.TypedTableBase<AIRPORTRow> {
+            
+            private global::System.Data.DataColumn columnARCD;
+            
+            private global::System.Data.DataColumn columnARNM;
+            
+            private global::System.Data.DataColumn columnARCITYNM;
+            
+            private global::System.Data.DataColumn columnARCNCD;
+            
+            private global::System.Data.DataColumn columnARFAACD;
+            
+            private global::System.Data.DataColumn columnARICAOCD;
+            
+            private global::System.Data.DataColumn columnARLATITUDE;
+            
+            private global::System.Data.DataColumn columnARLNGITUDE;
+            
+            private global::System.Data.DataColumn columnARALTITUDE;
+            
+            private global::System.Data.DataColumn columnARTIMEZNM;
+            
+            private global::System.Data.DataColumn columnARTIMEZOF;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public AIRPORTDataTable() {
+                this.TableName = "AIRPORT";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal AIRPORTDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected AIRPORTDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ARCDColumn {
+                get {
+                    return this.columnARCD;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ARNMColumn {
+                get {
+                    return this.columnARNM;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ARCITYNMColumn {
+                get {
+                    return this.columnARCITYNM;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ARCNCDColumn {
+                get {
+                    return this.columnARCNCD;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ARFAACDColumn {
+                get {
+                    return this.columnARFAACD;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ARICAOCDColumn {
+                get {
+                    return this.columnARICAOCD;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ARLATITUDEColumn {
+                get {
+                    return this.columnARLATITUDE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ARLNGITUDEColumn {
+                get {
+                    return this.columnARLNGITUDE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ARALTITUDEColumn {
+                get {
+                    return this.columnARALTITUDE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ARTIMEZNMColumn {
+                get {
+                    return this.columnARTIMEZNM;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ARTIMEZOFColumn {
+                get {
+                    return this.columnARTIMEZOF;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public AIRPORTRow this[int index] {
+                get {
+                    return ((AIRPORTRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event AIRPORTRowChangeEventHandler AIRPORTRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event AIRPORTRowChangeEventHandler AIRPORTRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event AIRPORTRowChangeEventHandler AIRPORTRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event AIRPORTRowChangeEventHandler AIRPORTRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void AddAIRPORTRow(AIRPORTRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public AIRPORTRow AddAIRPORTRow(string ARCD, string ARNM, string ARCITYNM, string ARCNCD, string ARFAACD, string ARICAOCD, decimal ARLATITUDE, decimal ARLNGITUDE, int ARALTITUDE, string ARTIMEZNM, decimal ARTIMEZOF) {
+                AIRPORTRow rowAIRPORTRow = ((AIRPORTRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        ARCD,
+                        ARNM,
+                        ARCITYNM,
+                        ARCNCD,
+                        ARFAACD,
+                        ARICAOCD,
+                        ARLATITUDE,
+                        ARLNGITUDE,
+                        ARALTITUDE,
+                        ARTIMEZNM,
+                        ARTIMEZOF};
+                rowAIRPORTRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowAIRPORTRow);
+                return rowAIRPORTRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public AIRPORTRow FindByARCD(string ARCD) {
+                return ((AIRPORTRow)(this.Rows.Find(new object[] {
+                            ARCD})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                AIRPORTDataTable cln = ((AIRPORTDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new AIRPORTDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal void InitVars() {
+                this.columnARCD = base.Columns["ARCD"];
+                this.columnARNM = base.Columns["ARNM"];
+                this.columnARCITYNM = base.Columns["ARCITYNM"];
+                this.columnARCNCD = base.Columns["ARCNCD"];
+                this.columnARFAACD = base.Columns["ARFAACD"];
+                this.columnARICAOCD = base.Columns["ARICAOCD"];
+                this.columnARLATITUDE = base.Columns["ARLATITUDE"];
+                this.columnARLNGITUDE = base.Columns["ARLNGITUDE"];
+                this.columnARALTITUDE = base.Columns["ARALTITUDE"];
+                this.columnARTIMEZNM = base.Columns["ARTIMEZNM"];
+                this.columnARTIMEZOF = base.Columns["ARTIMEZOF"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            private void InitClass() {
+                this.columnARCD = new global::System.Data.DataColumn("ARCD", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnARCD);
+                this.columnARNM = new global::System.Data.DataColumn("ARNM", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnARNM);
+                this.columnARCITYNM = new global::System.Data.DataColumn("ARCITYNM", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnARCITYNM);
+                this.columnARCNCD = new global::System.Data.DataColumn("ARCNCD", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnARCNCD);
+                this.columnARFAACD = new global::System.Data.DataColumn("ARFAACD", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnARFAACD);
+                this.columnARICAOCD = new global::System.Data.DataColumn("ARICAOCD", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnARICAOCD);
+                this.columnARLATITUDE = new global::System.Data.DataColumn("ARLATITUDE", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnARLATITUDE);
+                this.columnARLNGITUDE = new global::System.Data.DataColumn("ARLNGITUDE", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnARLNGITUDE);
+                this.columnARALTITUDE = new global::System.Data.DataColumn("ARALTITUDE", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnARALTITUDE);
+                this.columnARTIMEZNM = new global::System.Data.DataColumn("ARTIMEZNM", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnARTIMEZNM);
+                this.columnARTIMEZOF = new global::System.Data.DataColumn("ARTIMEZOF", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnARTIMEZOF);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnARCD}, true));
+                this.columnARCD.AllowDBNull = false;
+                this.columnARCD.Unique = true;
+                this.columnARCD.MaxLength = 3;
+                this.columnARNM.AllowDBNull = false;
+                this.columnARNM.MaxLength = 100;
+                this.columnARCITYNM.AllowDBNull = false;
+                this.columnARCITYNM.MaxLength = 60;
+                this.columnARCNCD.AllowDBNull = false;
+                this.columnARCNCD.MaxLength = 2;
+                this.columnARFAACD.AllowDBNull = false;
+                this.columnARFAACD.MaxLength = 3;
+                this.columnARICAOCD.AllowDBNull = false;
+                this.columnARICAOCD.MaxLength = 4;
+                this.columnARLATITUDE.AllowDBNull = false;
+                this.columnARLNGITUDE.AllowDBNull = false;
+                this.columnARALTITUDE.AllowDBNull = false;
+                this.columnARTIMEZNM.AllowDBNull = false;
+                this.columnARTIMEZNM.MaxLength = 25;
+                this.columnARTIMEZOF.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public AIRPORTRow NewAIRPORTRow() {
+                return ((AIRPORTRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new AIRPORTRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(AIRPORTRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.AIRPORTRowChanged != null)) {
+                    this.AIRPORTRowChanged(this, new AIRPORTRowChangeEvent(((AIRPORTRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.AIRPORTRowChanging != null)) {
+                    this.AIRPORTRowChanging(this, new AIRPORTRowChangeEvent(((AIRPORTRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.AIRPORTRowDeleted != null)) {
+                    this.AIRPORTRowDeleted(this, new AIRPORTRowChangeEvent(((AIRPORTRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.AIRPORTRowDeleting != null)) {
+                    this.AIRPORTRowDeleting(this, new AIRPORTRowChangeEvent(((AIRPORTRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void RemoveAIRPORTRow(AIRPORTRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSet1 ds = new DataSet1();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "AIRPORTDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class CREWDataTable : global::System.Data.TypedTableBase<CREWRow> {
+            
+            private global::System.Data.DataColumn columnFLIGHTNO;
+            
+            private global::System.Data.DataColumn columnCREWCODE;
+            
+            private global::System.Data.DataColumn columnPILOTS;
+            
+            private global::System.Data.DataColumn columnATTENDANTS;
+            
+            private global::System.Data.DataColumn columnRESCLERK;
+            
+            private global::System.Data.DataColumn columnMAINT;
+            
+            private global::System.Data.DataColumn columnJANITOR;
+            
+            private global::System.Data.DataColumn columnREFUELING;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public CREWDataTable() {
+                this.TableName = "CREW";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal CREWDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected CREWDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn FLIGHTNOColumn {
+                get {
+                    return this.columnFLIGHTNO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CREWCODEColumn {
+                get {
+                    return this.columnCREWCODE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PILOTSColumn {
+                get {
+                    return this.columnPILOTS;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ATTENDANTSColumn {
+                get {
+                    return this.columnATTENDANTS;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn RESCLERKColumn {
+                get {
+                    return this.columnRESCLERK;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn MAINTColumn {
+                get {
+                    return this.columnMAINT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn JANITORColumn {
+                get {
+                    return this.columnJANITOR;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn REFUELINGColumn {
+                get {
+                    return this.columnREFUELING;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public CREWRow this[int index] {
+                get {
+                    return ((CREWRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event CREWRowChangeEventHandler CREWRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event CREWRowChangeEventHandler CREWRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event CREWRowChangeEventHandler CREWRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event CREWRowChangeEventHandler CREWRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void AddCREWRow(CREWRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public CREWRow AddCREWRow(string FLIGHTNO, string CREWCODE, int PILOTS, int ATTENDANTS, string RESCLERK, string MAINT, string JANITOR, string REFUELING) {
+                CREWRow rowCREWRow = ((CREWRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        FLIGHTNO,
+                        CREWCODE,
+                        PILOTS,
+                        ATTENDANTS,
+                        RESCLERK,
+                        MAINT,
+                        JANITOR,
+                        REFUELING};
+                rowCREWRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowCREWRow);
+                return rowCREWRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public CREWRow FindByFLIGHTNO(string FLIGHTNO) {
+                return ((CREWRow)(this.Rows.Find(new object[] {
+                            FLIGHTNO})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                CREWDataTable cln = ((CREWDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new CREWDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal void InitVars() {
+                this.columnFLIGHTNO = base.Columns["FLIGHTNO"];
+                this.columnCREWCODE = base.Columns["CREWCODE"];
+                this.columnPILOTS = base.Columns["PILOTS"];
+                this.columnATTENDANTS = base.Columns["ATTENDANTS"];
+                this.columnRESCLERK = base.Columns["RESCLERK"];
+                this.columnMAINT = base.Columns["MAINT"];
+                this.columnJANITOR = base.Columns["JANITOR"];
+                this.columnREFUELING = base.Columns["REFUELING"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            private void InitClass() {
+                this.columnFLIGHTNO = new global::System.Data.DataColumn("FLIGHTNO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFLIGHTNO);
+                this.columnCREWCODE = new global::System.Data.DataColumn("CREWCODE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCREWCODE);
+                this.columnPILOTS = new global::System.Data.DataColumn("PILOTS", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPILOTS);
+                this.columnATTENDANTS = new global::System.Data.DataColumn("ATTENDANTS", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnATTENDANTS);
+                this.columnRESCLERK = new global::System.Data.DataColumn("RESCLERK", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRESCLERK);
+                this.columnMAINT = new global::System.Data.DataColumn("MAINT", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMAINT);
+                this.columnJANITOR = new global::System.Data.DataColumn("JANITOR", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnJANITOR);
+                this.columnREFUELING = new global::System.Data.DataColumn("REFUELING", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnREFUELING);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnFLIGHTNO}, true));
+                this.columnFLIGHTNO.AllowDBNull = false;
+                this.columnFLIGHTNO.Unique = true;
+                this.columnFLIGHTNO.MaxLength = 10;
+                this.columnCREWCODE.AllowDBNull = false;
+                this.columnCREWCODE.MaxLength = 10;
+                this.columnPILOTS.AllowDBNull = false;
+                this.columnATTENDANTS.AllowDBNull = false;
+                this.columnRESCLERK.AllowDBNull = false;
+                this.columnRESCLERK.MaxLength = 10;
+                this.columnMAINT.MaxLength = 10;
+                this.columnJANITOR.MaxLength = 10;
+                this.columnREFUELING.MaxLength = 10;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public CREWRow NewCREWRow() {
+                return ((CREWRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new CREWRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(CREWRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.CREWRowChanged != null)) {
+                    this.CREWRowChanged(this, new CREWRowChangeEvent(((CREWRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.CREWRowChanging != null)) {
+                    this.CREWRowChanging(this, new CREWRowChangeEvent(((CREWRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.CREWRowDeleted != null)) {
+                    this.CREWRowDeleted(this, new CREWRowChangeEvent(((CREWRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.CREWRowDeleting != null)) {
+                    this.CREWRowDeleting(this, new CREWRowChangeEvent(((CREWRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void RemoveCREWRow(CREWRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSet1 ds = new DataSet1();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "CREWDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class FLIGHTDataTable : global::System.Data.TypedTableBase<FLIGHTRow> {
+            
+            private global::System.Data.DataColumn columnFLIGHTNO;
+            
+            private global::System.Data.DataColumn columnFTRTID;
+            
+            private global::System.Data.DataColumn columnPLANENO;
+            
+            private global::System.Data.DataColumn columnFTCAID;
+            
+            private global::System.Data.DataColumn columnDTIME;
+            
+            private global::System.Data.DataColumn columnATIME;
+            
+            private global::System.Data.DataColumn columnDDATE;
+            
+            private global::System.Data.DataColumn columnADATE;
+            
+            private global::System.Data.DataColumn columnFCLASSAVL;
+            
+            private global::System.Data.DataColumn columnCOACHAVL;
+            
+            private global::System.Data.DataColumn columnPREPSTATUS;
+            
+            private global::System.Data.DataColumn columnFLTSTATUS;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public FLIGHTDataTable() {
+                this.TableName = "FLIGHT";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal FLIGHTDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected FLIGHTDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn FLIGHTNOColumn {
+                get {
+                    return this.columnFLIGHTNO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn FTRTIDColumn {
+                get {
+                    return this.columnFTRTID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PLANENOColumn {
+                get {
+                    return this.columnPLANENO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn FTCAIDColumn {
+                get {
+                    return this.columnFTCAID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn DTIMEColumn {
+                get {
+                    return this.columnDTIME;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ATIMEColumn {
+                get {
+                    return this.columnATIME;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn DDATEColumn {
+                get {
+                    return this.columnDDATE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ADATEColumn {
+                get {
+                    return this.columnADATE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn FCLASSAVLColumn {
+                get {
+                    return this.columnFCLASSAVL;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn COACHAVLColumn {
+                get {
+                    return this.columnCOACHAVL;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PREPSTATUSColumn {
+                get {
+                    return this.columnPREPSTATUS;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn FLTSTATUSColumn {
+                get {
+                    return this.columnFLTSTATUS;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public FLIGHTRow this[int index] {
+                get {
+                    return ((FLIGHTRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event FLIGHTRowChangeEventHandler FLIGHTRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event FLIGHTRowChangeEventHandler FLIGHTRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event FLIGHTRowChangeEventHandler FLIGHTRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event FLIGHTRowChangeEventHandler FLIGHTRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void AddFLIGHTRow(FLIGHTRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public FLIGHTRow AddFLIGHTRow(string FLIGHTNO, int FTRTID, string PLANENO, short FTCAID, string DTIME, string ATIME, string DDATE, string ADATE, int FCLASSAVL, int COACHAVL, string PREPSTATUS, string FLTSTATUS) {
+                FLIGHTRow rowFLIGHTRow = ((FLIGHTRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        FLIGHTNO,
+                        FTRTID,
+                        PLANENO,
+                        FTCAID,
+                        DTIME,
+                        ATIME,
+                        DDATE,
+                        ADATE,
+                        FCLASSAVL,
+                        COACHAVL,
+                        PREPSTATUS,
+                        FLTSTATUS};
+                rowFLIGHTRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowFLIGHTRow);
+                return rowFLIGHTRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public FLIGHTRow FindByFLIGHTNO(string FLIGHTNO) {
+                return ((FLIGHTRow)(this.Rows.Find(new object[] {
+                            FLIGHTNO})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                FLIGHTDataTable cln = ((FLIGHTDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new FLIGHTDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal void InitVars() {
+                this.columnFLIGHTNO = base.Columns["FLIGHTNO"];
+                this.columnFTRTID = base.Columns["FTRTID"];
+                this.columnPLANENO = base.Columns["PLANENO"];
+                this.columnFTCAID = base.Columns["FTCAID"];
+                this.columnDTIME = base.Columns["DTIME"];
+                this.columnATIME = base.Columns["ATIME"];
+                this.columnDDATE = base.Columns["DDATE"];
+                this.columnADATE = base.Columns["ADATE"];
+                this.columnFCLASSAVL = base.Columns["FCLASSAVL"];
+                this.columnCOACHAVL = base.Columns["COACHAVL"];
+                this.columnPREPSTATUS = base.Columns["PREPSTATUS"];
+                this.columnFLTSTATUS = base.Columns["FLTSTATUS"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            private void InitClass() {
+                this.columnFLIGHTNO = new global::System.Data.DataColumn("FLIGHTNO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFLIGHTNO);
+                this.columnFTRTID = new global::System.Data.DataColumn("FTRTID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFTRTID);
+                this.columnPLANENO = new global::System.Data.DataColumn("PLANENO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPLANENO);
+                this.columnFTCAID = new global::System.Data.DataColumn("FTCAID", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFTCAID);
+                this.columnDTIME = new global::System.Data.DataColumn("DTIME", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDTIME);
+                this.columnATIME = new global::System.Data.DataColumn("ATIME", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnATIME);
+                this.columnDDATE = new global::System.Data.DataColumn("DDATE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDDATE);
+                this.columnADATE = new global::System.Data.DataColumn("ADATE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnADATE);
+                this.columnFCLASSAVL = new global::System.Data.DataColumn("FCLASSAVL", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFCLASSAVL);
+                this.columnCOACHAVL = new global::System.Data.DataColumn("COACHAVL", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCOACHAVL);
+                this.columnPREPSTATUS = new global::System.Data.DataColumn("PREPSTATUS", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPREPSTATUS);
+                this.columnFLTSTATUS = new global::System.Data.DataColumn("FLTSTATUS", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFLTSTATUS);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnFLIGHTNO}, true));
+                this.columnFLIGHTNO.AllowDBNull = false;
+                this.columnFLIGHTNO.Unique = true;
+                this.columnFLIGHTNO.MaxLength = 10;
+                this.columnFTRTID.AllowDBNull = false;
+                this.columnPLANENO.AllowDBNull = false;
+                this.columnPLANENO.MaxLength = 10;
+                this.columnFTCAID.AllowDBNull = false;
+                this.columnDTIME.AllowDBNull = false;
+                this.columnDTIME.MaxLength = 8;
+                this.columnATIME.AllowDBNull = false;
+                this.columnATIME.MaxLength = 8;
+                this.columnDDATE.AllowDBNull = false;
+                this.columnDDATE.MaxLength = 10;
+                this.columnADATE.AllowDBNull = false;
+                this.columnADATE.MaxLength = 10;
+                this.columnFCLASSAVL.AllowDBNull = false;
+                this.columnCOACHAVL.AllowDBNull = false;
+                this.columnPREPSTATUS.AllowDBNull = false;
+                this.columnPREPSTATUS.MaxLength = 1;
+                this.columnFLTSTATUS.AllowDBNull = false;
+                this.columnFLTSTATUS.MaxLength = 3;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public FLIGHTRow NewFLIGHTRow() {
+                return ((FLIGHTRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new FLIGHTRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(FLIGHTRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.FLIGHTRowChanged != null)) {
+                    this.FLIGHTRowChanged(this, new FLIGHTRowChangeEvent(((FLIGHTRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.FLIGHTRowChanging != null)) {
+                    this.FLIGHTRowChanging(this, new FLIGHTRowChangeEvent(((FLIGHTRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.FLIGHTRowDeleted != null)) {
+                    this.FLIGHTRowDeleted(this, new FLIGHTRowChangeEvent(((FLIGHTRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.FLIGHTRowDeleting != null)) {
+                    this.FLIGHTRowDeleting(this, new FLIGHTRowChangeEvent(((FLIGHTRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void RemoveFLIGHTRow(FLIGHTRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSet1 ds = new DataSet1();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "FLIGHTDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class EMPLOYEERow : global::System.Data.DataRow {
@@ -1852,6 +3647,669 @@ namespace Pixis_Employees {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class AIRPLANERow : global::System.Data.DataRow {
+            
+            private AIRPLANEDataTable tableAIRPLANE;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal AIRPLANERow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableAIRPLANE = ((AIRPLANEDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string PLANENO {
+                get {
+                    return ((string)(this[this.tableAIRPLANE.PLANENOColumn]));
+                }
+                set {
+                    this[this.tableAIRPLANE.PLANENOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int MAXDIST {
+                get {
+                    return ((int)(this[this.tableAIRPLANE.MAXDISTColumn]));
+                }
+                set {
+                    this[this.tableAIRPLANE.MAXDISTColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int FCLASS {
+                get {
+                    return ((int)(this[this.tableAIRPLANE.FCLASSColumn]));
+                }
+                set {
+                    this[this.tableAIRPLANE.FCLASSColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int CCLASS {
+                get {
+                    return ((int)(this[this.tableAIRPLANE.CCLASSColumn]));
+                }
+                set {
+                    this[this.tableAIRPLANE.CCLASSColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string PAVAIL {
+                get {
+                    return ((string)(this[this.tableAIRPLANE.PAVAILColumn]));
+                }
+                set {
+                    this[this.tableAIRPLANE.PAVAILColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int MAINTMILES {
+                get {
+                    return ((int)(this[this.tableAIRPLANE.MAINTMILESColumn]));
+                }
+                set {
+                    this[this.tableAIRPLANE.MAINTMILESColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string PLANEMODEL {
+                get {
+                    return ((string)(this[this.tableAIRPLANE.PLANEMODELColumn]));
+                }
+                set {
+                    this[this.tableAIRPLANE.PLANEMODELColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string PMAKE {
+                get {
+                    return ((string)(this[this.tableAIRPLANE.PMAKEColumn]));
+                }
+                set {
+                    this[this.tableAIRPLANE.PMAKEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string APARCD {
+                get {
+                    try {
+                        return ((string)(this[this.tableAIRPLANE.APARCDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'APARCD\' in table \'AIRPLANE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAIRPLANE.APARCDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string APACTDT {
+                get {
+                    try {
+                        return ((string)(this[this.tableAIRPLANE.APACTDTColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'APACTDT\' in table \'AIRPLANE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAIRPLANE.APACTDTColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string APIACTDT {
+                get {
+                    try {
+                        return ((string)(this[this.tableAIRPLANE.APIACTDTColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'APIACTDT\' in table \'AIRPLANE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAIRPLANE.APIACTDTColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string STATUS {
+                get {
+                    try {
+                        return ((string)(this[this.tableAIRPLANE.STATUSColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'STATUS\' in table \'AIRPLANE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAIRPLANE.STATUSColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string DATEMAINT {
+                get {
+                    return ((string)(this[this.tableAIRPLANE.DATEMAINTColumn]));
+                }
+                set {
+                    this[this.tableAIRPLANE.DATEMAINTColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsAPARCDNull() {
+                return this.IsNull(this.tableAIRPLANE.APARCDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetAPARCDNull() {
+                this[this.tableAIRPLANE.APARCDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsAPACTDTNull() {
+                return this.IsNull(this.tableAIRPLANE.APACTDTColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetAPACTDTNull() {
+                this[this.tableAIRPLANE.APACTDTColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsAPIACTDTNull() {
+                return this.IsNull(this.tableAIRPLANE.APIACTDTColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetAPIACTDTNull() {
+                this[this.tableAIRPLANE.APIACTDTColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsSTATUSNull() {
+                return this.IsNull(this.tableAIRPLANE.STATUSColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetSTATUSNull() {
+                this[this.tableAIRPLANE.STATUSColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class AIRPORTRow : global::System.Data.DataRow {
+            
+            private AIRPORTDataTable tableAIRPORT;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal AIRPORTRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableAIRPORT = ((AIRPORTDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string ARCD {
+                get {
+                    return ((string)(this[this.tableAIRPORT.ARCDColumn]));
+                }
+                set {
+                    this[this.tableAIRPORT.ARCDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string ARNM {
+                get {
+                    return ((string)(this[this.tableAIRPORT.ARNMColumn]));
+                }
+                set {
+                    this[this.tableAIRPORT.ARNMColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string ARCITYNM {
+                get {
+                    return ((string)(this[this.tableAIRPORT.ARCITYNMColumn]));
+                }
+                set {
+                    this[this.tableAIRPORT.ARCITYNMColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string ARCNCD {
+                get {
+                    return ((string)(this[this.tableAIRPORT.ARCNCDColumn]));
+                }
+                set {
+                    this[this.tableAIRPORT.ARCNCDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string ARFAACD {
+                get {
+                    return ((string)(this[this.tableAIRPORT.ARFAACDColumn]));
+                }
+                set {
+                    this[this.tableAIRPORT.ARFAACDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string ARICAOCD {
+                get {
+                    return ((string)(this[this.tableAIRPORT.ARICAOCDColumn]));
+                }
+                set {
+                    this[this.tableAIRPORT.ARICAOCDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal ARLATITUDE {
+                get {
+                    return ((decimal)(this[this.tableAIRPORT.ARLATITUDEColumn]));
+                }
+                set {
+                    this[this.tableAIRPORT.ARLATITUDEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal ARLNGITUDE {
+                get {
+                    return ((decimal)(this[this.tableAIRPORT.ARLNGITUDEColumn]));
+                }
+                set {
+                    this[this.tableAIRPORT.ARLNGITUDEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int ARALTITUDE {
+                get {
+                    return ((int)(this[this.tableAIRPORT.ARALTITUDEColumn]));
+                }
+                set {
+                    this[this.tableAIRPORT.ARALTITUDEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string ARTIMEZNM {
+                get {
+                    return ((string)(this[this.tableAIRPORT.ARTIMEZNMColumn]));
+                }
+                set {
+                    this[this.tableAIRPORT.ARTIMEZNMColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal ARTIMEZOF {
+                get {
+                    return ((decimal)(this[this.tableAIRPORT.ARTIMEZOFColumn]));
+                }
+                set {
+                    this[this.tableAIRPORT.ARTIMEZOFColumn] = value;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class CREWRow : global::System.Data.DataRow {
+            
+            private CREWDataTable tableCREW;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal CREWRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableCREW = ((CREWDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string FLIGHTNO {
+                get {
+                    return ((string)(this[this.tableCREW.FLIGHTNOColumn]));
+                }
+                set {
+                    this[this.tableCREW.FLIGHTNOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string CREWCODE {
+                get {
+                    return ((string)(this[this.tableCREW.CREWCODEColumn]));
+                }
+                set {
+                    this[this.tableCREW.CREWCODEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int PILOTS {
+                get {
+                    return ((int)(this[this.tableCREW.PILOTSColumn]));
+                }
+                set {
+                    this[this.tableCREW.PILOTSColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int ATTENDANTS {
+                get {
+                    return ((int)(this[this.tableCREW.ATTENDANTSColumn]));
+                }
+                set {
+                    this[this.tableCREW.ATTENDANTSColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string RESCLERK {
+                get {
+                    return ((string)(this[this.tableCREW.RESCLERKColumn]));
+                }
+                set {
+                    this[this.tableCREW.RESCLERKColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string MAINT {
+                get {
+                    try {
+                        return ((string)(this[this.tableCREW.MAINTColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'MAINT\' in table \'CREW\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCREW.MAINTColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string JANITOR {
+                get {
+                    try {
+                        return ((string)(this[this.tableCREW.JANITORColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'JANITOR\' in table \'CREW\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCREW.JANITORColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string REFUELING {
+                get {
+                    try {
+                        return ((string)(this[this.tableCREW.REFUELINGColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'REFUELING\' in table \'CREW\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCREW.REFUELINGColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsMAINTNull() {
+                return this.IsNull(this.tableCREW.MAINTColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetMAINTNull() {
+                this[this.tableCREW.MAINTColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsJANITORNull() {
+                return this.IsNull(this.tableCREW.JANITORColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetJANITORNull() {
+                this[this.tableCREW.JANITORColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsREFUELINGNull() {
+                return this.IsNull(this.tableCREW.REFUELINGColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetREFUELINGNull() {
+                this[this.tableCREW.REFUELINGColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class FLIGHTRow : global::System.Data.DataRow {
+            
+            private FLIGHTDataTable tableFLIGHT;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal FLIGHTRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableFLIGHT = ((FLIGHTDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string FLIGHTNO {
+                get {
+                    return ((string)(this[this.tableFLIGHT.FLIGHTNOColumn]));
+                }
+                set {
+                    this[this.tableFLIGHT.FLIGHTNOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int FTRTID {
+                get {
+                    return ((int)(this[this.tableFLIGHT.FTRTIDColumn]));
+                }
+                set {
+                    this[this.tableFLIGHT.FTRTIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string PLANENO {
+                get {
+                    return ((string)(this[this.tableFLIGHT.PLANENOColumn]));
+                }
+                set {
+                    this[this.tableFLIGHT.PLANENOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public short FTCAID {
+                get {
+                    return ((short)(this[this.tableFLIGHT.FTCAIDColumn]));
+                }
+                set {
+                    this[this.tableFLIGHT.FTCAIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string DTIME {
+                get {
+                    return ((string)(this[this.tableFLIGHT.DTIMEColumn]));
+                }
+                set {
+                    this[this.tableFLIGHT.DTIMEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string ATIME {
+                get {
+                    return ((string)(this[this.tableFLIGHT.ATIMEColumn]));
+                }
+                set {
+                    this[this.tableFLIGHT.ATIMEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string DDATE {
+                get {
+                    return ((string)(this[this.tableFLIGHT.DDATEColumn]));
+                }
+                set {
+                    this[this.tableFLIGHT.DDATEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string ADATE {
+                get {
+                    return ((string)(this[this.tableFLIGHT.ADATEColumn]));
+                }
+                set {
+                    this[this.tableFLIGHT.ADATEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int FCLASSAVL {
+                get {
+                    return ((int)(this[this.tableFLIGHT.FCLASSAVLColumn]));
+                }
+                set {
+                    this[this.tableFLIGHT.FCLASSAVLColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int COACHAVL {
+                get {
+                    return ((int)(this[this.tableFLIGHT.COACHAVLColumn]));
+                }
+                set {
+                    this[this.tableFLIGHT.COACHAVLColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string PREPSTATUS {
+                get {
+                    return ((string)(this[this.tableFLIGHT.PREPSTATUSColumn]));
+                }
+                set {
+                    this[this.tableFLIGHT.PREPSTATUSColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string FLTSTATUS {
+                get {
+                    return ((string)(this[this.tableFLIGHT.FLTSTATUSColumn]));
+                }
+                set {
+                    this[this.tableFLIGHT.FLTSTATUSColumn] = value;
+                }
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -1939,6 +4397,142 @@ namespace Pixis_Employees {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public ZIPCODERow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public class AIRPLANERowChangeEvent : global::System.EventArgs {
+            
+            private AIRPLANERow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public AIRPLANERowChangeEvent(AIRPLANERow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public AIRPLANERow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public class AIRPORTRowChangeEvent : global::System.EventArgs {
+            
+            private AIRPORTRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public AIRPORTRowChangeEvent(AIRPORTRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public AIRPORTRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public class CREWRowChangeEvent : global::System.EventArgs {
+            
+            private CREWRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public CREWRowChangeEvent(CREWRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public CREWRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public class FLIGHTRowChangeEvent : global::System.EventArgs {
+            
+            private FLIGHTRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public FLIGHTRowChangeEvent(FLIGHTRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public FLIGHTRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -2828,6 +5422,1179 @@ namespace Pixis_Employees.DataSet1TableAdapters {
     }
     
     /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class AIRPLANETableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.OleDb.OleDbDataAdapter _adapter;
+        
+        private global::System.Data.OleDb.OleDbConnection _connection;
+        
+        private global::System.Data.OleDb.OleDbTransaction _transaction;
+        
+        private global::System.Data.OleDb.OleDbCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public AIRPLANETableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected internal global::System.Data.OleDb.OleDbDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.OleDb.OleDbConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.OleDb.OleDbCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.OleDb.OleDbTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected global::System.Data.OleDb.OleDbCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.OleDb.OleDbDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "AIRPLANE";
+            tableMapping.ColumnMappings.Add("PLANENO", "PLANENO");
+            tableMapping.ColumnMappings.Add("MAXDIST", "MAXDIST");
+            tableMapping.ColumnMappings.Add("FCLASS", "FCLASS");
+            tableMapping.ColumnMappings.Add("CCLASS", "CCLASS");
+            tableMapping.ColumnMappings.Add("PAVAIL", "PAVAIL");
+            tableMapping.ColumnMappings.Add("MAINTMILES", "MAINTMILES");
+            tableMapping.ColumnMappings.Add("PLANEMODEL", "PLANEMODEL");
+            tableMapping.ColumnMappings.Add("PMAKE", "PMAKE");
+            tableMapping.ColumnMappings.Add("APARCD", "APARCD");
+            tableMapping.ColumnMappings.Add("APACTDT", "APACTDT");
+            tableMapping.ColumnMappings.Add("APIACTDT", "APIACTDT");
+            tableMapping.ColumnMappings.Add("STATUS", "STATUS");
+            tableMapping.ColumnMappings.Add("DATEMAINT", "DATEMAINT");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO S101FF5C.ITPA638.AIRPLANE (PLANENO, MAXDIST, FCLASS, CCLASS, PAVAIL, " +
+                "MAINTMILES, PLANEMODEL, PMAKE, APARCD, APACTDT, APIACTDT, STATUS, DATEMAINT) VAL" +
+                "UES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PLANENO", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PLANENO", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("MAXDIST", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MAXDIST", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("FCLASS", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "FCLASS", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("CCLASS", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CCLASS", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PAVAIL", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PAVAIL", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("MAINTMILES", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MAINTMILES", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PLANEMODEL", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PLANEMODEL", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PMAKE", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PMAKE", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("APARCD", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "APARCD", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("APACTDT", global::System.Data.OleDb.OleDbType.Char, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "APACTDT", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("APIACTDT", global::System.Data.OleDb.OleDbType.Char, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "APIACTDT", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("STATUS", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "STATUS", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DATEMAINT", global::System.Data.OleDb.OleDbType.Char, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DATEMAINT", global::System.Data.DataRowVersion.Current, false, null));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.OleDb.OleDbConnection();
+            this._connection.ConnectionString = global::Pixis_Employees.Properties.Settings.Default.ConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
+            this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT PLANENO, MAXDIST, FCLASS, CCLASS, PAVAIL, MAINTMILES, PLANEMODEL, PMAKE, A" +
+                "PARCD, APACTDT, APIACTDT, STATUS, DATEMAINT FROM ITPA638.AIRPLANE";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(DataSet1.AIRPLANEDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DataSet1.AIRPLANEDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            DataSet1.AIRPLANEDataTable dataTable = new DataSet1.AIRPLANEDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(DataSet1.AIRPLANEDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(DataSet1 dataSet) {
+            return this.Adapter.Update(dataSet, "AIRPLANE");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(string PLANENO, int MAXDIST, int FCLASS, int CCLASS, string PAVAIL, int MAINTMILES, string PLANEMODEL, string PMAKE, string APARCD, string APACTDT, string APIACTDT, string STATUS, string DATEMAINT) {
+            if ((PLANENO == null)) {
+                throw new global::System.ArgumentNullException("PLANENO");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(PLANENO));
+            }
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(MAXDIST));
+            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(FCLASS));
+            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(CCLASS));
+            if ((PAVAIL == null)) {
+                throw new global::System.ArgumentNullException("PAVAIL");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(PAVAIL));
+            }
+            this.Adapter.InsertCommand.Parameters[5].Value = ((int)(MAINTMILES));
+            if ((PLANEMODEL == null)) {
+                throw new global::System.ArgumentNullException("PLANEMODEL");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(PLANEMODEL));
+            }
+            if ((PMAKE == null)) {
+                throw new global::System.ArgumentNullException("PMAKE");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(PMAKE));
+            }
+            if ((APARCD == null)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(APARCD));
+            }
+            if ((APACTDT == null)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(APACTDT));
+            }
+            if ((APIACTDT == null)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(APIACTDT));
+            }
+            if ((STATUS == null)) {
+                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(STATUS));
+            }
+            if ((DATEMAINT == null)) {
+                throw new global::System.ArgumentNullException("DATEMAINT");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(DATEMAINT));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class AIRPORTTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.OleDb.OleDbDataAdapter _adapter;
+        
+        private global::System.Data.OleDb.OleDbConnection _connection;
+        
+        private global::System.Data.OleDb.OleDbTransaction _transaction;
+        
+        private global::System.Data.OleDb.OleDbCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public AIRPORTTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected internal global::System.Data.OleDb.OleDbDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.OleDb.OleDbConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.OleDb.OleDbCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.OleDb.OleDbTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected global::System.Data.OleDb.OleDbCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.OleDb.OleDbDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "AIRPORT";
+            tableMapping.ColumnMappings.Add("ARCD", "ARCD");
+            tableMapping.ColumnMappings.Add("ARNM", "ARNM");
+            tableMapping.ColumnMappings.Add("ARCITYNM", "ARCITYNM");
+            tableMapping.ColumnMappings.Add("ARCNCD", "ARCNCD");
+            tableMapping.ColumnMappings.Add("ARFAACD", "ARFAACD");
+            tableMapping.ColumnMappings.Add("ARICAOCD", "ARICAOCD");
+            tableMapping.ColumnMappings.Add("ARLATITUDE", "ARLATITUDE");
+            tableMapping.ColumnMappings.Add("ARLNGITUDE", "ARLNGITUDE");
+            tableMapping.ColumnMappings.Add("ARALTITUDE", "ARALTITUDE");
+            tableMapping.ColumnMappings.Add("ARTIMEZNM", "ARTIMEZNM");
+            tableMapping.ColumnMappings.Add("ARTIMEZOF", "ARTIMEZOF");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO S101FF5C.ITPA638.AIRPORT (ARCD, ARNM, ARCITYNM, ARCNCD, ARFAACD, ARIC" +
+                "AOCD, ARLATITUDE, ARLNGITUDE, ARALTITUDE, ARTIMEZNM, ARTIMEZOF) VALUES (?, ?, ?," +
+                " ?, ?, ?, ?, ?, ?, ?, ?)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ARCD", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ARCD", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ARNM", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ARNM", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ARCITYNM", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ARCITYNM", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ARCNCD", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ARCNCD", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ARFAACD", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ARFAACD", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ARICAOCD", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ARICAOCD", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ARLATITUDE", global::System.Data.OleDb.OleDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, ((byte)(9)), ((byte)(6)), "ARLATITUDE", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ARLNGITUDE", global::System.Data.OleDb.OleDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, ((byte)(9)), ((byte)(6)), "ARLNGITUDE", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ARALTITUDE", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ARALTITUDE", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ARTIMEZNM", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ARTIMEZNM", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ARTIMEZOF", global::System.Data.OleDb.OleDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, ((byte)(4)), ((byte)(2)), "ARTIMEZOF", global::System.Data.DataRowVersion.Current, false, null));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.OleDb.OleDbConnection();
+            this._connection.ConnectionString = global::Pixis_Employees.Properties.Settings.Default.ConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
+            this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT ARCD, ARNM, ARCITYNM, ARCNCD, ARFAACD, ARICAOCD, ARLATITUDE, ARLNGITUDE, A" +
+                "RALTITUDE, ARTIMEZNM, ARTIMEZOF FROM ITPA638.AIRPORT";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(DataSet1.AIRPORTDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DataSet1.AIRPORTDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            DataSet1.AIRPORTDataTable dataTable = new DataSet1.AIRPORTDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(DataSet1.AIRPORTDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(DataSet1 dataSet) {
+            return this.Adapter.Update(dataSet, "AIRPORT");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(string ARCD, string ARNM, string ARCITYNM, string ARCNCD, string ARFAACD, string ARICAOCD, decimal ARLATITUDE, decimal ARLNGITUDE, int ARALTITUDE, string ARTIMEZNM, decimal ARTIMEZOF) {
+            if ((ARCD == null)) {
+                throw new global::System.ArgumentNullException("ARCD");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(ARCD));
+            }
+            if ((ARNM == null)) {
+                throw new global::System.ArgumentNullException("ARNM");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(ARNM));
+            }
+            if ((ARCITYNM == null)) {
+                throw new global::System.ArgumentNullException("ARCITYNM");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(ARCITYNM));
+            }
+            if ((ARCNCD == null)) {
+                throw new global::System.ArgumentNullException("ARCNCD");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(ARCNCD));
+            }
+            if ((ARFAACD == null)) {
+                throw new global::System.ArgumentNullException("ARFAACD");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(ARFAACD));
+            }
+            if ((ARICAOCD == null)) {
+                throw new global::System.ArgumentNullException("ARICAOCD");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(ARICAOCD));
+            }
+            this.Adapter.InsertCommand.Parameters[6].Value = ((decimal)(ARLATITUDE));
+            this.Adapter.InsertCommand.Parameters[7].Value = ((decimal)(ARLNGITUDE));
+            this.Adapter.InsertCommand.Parameters[8].Value = ((int)(ARALTITUDE));
+            if ((ARTIMEZNM == null)) {
+                throw new global::System.ArgumentNullException("ARTIMEZNM");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(ARTIMEZNM));
+            }
+            this.Adapter.InsertCommand.Parameters[10].Value = ((decimal)(ARTIMEZOF));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class CREWTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.OleDb.OleDbDataAdapter _adapter;
+        
+        private global::System.Data.OleDb.OleDbConnection _connection;
+        
+        private global::System.Data.OleDb.OleDbTransaction _transaction;
+        
+        private global::System.Data.OleDb.OleDbCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public CREWTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected internal global::System.Data.OleDb.OleDbDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.OleDb.OleDbConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.OleDb.OleDbCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.OleDb.OleDbTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected global::System.Data.OleDb.OleDbCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.OleDb.OleDbDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "CREW";
+            tableMapping.ColumnMappings.Add("FLIGHTNO", "FLIGHTNO");
+            tableMapping.ColumnMappings.Add("CREWCODE", "CREWCODE");
+            tableMapping.ColumnMappings.Add("PILOTS", "PILOTS");
+            tableMapping.ColumnMappings.Add("ATTENDANTS", "ATTENDANTS");
+            tableMapping.ColumnMappings.Add("RESCLERK", "RESCLERK");
+            tableMapping.ColumnMappings.Add("MAINT", "MAINT");
+            tableMapping.ColumnMappings.Add("JANITOR", "JANITOR");
+            tableMapping.ColumnMappings.Add("REFUELING", "REFUELING");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO S101FF5C.ITPA638.CREW (FLIGHTNO, CREWCODE, PILOTS, ATTENDANTS, RESCLE" +
+                "RK, MAINT, JANITOR, REFUELING) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("FLIGHTNO", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "FLIGHTNO", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("CREWCODE", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CREWCODE", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PILOTS", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PILOTS", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ATTENDANTS", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ATTENDANTS", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("RESCLERK", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "RESCLERK", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("MAINT", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MAINT", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("JANITOR", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "JANITOR", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("REFUELING", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "REFUELING", global::System.Data.DataRowVersion.Current, false, null));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.OleDb.OleDbConnection();
+            this._connection.ConnectionString = global::Pixis_Employees.Properties.Settings.Default.ConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
+            this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT FLIGHTNO, CREWCODE, PILOTS, ATTENDANTS, RESCLERK, MAINT, JANITOR, REFUELIN" +
+                "G FROM ITPA638.CREW";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(DataSet1.CREWDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DataSet1.CREWDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            DataSet1.CREWDataTable dataTable = new DataSet1.CREWDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(DataSet1.CREWDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(DataSet1 dataSet) {
+            return this.Adapter.Update(dataSet, "CREW");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(string FLIGHTNO, string CREWCODE, int PILOTS, int ATTENDANTS, string RESCLERK, string MAINT, string JANITOR, string REFUELING) {
+            if ((FLIGHTNO == null)) {
+                throw new global::System.ArgumentNullException("FLIGHTNO");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(FLIGHTNO));
+            }
+            if ((CREWCODE == null)) {
+                throw new global::System.ArgumentNullException("CREWCODE");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(CREWCODE));
+            }
+            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(PILOTS));
+            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(ATTENDANTS));
+            if ((RESCLERK == null)) {
+                throw new global::System.ArgumentNullException("RESCLERK");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(RESCLERK));
+            }
+            if ((MAINT == null)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(MAINT));
+            }
+            if ((JANITOR == null)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(JANITOR));
+            }
+            if ((REFUELING == null)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(REFUELING));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class FLIGHTTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.OleDb.OleDbDataAdapter _adapter;
+        
+        private global::System.Data.OleDb.OleDbConnection _connection;
+        
+        private global::System.Data.OleDb.OleDbTransaction _transaction;
+        
+        private global::System.Data.OleDb.OleDbCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public FLIGHTTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected internal global::System.Data.OleDb.OleDbDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.OleDb.OleDbConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.OleDb.OleDbCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.OleDb.OleDbTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected global::System.Data.OleDb.OleDbCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.OleDb.OleDbDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "FLIGHT";
+            tableMapping.ColumnMappings.Add("FLIGHTNO", "FLIGHTNO");
+            tableMapping.ColumnMappings.Add("FTRTID", "FTRTID");
+            tableMapping.ColumnMappings.Add("PLANENO", "PLANENO");
+            tableMapping.ColumnMappings.Add("FTCAID", "FTCAID");
+            tableMapping.ColumnMappings.Add("DTIME", "DTIME");
+            tableMapping.ColumnMappings.Add("ATIME", "ATIME");
+            tableMapping.ColumnMappings.Add("DDATE", "DDATE");
+            tableMapping.ColumnMappings.Add("ADATE", "ADATE");
+            tableMapping.ColumnMappings.Add("FCLASSAVL", "FCLASSAVL");
+            tableMapping.ColumnMappings.Add("COACHAVL", "COACHAVL");
+            tableMapping.ColumnMappings.Add("PREPSTATUS", "PREPSTATUS");
+            tableMapping.ColumnMappings.Add("FLTSTATUS", "FLTSTATUS");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO S101FF5C.ITPA638.FLIGHT (FLIGHTNO, FTRTID, PLANENO, FTCAID, DTIME, AT" +
+                "IME, DDATE, ADATE, FCLASSAVL, COACHAVL, PREPSTATUS, FLTSTATUS) VALUES (?, ?, ?, " +
+                "?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("FLIGHTNO", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "FLIGHTNO", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("FTRTID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "FTRTID", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PLANENO", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PLANENO", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("FTCAID", global::System.Data.OleDb.OleDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "FTCAID", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DTIME", global::System.Data.OleDb.OleDbType.Char, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DTIME", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ATIME", global::System.Data.OleDb.OleDbType.Char, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ATIME", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DDATE", global::System.Data.OleDb.OleDbType.Char, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DDATE", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ADATE", global::System.Data.OleDb.OleDbType.Char, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ADATE", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("FCLASSAVL", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "FCLASSAVL", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("COACHAVL", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "COACHAVL", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PREPSTATUS", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PREPSTATUS", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("FLTSTATUS", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "FLTSTATUS", global::System.Data.DataRowVersion.Current, false, null));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.OleDb.OleDbConnection();
+            this._connection.ConnectionString = global::Pixis_Employees.Properties.Settings.Default.ConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
+            this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT FLIGHTNO, FTRTID, PLANENO, FTCAID, DTIME, ATIME, DDATE, ADATE, FCLASSAVL, " +
+                "COACHAVL, PREPSTATUS, FLTSTATUS FROM ITPA638.FLIGHT";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(DataSet1.FLIGHTDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DataSet1.FLIGHTDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            DataSet1.FLIGHTDataTable dataTable = new DataSet1.FLIGHTDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(DataSet1.FLIGHTDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(DataSet1 dataSet) {
+            return this.Adapter.Update(dataSet, "FLIGHT");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(string FLIGHTNO, int FTRTID, string PLANENO, short FTCAID, string DTIME, string ATIME, string DDATE, string ADATE, int FCLASSAVL, int COACHAVL, string PREPSTATUS, string FLTSTATUS) {
+            if ((FLIGHTNO == null)) {
+                throw new global::System.ArgumentNullException("FLIGHTNO");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(FLIGHTNO));
+            }
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(FTRTID));
+            if ((PLANENO == null)) {
+                throw new global::System.ArgumentNullException("PLANENO");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(PLANENO));
+            }
+            this.Adapter.InsertCommand.Parameters[3].Value = ((short)(FTCAID));
+            if ((DTIME == null)) {
+                throw new global::System.ArgumentNullException("DTIME");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(DTIME));
+            }
+            if ((ATIME == null)) {
+                throw new global::System.ArgumentNullException("ATIME");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(ATIME));
+            }
+            if ((DDATE == null)) {
+                throw new global::System.ArgumentNullException("DDATE");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(DDATE));
+            }
+            if ((ADATE == null)) {
+                throw new global::System.ArgumentNullException("ADATE");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(ADATE));
+            }
+            this.Adapter.InsertCommand.Parameters[8].Value = ((int)(FCLASSAVL));
+            this.Adapter.InsertCommand.Parameters[9].Value = ((int)(COACHAVL));
+            if ((PREPSTATUS == null)) {
+                throw new global::System.ArgumentNullException("PREPSTATUS");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(PREPSTATUS));
+            }
+            if ((FLTSTATUS == null)) {
+                throw new global::System.ArgumentNullException("FLTSTATUS");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(FLTSTATUS));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+    }
+    
+    /// <summary>
     ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     ///</summary>
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2844,6 +6611,14 @@ namespace Pixis_Employees.DataSet1TableAdapters {
         private JOBTYPETableAdapter _jOBTYPETableAdapter;
         
         private ZIPCODETableAdapter _zIPCODETableAdapter;
+        
+        private AIRPLANETableAdapter _aIRPLANETableAdapter;
+        
+        private AIRPORTTableAdapter _aIRPORTTableAdapter;
+        
+        private CREWTableAdapter _cREWTableAdapter;
+        
+        private FLIGHTTableAdapter _fLIGHTTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -2904,6 +6679,62 @@ namespace Pixis_Employees.DataSet1TableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public AIRPLANETableAdapter AIRPLANETableAdapter {
+            get {
+                return this._aIRPLANETableAdapter;
+            }
+            set {
+                this._aIRPLANETableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public AIRPORTTableAdapter AIRPORTTableAdapter {
+            get {
+                return this._aIRPORTTableAdapter;
+            }
+            set {
+                this._aIRPORTTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public CREWTableAdapter CREWTableAdapter {
+            get {
+                return this._cREWTableAdapter;
+            }
+            set {
+                this._cREWTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public FLIGHTTableAdapter FLIGHTTableAdapter {
+            get {
+                return this._fLIGHTTableAdapter;
+            }
+            set {
+                this._fLIGHTTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public bool BackupDataSetBeforeUpdate {
             get {
                 return this._backupDataSetBeforeUpdate;
@@ -2933,6 +6764,22 @@ namespace Pixis_Employees.DataSet1TableAdapters {
                             && (this._zIPCODETableAdapter.Connection != null))) {
                     return this._zIPCODETableAdapter.Connection;
                 }
+                if (((this._aIRPLANETableAdapter != null) 
+                            && (this._aIRPLANETableAdapter.Connection != null))) {
+                    return this._aIRPLANETableAdapter.Connection;
+                }
+                if (((this._aIRPORTTableAdapter != null) 
+                            && (this._aIRPORTTableAdapter.Connection != null))) {
+                    return this._aIRPORTTableAdapter.Connection;
+                }
+                if (((this._cREWTableAdapter != null) 
+                            && (this._cREWTableAdapter.Connection != null))) {
+                    return this._cREWTableAdapter.Connection;
+                }
+                if (((this._fLIGHTTableAdapter != null) 
+                            && (this._fLIGHTTableAdapter.Connection != null))) {
+                    return this._fLIGHTTableAdapter.Connection;
+                }
                 return null;
             }
             set {
@@ -2953,6 +6800,18 @@ namespace Pixis_Employees.DataSet1TableAdapters {
                     count = (count + 1);
                 }
                 if ((this._zIPCODETableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._aIRPLANETableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._aIRPORTTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._cREWTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._fLIGHTTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -2993,6 +6852,42 @@ namespace Pixis_Employees.DataSet1TableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._aIRPLANETableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.AIRPLANE.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._aIRPLANETableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._aIRPORTTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.AIRPORT.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._aIRPORTTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._cREWTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.CREW.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._cREWTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._fLIGHTTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.FLIGHT.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._fLIGHTTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             return result;
         }
         
@@ -3027,6 +6922,38 @@ namespace Pixis_Employees.DataSet1TableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._aIRPLANETableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.AIRPLANE.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._aIRPLANETableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._aIRPORTTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.AIRPORT.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._aIRPORTTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._cREWTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.CREW.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._cREWTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._fLIGHTTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.FLIGHT.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._fLIGHTTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             return result;
         }
         
@@ -3037,6 +6964,38 @@ namespace Pixis_Employees.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private int UpdateDeletedRows(DataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
+            if ((this._fLIGHTTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.FLIGHT.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._fLIGHTTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._cREWTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.CREW.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._cREWTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._aIRPORTTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.AIRPORT.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._aIRPORTTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._aIRPLANETableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.AIRPLANE.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._aIRPLANETableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._zIPCODETableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.ZIPCODE.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -3115,6 +7074,26 @@ namespace Pixis_Employees.DataSet1TableAdapters {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
+            if (((this._aIRPLANETableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._aIRPLANETableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
+            }
+            if (((this._aIRPORTTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._aIRPORTTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
+            }
+            if (((this._cREWTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._cREWTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
+            }
+            if (((this._fLIGHTTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._fLIGHTTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
+            }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
                 throw new global::System.ApplicationException("TableAdapterManager contains no connection information. Set each TableAdapterMana" +
@@ -3172,6 +7151,42 @@ namespace Pixis_Employees.DataSet1TableAdapters {
                     if (this._zIPCODETableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._zIPCODETableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._zIPCODETableAdapter.Adapter);
+                    }
+                }
+                if ((this._aIRPLANETableAdapter != null)) {
+                    revertConnections.Add(this._aIRPLANETableAdapter, this._aIRPLANETableAdapter.Connection);
+                    this._aIRPLANETableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(workConnection));
+                    this._aIRPLANETableAdapter.Transaction = ((global::System.Data.OleDb.OleDbTransaction)(workTransaction));
+                    if (this._aIRPLANETableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._aIRPLANETableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._aIRPLANETableAdapter.Adapter);
+                    }
+                }
+                if ((this._aIRPORTTableAdapter != null)) {
+                    revertConnections.Add(this._aIRPORTTableAdapter, this._aIRPORTTableAdapter.Connection);
+                    this._aIRPORTTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(workConnection));
+                    this._aIRPORTTableAdapter.Transaction = ((global::System.Data.OleDb.OleDbTransaction)(workTransaction));
+                    if (this._aIRPORTTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._aIRPORTTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._aIRPORTTableAdapter.Adapter);
+                    }
+                }
+                if ((this._cREWTableAdapter != null)) {
+                    revertConnections.Add(this._cREWTableAdapter, this._cREWTableAdapter.Connection);
+                    this._cREWTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(workConnection));
+                    this._cREWTableAdapter.Transaction = ((global::System.Data.OleDb.OleDbTransaction)(workTransaction));
+                    if (this._cREWTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._cREWTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._cREWTableAdapter.Adapter);
+                    }
+                }
+                if ((this._fLIGHTTableAdapter != null)) {
+                    revertConnections.Add(this._fLIGHTTableAdapter, this._fLIGHTTableAdapter.Connection);
+                    this._fLIGHTTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(workConnection));
+                    this._fLIGHTTableAdapter.Transaction = ((global::System.Data.OleDb.OleDbTransaction)(workTransaction));
+                    if (this._fLIGHTTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._fLIGHTTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._fLIGHTTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -3243,6 +7258,22 @@ namespace Pixis_Employees.DataSet1TableAdapters {
                 if ((this._zIPCODETableAdapter != null)) {
                     this._zIPCODETableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._zIPCODETableAdapter]));
                     this._zIPCODETableAdapter.Transaction = null;
+                }
+                if ((this._aIRPLANETableAdapter != null)) {
+                    this._aIRPLANETableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._aIRPLANETableAdapter]));
+                    this._aIRPLANETableAdapter.Transaction = null;
+                }
+                if ((this._aIRPORTTableAdapter != null)) {
+                    this._aIRPORTTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._aIRPORTTableAdapter]));
+                    this._aIRPORTTableAdapter.Transaction = null;
+                }
+                if ((this._cREWTableAdapter != null)) {
+                    this._cREWTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._cREWTableAdapter]));
+                    this._cREWTableAdapter.Transaction = null;
+                }
+                if ((this._fLIGHTTableAdapter != null)) {
+                    this._fLIGHTTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._fLIGHTTableAdapter]));
+                    this._fLIGHTTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
