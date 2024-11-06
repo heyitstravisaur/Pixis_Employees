@@ -26,7 +26,7 @@ namespace Pixis_Employees
             this.Close();
         }
 
-        private void btnDisplay_Click(object sender, EventArgs e)
+        private void btnDisplay_Click(object sender, EventArgs e)https://github.com/heyitstravisaur/Pixis_Employees
         {
 
         }
@@ -39,7 +39,9 @@ namespace Pixis_Employees
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-
+            AddUpdate addUpdate = new AddUpdate();
+            addUpdate.ShowDialog();
+            //going to send a name for the title
         }
     }
 }

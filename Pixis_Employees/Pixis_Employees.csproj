@@ -108,6 +108,9 @@
     <Compile Include="StaffSchedule.Designer.cs">
       <DependentUpon>StaffSchedule.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddUpdate.resx">
+      <DependentUpon>AddUpdate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Airplane.resx">
       <DependentUpon>Airplane.cs</DependentUpon>
     </EmbeddedResource>

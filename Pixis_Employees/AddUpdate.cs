@@ -16,5 +16,10 @@ namespace Pixis_Employees
         {
             InitializeComponent();
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            //this is to add a
+        }
     }
 }
