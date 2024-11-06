@@ -7,12 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using IBM.Data.DB2.iSeries;
 
 namespace Pixis_Employees
 {
     public partial class Employee : Form
     {
         private PyxisairFlightReservationSystem pfrs;
+        private BindingSource bindingSource = new BindingSource();
+        private iDB2DataAdapter dataAdapter = new iDB2DataAdapter();
+        DataTable table;
 
         public Employee(PyxisairFlightReservationSystem form)
         {
@@ -26,7 +30,7 @@ namespace Pixis_Employees
             this.Close();
         }
 
-        private void btnDisplay_Click(object sender, EventArgs e)https://github.com/heyitstravisaur/Pixis_Employees
+        private void btnDisplay_Click(object sender, EventArgs e)
         {
 
         }
@@ -34,6 +38,8 @@ namespace Pixis_Employees
         private void btnAdd_Click(object sender, EventArgs e)
         {
             AddUpdate addUpdate = new AddUpdate();
+            string title = "Add";
+            addUpdate.title = title;
             addUpdate.ShowDialog();
         }
 
@@ -46,7 +52,21 @@ namespace Pixis_Employees
 
         private void Employee_Load(object sender, EventArgs e)
         {
+            string connectionString = "DataSource=deathstar.gtc.edu";
+            string sql = "SELECT * FROM EMPLOYEE";
 
+            try
+            {
+                dataGridView1.DataSource = bindingSource;
+
+                dataAdapter = new iDB2DataAdapter(sql, connectionString);
+                iDB2CommandBuilder commandBuilder = new iDB2CommandBuilder(dataAdapter);
+                table = new DataTable();
+
+                dataAdapter.Fill(table);
+                bindingSource.DataSource = table;
+            }
+            catch (Exception ex) { }
         }
     }
 }

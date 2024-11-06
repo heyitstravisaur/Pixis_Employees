@@ -389,6 +389,7 @@
             this.Controls.Add(this.textBox1);
             this.Name = "AddUpdate";
             this.Text = "AddUpdate";
+            this.Load += new System.EventHandler(this.AddUpdate_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
