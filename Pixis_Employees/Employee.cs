@@ -26,7 +26,7 @@ namespace Pixis_Employees
             this.Close();
         }
 
-        private void btnDisplay_Click(object sender, EventArgs e)https://github.com/heyitstravisaur/Pixis_Employees
+        private void btnDisplay_Click(object sender, EventArgs e)
         {
 
         }

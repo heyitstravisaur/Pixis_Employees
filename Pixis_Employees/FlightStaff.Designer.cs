@@ -33,9 +33,10 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(319, 202);
+            this.btnExit.Location = new System.Drawing.Point(423, 250);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(162, 47);
+            this.btnExit.Size = new System.Drawing.Size(108, 31);
             this.btnExit.TabIndex = 10;
             this.btnExit.Text = "E&xit";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -43,12 +44,14 @@
             // 
             // FlightStaff
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(533, 292);
             this.Controls.Add(this.btnExit);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FlightStaff";
             this.Text = "FlightStaff";
+            this.Load += new System.EventHandler(this.FlightStaff_Load);
             this.ResumeLayout(false);
 
         }

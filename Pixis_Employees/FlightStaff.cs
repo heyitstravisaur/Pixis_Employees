@@ -25,5 +25,10 @@ namespace Pixis_Employees
             pfrs.Show();
             this.Close();
         }
+
+        private void FlightStaff_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
