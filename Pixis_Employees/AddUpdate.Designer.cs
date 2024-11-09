@@ -48,23 +48,23 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtGender = new System.Windows.Forms.TextBox();
+            this.txtJobId = new System.Windows.Forms.TextBox();
+            this.txtWorkStatus = new System.Windows.Forms.TextBox();
+            this.txtHourlyRate = new System.Windows.Forms.TextBox();
+            this.txtEmpHireDate = new System.Windows.Forms.TextBox();
+            this.txtEmpStartDate = new System.Windows.Forms.TextBox();
+            this.txtEmpTermDate = new System.Windows.Forms.TextBox();
+            this.txtRegionId = new System.Windows.Forms.TextBox();
+            this.txtEmpFName = new System.Windows.Forms.TextBox();
+            this.txtLName = new System.Windows.Forms.TextBox();
+            this.txtEmpCity = new System.Windows.Forms.TextBox();
+            this.txtEmpState = new System.Windows.Forms.TextBox();
+            this.txtEmpZip = new System.Windows.Forms.TextBox();
+            this.txtEmpPhoneNumber = new System.Windows.Forms.TextBox();
+            this.txtEmpEmail = new System.Windows.Forms.TextBox();
+            this.txtEmpDOB = new System.Windows.Forms.TextBox();
+            this.txtEmpNum = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -243,23 +243,23 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox10);
-            this.groupBox1.Controls.Add(this.textBox11);
-            this.groupBox1.Controls.Add(this.textBox12);
-            this.groupBox1.Controls.Add(this.textBox13);
-            this.groupBox1.Controls.Add(this.textBox14);
-            this.groupBox1.Controls.Add(this.textBox15);
-            this.groupBox1.Controls.Add(this.textBox16);
-            this.groupBox1.Controls.Add(this.textBox17);
-            this.groupBox1.Controls.Add(this.textBox9);
-            this.groupBox1.Controls.Add(this.textBox8);
-            this.groupBox1.Controls.Add(this.textBox7);
-            this.groupBox1.Controls.Add(this.textBox6);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtGender);
+            this.groupBox1.Controls.Add(this.txtJobId);
+            this.groupBox1.Controls.Add(this.txtWorkStatus);
+            this.groupBox1.Controls.Add(this.txtHourlyRate);
+            this.groupBox1.Controls.Add(this.txtEmpHireDate);
+            this.groupBox1.Controls.Add(this.txtEmpStartDate);
+            this.groupBox1.Controls.Add(this.txtEmpTermDate);
+            this.groupBox1.Controls.Add(this.txtRegionId);
+            this.groupBox1.Controls.Add(this.txtEmpFName);
+            this.groupBox1.Controls.Add(this.txtLName);
+            this.groupBox1.Controls.Add(this.txtEmpCity);
+            this.groupBox1.Controls.Add(this.txtEmpState);
+            this.groupBox1.Controls.Add(this.txtEmpZip);
+            this.groupBox1.Controls.Add(this.txtEmpPhoneNumber);
+            this.groupBox1.Controls.Add(this.txtEmpEmail);
+            this.groupBox1.Controls.Add(this.txtEmpDOB);
+            this.groupBox1.Controls.Add(this.txtEmpNum);
             this.groupBox1.Location = new System.Drawing.Point(179, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(149, 458);
@@ -267,124 +267,124 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
-            // textBox10
+            // txtGender
             // 
-            this.textBox10.Location = new System.Drawing.Point(25, 246);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(100, 20);
-            this.textBox10.TabIndex = 43;
+            this.txtGender.Location = new System.Drawing.Point(25, 246);
+            this.txtGender.Name = "txtGender";
+            this.txtGender.Size = new System.Drawing.Size(100, 20);
+            this.txtGender.TabIndex = 43;
             // 
-            // textBox11
+            // txtJobId
             // 
-            this.textBox11.Location = new System.Drawing.Point(25, 272);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(100, 20);
-            this.textBox11.TabIndex = 42;
+            this.txtJobId.Location = new System.Drawing.Point(25, 272);
+            this.txtJobId.Name = "txtJobId";
+            this.txtJobId.Size = new System.Drawing.Size(100, 20);
+            this.txtJobId.TabIndex = 42;
             // 
-            // textBox12
+            // txtWorkStatus
             // 
-            this.textBox12.Location = new System.Drawing.Point(25, 298);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(100, 20);
-            this.textBox12.TabIndex = 41;
+            this.txtWorkStatus.Location = new System.Drawing.Point(25, 298);
+            this.txtWorkStatus.Name = "txtWorkStatus";
+            this.txtWorkStatus.Size = new System.Drawing.Size(100, 20);
+            this.txtWorkStatus.TabIndex = 41;
             // 
-            // textBox13
+            // txtHourlyRate
             // 
-            this.textBox13.Location = new System.Drawing.Point(25, 324);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(100, 20);
-            this.textBox13.TabIndex = 40;
+            this.txtHourlyRate.Location = new System.Drawing.Point(25, 324);
+            this.txtHourlyRate.Name = "txtHourlyRate";
+            this.txtHourlyRate.Size = new System.Drawing.Size(100, 20);
+            this.txtHourlyRate.TabIndex = 40;
             // 
-            // textBox14
+            // txtEmpHireDate
             // 
-            this.textBox14.Location = new System.Drawing.Point(25, 350);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(100, 20);
-            this.textBox14.TabIndex = 39;
+            this.txtEmpHireDate.Location = new System.Drawing.Point(25, 350);
+            this.txtEmpHireDate.Name = "txtEmpHireDate";
+            this.txtEmpHireDate.Size = new System.Drawing.Size(100, 20);
+            this.txtEmpHireDate.TabIndex = 39;
             // 
-            // textBox15
+            // txtEmpStartDate
             // 
-            this.textBox15.Location = new System.Drawing.Point(25, 376);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(100, 20);
-            this.textBox15.TabIndex = 38;
+            this.txtEmpStartDate.Location = new System.Drawing.Point(25, 376);
+            this.txtEmpStartDate.Name = "txtEmpStartDate";
+            this.txtEmpStartDate.Size = new System.Drawing.Size(100, 20);
+            this.txtEmpStartDate.TabIndex = 38;
             // 
-            // textBox16
+            // txtEmpTermDate
             // 
-            this.textBox16.Location = new System.Drawing.Point(25, 402);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(100, 20);
-            this.textBox16.TabIndex = 37;
+            this.txtEmpTermDate.Location = new System.Drawing.Point(25, 402);
+            this.txtEmpTermDate.Name = "txtEmpTermDate";
+            this.txtEmpTermDate.Size = new System.Drawing.Size(100, 20);
+            this.txtEmpTermDate.TabIndex = 37;
             // 
-            // textBox17
+            // txtRegionId
             // 
-            this.textBox17.Location = new System.Drawing.Point(25, 428);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(100, 20);
-            this.textBox17.TabIndex = 36;
+            this.txtRegionId.Location = new System.Drawing.Point(25, 428);
+            this.txtRegionId.Name = "txtRegionId";
+            this.txtRegionId.Size = new System.Drawing.Size(100, 20);
+            this.txtRegionId.TabIndex = 36;
             // 
-            // textBox9
+            // txtEmpFName
             // 
-            this.textBox9.Location = new System.Drawing.Point(25, 38);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 20);
-            this.textBox9.TabIndex = 35;
+            this.txtEmpFName.Location = new System.Drawing.Point(25, 38);
+            this.txtEmpFName.Name = "txtEmpFName";
+            this.txtEmpFName.Size = new System.Drawing.Size(100, 20);
+            this.txtEmpFName.TabIndex = 35;
             // 
-            // textBox8
+            // txtLName
             // 
-            this.textBox8.Location = new System.Drawing.Point(25, 64);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 20);
-            this.textBox8.TabIndex = 34;
+            this.txtLName.Location = new System.Drawing.Point(25, 64);
+            this.txtLName.Name = "txtLName";
+            this.txtLName.Size = new System.Drawing.Size(100, 20);
+            this.txtLName.TabIndex = 34;
             // 
-            // textBox7
+            // txtEmpCity
             // 
-            this.textBox7.Location = new System.Drawing.Point(25, 90);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 33;
+            this.txtEmpCity.Location = new System.Drawing.Point(25, 90);
+            this.txtEmpCity.Name = "txtEmpCity";
+            this.txtEmpCity.Size = new System.Drawing.Size(100, 20);
+            this.txtEmpCity.TabIndex = 33;
             // 
-            // textBox6
+            // txtEmpState
             // 
-            this.textBox6.Location = new System.Drawing.Point(25, 116);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 32;
+            this.txtEmpState.Location = new System.Drawing.Point(25, 116);
+            this.txtEmpState.Name = "txtEmpState";
+            this.txtEmpState.Size = new System.Drawing.Size(100, 20);
+            this.txtEmpState.TabIndex = 32;
             // 
-            // textBox5
+            // txtEmpZip
             // 
-            this.textBox5.Location = new System.Drawing.Point(25, 142);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 31;
+            this.txtEmpZip.Location = new System.Drawing.Point(25, 142);
+            this.txtEmpZip.Name = "txtEmpZip";
+            this.txtEmpZip.Size = new System.Drawing.Size(100, 20);
+            this.txtEmpZip.TabIndex = 31;
             // 
-            // textBox4
+            // txtEmpPhoneNumber
             // 
-            this.textBox4.Location = new System.Drawing.Point(25, 168);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 30;
+            this.txtEmpPhoneNumber.Location = new System.Drawing.Point(25, 168);
+            this.txtEmpPhoneNumber.Name = "txtEmpPhoneNumber";
+            this.txtEmpPhoneNumber.Size = new System.Drawing.Size(100, 20);
+            this.txtEmpPhoneNumber.TabIndex = 30;
             // 
-            // textBox3
+            // txtEmpEmail
             // 
-            this.textBox3.Location = new System.Drawing.Point(25, 194);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 29;
+            this.txtEmpEmail.Location = new System.Drawing.Point(25, 194);
+            this.txtEmpEmail.Name = "txtEmpEmail";
+            this.txtEmpEmail.Size = new System.Drawing.Size(100, 20);
+            this.txtEmpEmail.TabIndex = 29;
             // 
-            // textBox2
+            // txtEmpDOB
             // 
-            this.textBox2.Location = new System.Drawing.Point(25, 220);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 28;
+            this.txtEmpDOB.Location = new System.Drawing.Point(25, 220);
+            this.txtEmpDOB.Name = "txtEmpDOB";
+            this.txtEmpDOB.Size = new System.Drawing.Size(100, 20);
+            this.txtEmpDOB.TabIndex = 28;
             // 
-            // textBox1
+            // txtEmpNum
             // 
-            this.textBox1.Location = new System.Drawing.Point(25, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 27;
+            this.txtEmpNum.Location = new System.Drawing.Point(25, 12);
+            this.txtEmpNum.Name = "txtEmpNum";
+            this.txtEmpNum.Size = new System.Drawing.Size(100, 20);
+            this.txtEmpNum.TabIndex = 27;
             // 
             // AddUpdate
             // 
@@ -442,22 +442,22 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtGender;
+        private System.Windows.Forms.TextBox txtJobId;
+        private System.Windows.Forms.TextBox txtWorkStatus;
+        private System.Windows.Forms.TextBox txtHourlyRate;
+        private System.Windows.Forms.TextBox txtEmpHireDate;
+        private System.Windows.Forms.TextBox txtEmpStartDate;
+        private System.Windows.Forms.TextBox txtEmpTermDate;
+        private System.Windows.Forms.TextBox txtRegionId;
+        private System.Windows.Forms.TextBox txtEmpFName;
+        private System.Windows.Forms.TextBox txtLName;
+        private System.Windows.Forms.TextBox txtEmpCity;
+        private System.Windows.Forms.TextBox txtEmpState;
+        private System.Windows.Forms.TextBox txtEmpZip;
+        private System.Windows.Forms.TextBox txtEmpPhoneNumber;
+        private System.Windows.Forms.TextBox txtEmpEmail;
+        private System.Windows.Forms.TextBox txtEmpDOB;
+        private System.Windows.Forms.TextBox txtEmpNum;
     }
 }
