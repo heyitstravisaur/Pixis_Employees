@@ -12,18 +12,22 @@ namespace Pixis_Employees
 {
     public partial class AddUpdate : Form
     {
+        List<GroupBox> groups = new List<GroupBox>();
+
         public string title { get; set; }
         public int empNum { get; set; }
 
         public AddUpdate()
         {
             InitializeComponent();
+
+            groups.Add(groupBox1);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             //this is to add a
-            
+            UpdateEmp.update(groups);
         }
 
         private void AddUpdate_Load(object sender, EventArgs e)

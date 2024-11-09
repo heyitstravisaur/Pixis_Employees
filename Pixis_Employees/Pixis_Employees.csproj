@@ -123,6 +123,7 @@
     <Compile Include="StaffSchedule.Designer.cs">
       <DependentUpon>StaffSchedule.cs</DependentUpon>
     </Compile>
+    <Compile Include="UpdateEmp.cs" />
     <EmbeddedResource Include="AddUpdate.resx">
       <DependentUpon>AddUpdate.cs</DependentUpon>
     </EmbeddedResource>
