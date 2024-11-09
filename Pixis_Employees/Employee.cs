@@ -37,10 +37,8 @@ namespace Pixis_Employees
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            AddUpdate addUpdate = new AddUpdate();
-            string title = "Add";
-            addUpdate.title = title;
-            addUpdate.ShowDialog();
+            EmployeeNumber employeeNumber = new EmployeeNumber();
+            employeeNumber.ShowDialog();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)

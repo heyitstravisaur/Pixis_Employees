@@ -13,17 +13,17 @@ namespace Pixis_Employees
     public partial class AddUpdate : Form
     {
         public string title { get; set; }
+        public int empNum { get; set; }
 
         public AddUpdate()
         {
             InitializeComponent();
-            
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             //this is to add a
-
+            
         }
 
         private void AddUpdate_Load(object sender, EventArgs e)
