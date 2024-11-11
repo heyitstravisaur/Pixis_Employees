@@ -48,7 +48,7 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtGender = new System.Windows.Forms.TextBox();
+            this.txtEmpGender = new System.Windows.Forms.TextBox();
             this.txtJobId = new System.Windows.Forms.TextBox();
             this.txtWorkStatus = new System.Windows.Forms.TextBox();
             this.txtHourlyRate = new System.Windows.Forms.TextBox();
@@ -57,7 +57,7 @@
             this.txtEmpTermDate = new System.Windows.Forms.TextBox();
             this.txtRegionId = new System.Windows.Forms.TextBox();
             this.txtEmpFName = new System.Windows.Forms.TextBox();
-            this.txtLName = new System.Windows.Forms.TextBox();
+            this.txtEmpLName = new System.Windows.Forms.TextBox();
             this.txtEmpCity = new System.Windows.Forms.TextBox();
             this.txtEmpState = new System.Windows.Forms.TextBox();
             this.txtEmpZip = new System.Windows.Forms.TextBox();
@@ -243,7 +243,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtGender);
+            this.groupBox1.Controls.Add(this.txtEmpGender);
             this.groupBox1.Controls.Add(this.txtJobId);
             this.groupBox1.Controls.Add(this.txtWorkStatus);
             this.groupBox1.Controls.Add(this.txtHourlyRate);
@@ -252,7 +252,7 @@
             this.groupBox1.Controls.Add(this.txtEmpTermDate);
             this.groupBox1.Controls.Add(this.txtRegionId);
             this.groupBox1.Controls.Add(this.txtEmpFName);
-            this.groupBox1.Controls.Add(this.txtLName);
+            this.groupBox1.Controls.Add(this.txtEmpLName);
             this.groupBox1.Controls.Add(this.txtEmpCity);
             this.groupBox1.Controls.Add(this.txtEmpState);
             this.groupBox1.Controls.Add(this.txtEmpZip);
@@ -267,12 +267,12 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
-            // txtGender
+            // txtEmpGender
             // 
-            this.txtGender.Location = new System.Drawing.Point(25, 246);
-            this.txtGender.Name = "txtGender";
-            this.txtGender.Size = new System.Drawing.Size(100, 20);
-            this.txtGender.TabIndex = 43;
+            this.txtEmpGender.Location = new System.Drawing.Point(25, 246);
+            this.txtEmpGender.Name = "txtEmpGender";
+            this.txtEmpGender.Size = new System.Drawing.Size(100, 20);
+            this.txtEmpGender.TabIndex = 43;
             // 
             // txtJobId
             // 
@@ -330,12 +330,12 @@
             this.txtEmpFName.Size = new System.Drawing.Size(100, 20);
             this.txtEmpFName.TabIndex = 35;
             // 
-            // txtLName
+            // txtEmpLName
             // 
-            this.txtLName.Location = new System.Drawing.Point(25, 64);
-            this.txtLName.Name = "txtLName";
-            this.txtLName.Size = new System.Drawing.Size(100, 20);
-            this.txtLName.TabIndex = 34;
+            this.txtEmpLName.Location = new System.Drawing.Point(25, 64);
+            this.txtEmpLName.Name = "txtEmpLName";
+            this.txtEmpLName.Size = new System.Drawing.Size(100, 20);
+            this.txtEmpLName.TabIndex = 34;
             // 
             // txtEmpCity
             // 
@@ -442,7 +442,7 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtGender;
+        private System.Windows.Forms.TextBox txtEmpGender;
         private System.Windows.Forms.TextBox txtJobId;
         private System.Windows.Forms.TextBox txtWorkStatus;
         private System.Windows.Forms.TextBox txtHourlyRate;
@@ -451,7 +451,7 @@
         private System.Windows.Forms.TextBox txtEmpTermDate;
         private System.Windows.Forms.TextBox txtRegionId;
         private System.Windows.Forms.TextBox txtEmpFName;
-        private System.Windows.Forms.TextBox txtLName;
+        private System.Windows.Forms.TextBox txtEmpLName;
         private System.Windows.Forms.TextBox txtEmpCity;
         private System.Windows.Forms.TextBox txtEmpState;
         private System.Windows.Forms.TextBox txtEmpZip;
