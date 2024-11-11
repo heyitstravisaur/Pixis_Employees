@@ -1,5 +1,7 @@
-﻿using System;
+﻿using IBM.Data.DB2.iSeries;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +14,7 @@ namespace Pixis_Employees
         public static void update(List<GroupBox> groupBoxes)
         {
             //varibales for switch case (for holding the text from the textboxes in the AddUpdate form)
+            string empAddress;
             string empDOB;
             string empCity;
             string empEmail;
@@ -31,6 +34,9 @@ namespace Pixis_Employees
             string workStatus;
 
             //Varibales for the sql statement
+            iDB2Connection conn;
+            iDB2DataAdapter iDBAdapter;
+            DataTable dt;
 
             foreach (var group in groupBoxes)
             {
@@ -41,61 +47,83 @@ namespace Pixis_Employees
                         switch (textBox.Name)
                         {
                             case "txtEmpNum":
-                                empNum = textBox.Name;
+                                empNum = textBox.Text;
                                 break;
                             case "txtEmpFName":
-                                empFName = textBox.Name;
+                                empFName = textBox.Text;
                                 break;
                             case "txtLName":
-                                empLName = textBox.Name;
+                                empLName = textBox.Text;
+                                break;
+                            case "txtEmployeeAddress":
+                                empAddress = textBox.Text;
                                 break;
                             case "txtEmpCity":
-                                empCity = textBox.Name;
+                                empCity = textBox.Text;
                                 break;
                             case "txtEmpState":
-                                empState = textBox.Name;
+                                empState = textBox.Text;
                                 break;
                             case "txtEmpZip":
-                                empZip = textBox.Name;
+                                empZip = textBox.Text;
                                 break;
                             case "txtEmpPhoneNumber":
-                                empPhoneNumber = textBox.Name;
+                                empPhoneNumber = textBox.Text;
                                 break;
                             case "txtEmpEmail":
-                                empEmail = textBox.Name;
+                                empEmail = textBox.Text;
                                 break;
                             case "txtEmpDOB":
-                                empDOB = textBox.Name;
+                                empDOB = textBox.Text;
                                 break;
                             case "txtEmpGender":
-                                empGender = textBox.Name;
+                                empGender = textBox.Text;
                                 break;
                             case "txtJobId":
-                                jobId = textBox.Name;
+                                jobId = textBox.Text;
                                 break;
                             case "txtWorkStatus":
-                                workStatus = textBox.Name;
+                                workStatus = textBox.Text;
                                 break;
                             case "txtHourlyRate":
-                                hourlyRate = textBox.Name;
+                                hourlyRate = textBox.Text;
                                 break;
                             case "txtEmpHireDate":
-                                empHireDate = textBox.Name;
+                                empHireDate = textBox.Text;
                                 break;
                             case "txtEmpStartDate":
-                                empStartDate = textBox.Name;
+                                empStartDate = textBox.Text;
                                 break;
                             case "txtEmpTermDate":
-                                empTermDate = textBox.Name;
+                                empTermDate = textBox.Text;
                                 break;
                             case "txtRegionId":
-                                regionId = textBox.Name;
+                                regionId = textBox.Text;
                                 break;
                         }
                     }
                 }
             }
 
+            string cmdText = "UPDATE EMPLOYEE " +
+                             "SET EFNAME = @empFName, " +
+                             "ELNAME = @empLName, " +
+                             "EADDR = @empAddress, " +
+                             "ECITY = @empCity, " +
+                             "ESTATE = @empState, " +
+                             "EZIP = @empZip, " +
+                             "EPHONE = @empPhoneNumber, " +
+                             "EMAIL = @empEmail, " +
+                             "DOB = @empDOB, " +
+                             "GENDER = @empGender, " +
+                             "JOBID = @jobId, " +
+                             "WRKSTATUS = @workStatus, " +
+                             "HRLYRATE = @hourlyRate, " +
+                             "EMHIREDT = @empHireDate, " +
+                             "EMSTARTDT = @empStartDate, " +
+                             "EMTERMDT = @empTermDate, " +
+                             "REGIONID = @regionId " +
+                             "WHERE EMPNO = @empNum";
 
         }
     }
