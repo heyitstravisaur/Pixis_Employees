@@ -48,6 +48,7 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtEmpAddress = new System.Windows.Forms.TextBox();
             this.txtEmpGender = new System.Windows.Forms.TextBox();
             this.txtJobId = new System.Windows.Forms.TextBox();
             this.txtWorkStatus = new System.Windows.Forms.TextBox();
@@ -66,7 +67,7 @@
             this.txtEmpDOB = new System.Windows.Forms.TextBox();
             this.txtEmpNum = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.txtEmpAddress = new System.Windows.Forms.TextBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -270,6 +271,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
+            // txtEmpAddress
+            // 
+            this.txtEmpAddress.Location = new System.Drawing.Point(25, 90);
+            this.txtEmpAddress.Name = "txtEmpAddress";
+            this.txtEmpAddress.Size = new System.Drawing.Size(100, 20);
+            this.txtEmpAddress.TabIndex = 44;
+            // 
             // txtEmpGender
             // 
             this.txtEmpGender.Location = new System.Drawing.Point(25, 272);
@@ -398,18 +406,20 @@
             this.label18.TabIndex = 38;
             this.label18.Text = "Employee Address";
             // 
-            // txtEmpAddress
+            // listBox1
             // 
-            this.txtEmpAddress.Location = new System.Drawing.Point(25, 90);
-            this.txtEmpAddress.Name = "txtEmpAddress";
-            this.txtEmpAddress.Size = new System.Drawing.Size(100, 20);
-            this.txtEmpAddress.TabIndex = 44;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(334, 67);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(137, 433);
+            this.listBox1.TabIndex = 39;
             // 
             // AddUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(488, 517);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnUpdate);
@@ -481,5 +491,6 @@
         private System.Windows.Forms.TextBox txtEmpNum;
         private System.Windows.Forms.TextBox txtEmpAddress;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }

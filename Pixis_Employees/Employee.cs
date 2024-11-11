@@ -37,8 +37,9 @@ namespace Pixis_Employees
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            EmployeeNumber employeeNumber = new EmployeeNumber();
+            EmployeeNumber employeeNumber = new EmployeeNumber(this);
             employeeNumber.ShowDialog();
+            this.Hide();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -50,7 +51,7 @@ namespace Pixis_Employees
 
         private void Employee_Load(object sender, EventArgs e)
         {
-            string connectionString = "DataSource=deathstar.gtc.edu";
+            string connectionString = "DataSource=deathstar.gtc.edu;User ID=itpa638";
             string sql = "SELECT * FROM EMPLOYEE";
 
             try
