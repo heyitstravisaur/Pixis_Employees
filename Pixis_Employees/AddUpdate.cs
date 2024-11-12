@@ -34,7 +34,6 @@ namespace Pixis_Employees
 
         private void AddUpdate_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dataSet1.EMPLOYEE' table. You can move, or remove it, as needed.
             this.eMPLOYEETableAdapter.Fill(this.dataSet1.EMPLOYEE);
             this.Text = title;
             if (title == "Add")
@@ -44,14 +43,15 @@ namespace Pixis_Employees
             }
             else
             {
+                btnUpdate.Show();
                 btnAdd.Hide();
-                UpdateEmp.update(groups);
             }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             //this will update the employee
+            UpdateEmp.update(groups);
         }
     }
 }
