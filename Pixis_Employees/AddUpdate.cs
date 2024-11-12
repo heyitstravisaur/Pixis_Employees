@@ -34,7 +34,6 @@ namespace Pixis_Employees
 
         private void AddUpdate_Load(object sender, EventArgs e)
         {
-            this.eMPLOYEETableAdapter.Fill(this.dataSet1.EMPLOYEE);
             this.Text = title;
             if (title == "Add")
             {
@@ -43,6 +42,7 @@ namespace Pixis_Employees
             }
             else
             {
+                this.eMPLOYEETableAdapter.Fill(this.dataSet1.EMPLOYEE);
                 btnUpdate.Show();
                 btnAdd.Hide();
             }
