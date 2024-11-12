@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -68,7 +69,13 @@
             this.txtEmpNum = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.dataSet1 = new Pixis_Employees.DataSet1();
+            this.eMPLOYEEBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.eMPLOYEETableAdapter = new Pixis_Employees.DataSet1TableAdapters.EMPLOYEETableAdapter();
+            this.tableAdapterManager = new Pixis_Employees.DataSet1TableAdapters.TableAdapterManager();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eMPLOYEEBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -273,6 +280,7 @@
             // 
             // txtEmpAddress
             // 
+            this.txtEmpAddress.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.eMPLOYEEBindingSource, "EADDR", true));
             this.txtEmpAddress.Location = new System.Drawing.Point(25, 90);
             this.txtEmpAddress.Name = "txtEmpAddress";
             this.txtEmpAddress.Size = new System.Drawing.Size(100, 20);
@@ -280,6 +288,7 @@
             // 
             // txtEmpGender
             // 
+            this.txtEmpGender.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.eMPLOYEEBindingSource, "GENDER", true));
             this.txtEmpGender.Location = new System.Drawing.Point(25, 272);
             this.txtEmpGender.Name = "txtEmpGender";
             this.txtEmpGender.Size = new System.Drawing.Size(100, 20);
@@ -287,6 +296,7 @@
             // 
             // txtJobId
             // 
+            this.txtJobId.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.eMPLOYEEBindingSource, "JOBID", true));
             this.txtJobId.Location = new System.Drawing.Point(25, 298);
             this.txtJobId.Name = "txtJobId";
             this.txtJobId.Size = new System.Drawing.Size(100, 20);
@@ -294,6 +304,7 @@
             // 
             // txtWorkStatus
             // 
+            this.txtWorkStatus.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.eMPLOYEEBindingSource, "WRKSTATUS", true));
             this.txtWorkStatus.Location = new System.Drawing.Point(25, 324);
             this.txtWorkStatus.Name = "txtWorkStatus";
             this.txtWorkStatus.Size = new System.Drawing.Size(100, 20);
@@ -301,6 +312,7 @@
             // 
             // txtHourlyRate
             // 
+            this.txtHourlyRate.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.eMPLOYEEBindingSource, "HRLYRATE", true));
             this.txtHourlyRate.Location = new System.Drawing.Point(25, 350);
             this.txtHourlyRate.Name = "txtHourlyRate";
             this.txtHourlyRate.Size = new System.Drawing.Size(100, 20);
@@ -308,6 +320,7 @@
             // 
             // txtEmpHireDate
             // 
+            this.txtEmpHireDate.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.eMPLOYEEBindingSource, "EMHIREDT", true));
             this.txtEmpHireDate.Location = new System.Drawing.Point(25, 376);
             this.txtEmpHireDate.Name = "txtEmpHireDate";
             this.txtEmpHireDate.Size = new System.Drawing.Size(100, 20);
@@ -315,6 +328,7 @@
             // 
             // txtEmpStartDate
             // 
+            this.txtEmpStartDate.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.eMPLOYEEBindingSource, "EMSTARTDT", true));
             this.txtEmpStartDate.Location = new System.Drawing.Point(25, 402);
             this.txtEmpStartDate.Name = "txtEmpStartDate";
             this.txtEmpStartDate.Size = new System.Drawing.Size(100, 20);
@@ -322,6 +336,7 @@
             // 
             // txtEmpTermDate
             // 
+            this.txtEmpTermDate.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.eMPLOYEEBindingSource, "EMTERMDT", true));
             this.txtEmpTermDate.Location = new System.Drawing.Point(25, 428);
             this.txtEmpTermDate.Name = "txtEmpTermDate";
             this.txtEmpTermDate.Size = new System.Drawing.Size(100, 20);
@@ -329,6 +344,7 @@
             // 
             // txtRegionId
             // 
+            this.txtRegionId.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.eMPLOYEEBindingSource, "REGIONID", true));
             this.txtRegionId.Location = new System.Drawing.Point(25, 454);
             this.txtRegionId.Name = "txtRegionId";
             this.txtRegionId.Size = new System.Drawing.Size(100, 20);
@@ -336,6 +352,7 @@
             // 
             // txtEmpFName
             // 
+            this.txtEmpFName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.eMPLOYEEBindingSource, "EFNAME", true));
             this.txtEmpFName.Location = new System.Drawing.Point(25, 38);
             this.txtEmpFName.Name = "txtEmpFName";
             this.txtEmpFName.Size = new System.Drawing.Size(100, 20);
@@ -343,6 +360,7 @@
             // 
             // txtEmpLName
             // 
+            this.txtEmpLName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.eMPLOYEEBindingSource, "ELNAME", true));
             this.txtEmpLName.Location = new System.Drawing.Point(25, 64);
             this.txtEmpLName.Name = "txtEmpLName";
             this.txtEmpLName.Size = new System.Drawing.Size(100, 20);
@@ -350,6 +368,7 @@
             // 
             // txtEmpCity
             // 
+            this.txtEmpCity.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.eMPLOYEEBindingSource, "ECITY", true));
             this.txtEmpCity.Location = new System.Drawing.Point(25, 116);
             this.txtEmpCity.Name = "txtEmpCity";
             this.txtEmpCity.Size = new System.Drawing.Size(100, 20);
@@ -357,6 +376,7 @@
             // 
             // txtEmpState
             // 
+            this.txtEmpState.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.eMPLOYEEBindingSource, "ESTATE", true));
             this.txtEmpState.Location = new System.Drawing.Point(25, 142);
             this.txtEmpState.Name = "txtEmpState";
             this.txtEmpState.Size = new System.Drawing.Size(100, 20);
@@ -364,6 +384,7 @@
             // 
             // txtEmpZip
             // 
+            this.txtEmpZip.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.eMPLOYEEBindingSource, "EZIP", true));
             this.txtEmpZip.Location = new System.Drawing.Point(25, 168);
             this.txtEmpZip.Name = "txtEmpZip";
             this.txtEmpZip.Size = new System.Drawing.Size(100, 20);
@@ -371,6 +392,7 @@
             // 
             // txtEmpPhoneNumber
             // 
+            this.txtEmpPhoneNumber.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.eMPLOYEEBindingSource, "EPHONE", true));
             this.txtEmpPhoneNumber.Location = new System.Drawing.Point(25, 194);
             this.txtEmpPhoneNumber.Name = "txtEmpPhoneNumber";
             this.txtEmpPhoneNumber.Size = new System.Drawing.Size(100, 20);
@@ -378,6 +400,7 @@
             // 
             // txtEmpEmail
             // 
+            this.txtEmpEmail.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.eMPLOYEEBindingSource, "EMAIL", true));
             this.txtEmpEmail.Location = new System.Drawing.Point(25, 220);
             this.txtEmpEmail.Name = "txtEmpEmail";
             this.txtEmpEmail.Size = new System.Drawing.Size(100, 20);
@@ -385,6 +408,7 @@
             // 
             // txtEmpDOB
             // 
+            this.txtEmpDOB.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.eMPLOYEEBindingSource, "DOB", true));
             this.txtEmpDOB.Location = new System.Drawing.Point(25, 246);
             this.txtEmpDOB.Name = "txtEmpDOB";
             this.txtEmpDOB.Size = new System.Drawing.Size(100, 20);
@@ -392,6 +416,7 @@
             // 
             // txtEmpNum
             // 
+            this.txtEmpNum.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.eMPLOYEEBindingSource, "EMPNO", true));
             this.txtEmpNum.Location = new System.Drawing.Point(25, 12);
             this.txtEmpNum.Name = "txtEmpNum";
             this.txtEmpNum.Size = new System.Drawing.Size(100, 20);
@@ -413,6 +438,32 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(137, 433);
             this.listBox1.TabIndex = 39;
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // eMPLOYEEBindingSource
+            // 
+            this.eMPLOYEEBindingSource.DataMember = "EMPLOYEE";
+            this.eMPLOYEEBindingSource.DataSource = this.dataSet1;
+            // 
+            // eMPLOYEETableAdapter
+            // 
+            this.eMPLOYEETableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.AIRPLANETableAdapter = null;
+            this.tableAdapterManager.AIRPORTTableAdapter = null;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.CREWTableAdapter = null;
+            this.tableAdapterManager.EMPLOYEETableAdapter = this.eMPLOYEETableAdapter;
+            this.tableAdapterManager.FLIGHTTableAdapter = null;
+            this.tableAdapterManager.JOBTYPETableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = Pixis_Employees.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.ZIPCODETableAdapter = null;
             // 
             // AddUpdate
             // 
@@ -446,6 +497,8 @@
             this.Load += new System.EventHandler(this.AddUpdate_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eMPLOYEEBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -492,5 +545,9 @@
         private System.Windows.Forms.TextBox txtEmpAddress;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.ListBox listBox1;
+        private DataSet1 dataSet1;
+        private System.Windows.Forms.BindingSource eMPLOYEEBindingSource;
+        private DataSet1TableAdapters.EMPLOYEETableAdapter eMPLOYEETableAdapter;
+        private DataSet1TableAdapters.TableAdapterManager tableAdapterManager;
     }
 }

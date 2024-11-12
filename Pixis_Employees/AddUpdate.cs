@@ -16,9 +16,6 @@ namespace Pixis_Employees
         List<GroupBox> groups = new List<GroupBox>();
 
         private PyxisairFlightReservationSystem pfrs;
-        private BindingSource bindingSource = new BindingSource();
-        private iDB2DataAdapter dataAdapter = new iDB2DataAdapter();
-        DataTable table = new DataTable();
 
         public string title { get; set; }
         public int empNum { get; set; }
@@ -33,45 +30,22 @@ namespace Pixis_Employees
         private void btnAdd_Click(object sender, EventArgs e)
         {
             //this is to add a
-            UpdateEmp.update(groups);
         }
 
         private void AddUpdate_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dataSet1.EMPLOYEE' table. You can move, or remove it, as needed.
+            this.eMPLOYEETableAdapter.Fill(this.dataSet1.EMPLOYEE);
             this.Text = title;
             if (title == "Add")
             {
                 btnAdd.Show();
                 btnUpdate.Hide();
-
-                string connectionString = "DataSource=deathstar.gtc.edu";
-                string sql = "SELECT * FROM EMPLOYEE WHERE EMPNO = @empNum";
-
-                try
-                {
-                    iDB2Connection connection = new iDB2Connection(connectionString);
-                    connection.Open();
-
-                    dataAdapter = new iDB2DataAdapter(sql, connection);
-                    table = new DataTable();
-
-                    dataAdapter.Fill(table);
-
-                    if (table.Rows.Count > 0)
-                    {
-                        DataRow row = table.Rows[0];
-
-                        txtEmpNum.Text = row["EMPNO"].ToString();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    listBox1.Items.Add(ex.ToString());
-                }
             }
             else
             {
                 btnAdd.Hide();
+                UpdateEmp.update(groups);
             }
         }
 
