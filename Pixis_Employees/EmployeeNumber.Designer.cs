@@ -69,7 +69,7 @@
             this.txtEmployeeNumber.Location = new System.Drawing.Point(12, 54);
             this.txtEmployeeNumber.Name = "txtEmployeeNumber";
             this.txtEmployeeNumber.Size = new System.Drawing.Size(262, 20);
-            this.txtEmployeeNumber.TabIndex = 3;
+            this.txtEmployeeNumber.TabIndex = 0;
             // 
             // EmployeeNumber
             // 
