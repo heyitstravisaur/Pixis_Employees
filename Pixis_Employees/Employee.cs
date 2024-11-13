@@ -30,9 +30,9 @@ namespace Pixis_Employees
             this.Close();
         }
 
-        private void btnDisplay_Click(object sender, EventArgs e)
+        private void btnRefresh_Click(object sender, EventArgs e)
         {
-
+            display();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -44,10 +44,14 @@ namespace Pixis_Employees
         {
             EmployeeNumber employeeNumber = new EmployeeNumber(this);
             employeeNumber.Show();
-            //this.Hide();
         }
 
         private void Employee_Load(object sender, EventArgs e)
+        {
+            display();
+        }
+
+        private void display()
         {
             string connectionString = "DataSource=deathstar.gtc.edu;User ID=itpa638";
             string sql = "SELECT * FROM EMPLOYEE";

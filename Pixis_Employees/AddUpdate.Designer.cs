@@ -50,6 +50,8 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtEmpAddress = new System.Windows.Forms.TextBox();
+            this.eMPLOYEEBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet1 = new Pixis_Employees.DataSet1();
             this.txtEmpGender = new System.Windows.Forms.TextBox();
             this.txtJobId = new System.Windows.Forms.TextBox();
             this.txtWorkStatus = new System.Windows.Forms.TextBox();
@@ -69,13 +71,11 @@
             this.txtEmpNum = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.dataSet1 = new Pixis_Employees.DataSet1();
-            this.eMPLOYEEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.eMPLOYEETableAdapter = new Pixis_Employees.DataSet1TableAdapters.EMPLOYEETableAdapter();
             this.tableAdapterManager = new Pixis_Employees.DataSet1TableAdapters.TableAdapterManager();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eMPLOYEEBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -286,6 +286,16 @@
             this.txtEmpAddress.Size = new System.Drawing.Size(100, 20);
             this.txtEmpAddress.TabIndex = 44;
             // 
+            // eMPLOYEEBindingSource
+            // 
+            this.eMPLOYEEBindingSource.DataMember = "EMPLOYEE";
+            this.eMPLOYEEBindingSource.DataSource = this.dataSet1;
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // txtEmpGender
             // 
             this.txtEmpGender.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.eMPLOYEEBindingSource, "GENDER", true));
@@ -436,18 +446,10 @@
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(334, 67);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(137, 433);
+            this.listBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.listBox1.ScrollAlwaysVisible = true;
+            this.listBox1.Size = new System.Drawing.Size(537, 433);
             this.listBox1.TabIndex = 39;
-            // 
-            // dataSet1
-            // 
-            this.dataSet1.DataSetName = "DataSet1";
-            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // eMPLOYEEBindingSource
-            // 
-            this.eMPLOYEEBindingSource.DataMember = "EMPLOYEE";
-            this.eMPLOYEEBindingSource.DataSource = this.dataSet1;
             // 
             // eMPLOYEETableAdapter
             // 
@@ -469,7 +471,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(488, 517);
+            this.ClientSize = new System.Drawing.Size(883, 517);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.groupBox1);
@@ -497,8 +499,8 @@
             this.Load += new System.EventHandler(this.AddUpdate_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eMPLOYEEBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -11,6 +11,7 @@ namespace Pixis_Employees
 {
     internal class UpdateEmp
     {
+
         public static void update(List<GroupBox> groupBoxes)
         {
             //varibales for switch case (for holding the text from the textboxes in the AddUpdate form)
@@ -34,9 +35,7 @@ namespace Pixis_Employees
             string workStatus;
 
             //Varibales for the sql statement
-            iDB2Connection conn;
-            iDB2DataAdapter iDBAdapter;
-            DataTable dt;
+            iDB2Connection conn = new iDB2Connection();
 
             foreach (var group in groupBoxes)
             {
@@ -125,6 +124,21 @@ namespace Pixis_Employees
                              "REGIONID = @regionId " +
                              "WHERE EMPNO = @empNum";
 
+            string connName = "Provider = IBMDA400.DataSource.1; Data Source = deathstar.gtc.edu; User ID = itpa638; Initial Catalog = S101FF5C";
+
+            try
+            {
+                conn = new iDB2Connection(connName);
+                conn.Open();
+
+                iDB2Command cmd = new iDB2Command(cmdText);
+                cmd.ExecuteNonQuery();
+
+                conn.Close();
+
+            }
+            catch (Exception ex) {  }
+            finally { conn.Close(); }
         }
     }
 }
