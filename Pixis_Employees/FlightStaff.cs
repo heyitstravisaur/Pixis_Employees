@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -33,23 +33,31 @@ namespace Pixis_Employees
 
         private void FlightStaff_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dataSet1.CREW' table. You can move, or remove it, as needed.
-            this.cREWTableAdapter.Fill(this.dataSet1.CREW);
-            string connectionString = "DataSource=deathstar.gtc.edu";
-            string sql = "SELECT * FROM CREW";
+        }
 
-            try
-            {
-                dataGridView1.DataSource = bindingSource;
-            
-                dataAdapter = new iDB2DataAdapter(sql, connectionString);
-                iDB2CommandBuilder commandBuilder = new iDB2CommandBuilder(dataAdapter);
-                table = new DataTable();
-            
-                dataAdapter.Fill(table);
-                bindingSource.DataSource = table;
-            }
-            catch (Exception ex) { }
+        private void btnCheckStaff_Click(object sender, EventArgs e)
+        {
+            //string flightNum;
+            //flightNum = txtboxFlightNum.Text;
+            //txtboxFlightNum
+            //btnCheckStaff
+
+            //this.cREWTableAdapter1.Fill(this.dataSet2.CREW);
+
+            //if(flightNum == FLIGHTNO)
+            //string connectionString = "DataSource=deathstar.gtc.edu";
+            //string sql = "SELECT * FROM CREW";
+
+            //try
+            //{
+            //    dataAdapter = new iDB2DataAdapter(sql, connectionString);
+            //    iDB2CommandBuilder commandBuilder = new iDB2CommandBuilder(dataAdapter);
+            //    table = new DataTable();
+
+            //    dataAdapter.Fill(table);
+            //    bindingSource.DataSource = table;
+            //}
+            //catch (Exception ex) { }
         }
     }
 }
