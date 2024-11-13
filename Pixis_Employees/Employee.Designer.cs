@@ -128,7 +128,7 @@
             this.eMTERMDTDataGridViewTextBoxColumn,
             this.rEGIONIDDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.eMPLOYEEBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(8, 8);
+            this.dataGridView1.Location = new System.Drawing.Point(11, 8);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;

@@ -24,13 +24,16 @@ namespace Pixis_Employees
         private void btnSelect_Click(object sender, EventArgs e)
         {
             int empNum = Convert.ToInt32(txtEmployeeNumber.Text);
-            AddUpdate addUpdate = new AddUpdate();
+
+            // Pass the reference of Form2 when creating Form4 (AddUpdate)
+            AddUpdate addUpdate = new AddUpdate(employee);
             string title = "Update Employee";
             addUpdate.title = title;
             addUpdate.empNum = empNum;
             addUpdate.Show();
-            employee.Hide();
-            this.Close();
+
+            employee.Hide(); // Hide Form2 (Employee)
+            this.Close();    // Close Form3 (EmployeeNumber)
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

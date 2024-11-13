@@ -15,7 +15,6 @@ namespace Pixis_Employees
     {
         List<GroupBox> groups = new List<GroupBox>();
 
-        private PyxisairFlightReservationSystem pfrs;
         private Employee employee;
 
         public string title { get; set; }
@@ -25,10 +24,10 @@ namespace Pixis_Employees
         iDB2DataAdapter iDBAdapter;
         DataSet ds;
 
-        public AddUpdate()
+        public AddUpdate(Employee form)
         {
             InitializeComponent();
-
+            employee = form;
             groups.Add(groupBox1);
         }
 
@@ -155,6 +154,8 @@ namespace Pixis_Employees
         {
             //this will update the employee
             UpdateEmp.update(groups);
+            employee.Show();
+            this.Close();
         }
     }
 }
