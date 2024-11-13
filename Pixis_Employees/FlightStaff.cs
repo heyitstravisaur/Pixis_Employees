@@ -33,6 +33,8 @@ namespace Pixis_Employees
 
         private void FlightStaff_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dataSet1.CREW' table. You can move, or remove it, as needed.
+            this.cREWTableAdapter.Fill(this.dataSet1.CREW);
             string connectionString = "DataSource=deathstar.gtc.edu";
             string sql = "SELECT * FROM CREW";
 
