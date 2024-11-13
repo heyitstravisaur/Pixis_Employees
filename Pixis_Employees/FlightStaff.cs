@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IBM.Data.DB2.iSeries;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,9 @@ namespace Pixis_Employees
 {
     public partial class FlightStaff : Form
     {
+        private BindingSource bindingSource = new BindingSource();
+        private iDB2DataAdapter dataAdapter = new iDB2DataAdapter();
+        DataTable table;
         private PyxisairFlightReservationSystem pfrs;
 
         public FlightStaff(PyxisairFlightReservationSystem form)
@@ -24,6 +28,11 @@ namespace Pixis_Employees
         {
             pfrs.Show();
             this.Close();
+        }
+
+        private void FlightStaff_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
