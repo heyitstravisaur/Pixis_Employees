@@ -34,6 +34,7 @@ namespace Pixis_Employees
 
         private void AddUpdate_Load(object sender, EventArgs e)
         {
+
             this.Text = title;
             if (title == "Add")
             {

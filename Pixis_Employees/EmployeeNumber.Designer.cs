@@ -31,7 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnSelect = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.txbEmployeeNumber = new System.Windows.Forms.TextBox();
+            this.txtEmployeeNumber = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -64,24 +64,25 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // txbEmployeeNumber
+            // txtEmployeeNumber
             // 
-            this.txbEmployeeNumber.Location = new System.Drawing.Point(12, 54);
-            this.txbEmployeeNumber.Name = "txbEmployeeNumber";
-            this.txbEmployeeNumber.Size = new System.Drawing.Size(262, 20);
-            this.txbEmployeeNumber.TabIndex = 3;
+            this.txtEmployeeNumber.Location = new System.Drawing.Point(12, 54);
+            this.txtEmployeeNumber.Name = "txtEmployeeNumber";
+            this.txtEmployeeNumber.Size = new System.Drawing.Size(262, 20);
+            this.txtEmployeeNumber.TabIndex = 3;
             // 
             // EmployeeNumber
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(323, 197);
-            this.Controls.Add(this.txbEmployeeNumber);
+            this.Controls.Add(this.txtEmployeeNumber);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSelect);
             this.Controls.Add(this.label1);
             this.Name = "EmployeeNumber";
             this.Text = "EmployeeNumber";
+            this.Load += new System.EventHandler(this.EmployeeNumber_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -92,6 +93,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnSelect;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.TextBox txbEmployeeNumber;
+        private System.Windows.Forms.TextBox txtEmployeeNumber;
     }
 }

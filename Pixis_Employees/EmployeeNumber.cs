@@ -18,22 +18,30 @@ namespace Pixis_Employees
         {
             InitializeComponent();
             employee = form;
+            txtEmployeeNumber.Focus();
         }
 
         private void btnSelect_Click(object sender, EventArgs e)
         {
-            int empNum = Convert.ToInt32(txbEmployeeNumber.Text);
+            int empNum = Convert.ToInt32(txtEmployeeNumber.Text);
             AddUpdate addUpdate = new AddUpdate();
             string title = "Update Employee";
             addUpdate.title = title;
             addUpdate.empNum = empNum;
             addUpdate.Show();
+            employee.Hide();
             this.Close();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            employee.Show();
             this.Close();
+        }
+
+        private void EmployeeNumber_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }
