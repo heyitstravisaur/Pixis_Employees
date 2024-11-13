@@ -82,7 +82,6 @@
             this.Controls.Add(this.label1);
             this.Name = "EmployeeNumber";
             this.Text = "EmployeeNumber";
-            this.Load += new System.EventHandler(this.EmployeeNumber_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

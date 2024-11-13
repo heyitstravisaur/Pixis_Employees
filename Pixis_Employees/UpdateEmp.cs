@@ -15,24 +15,24 @@ namespace Pixis_Employees
         public static void update(List<GroupBox> groupBoxes)
         {
             //varibales for switch case (for holding the text from the textboxes in the AddUpdate form)
-            string empAddress;
-            string empDOB;
-            string empCity;
-            string empEmail;
-            string empFName;
-            string empGender;
-            string empHireDate;
-            string empLName;
-            string empNum;
-            string empPhoneNumber;
-            string empStartDate;
-            string empState;
-            string empTermDate;
-            string empZip;
-            string hourlyRate;
-            string jobId;
-            string regionId;
-            string workStatus;
+            string empAddress = "";
+            string empDOB = "";
+            string empCity = "";
+            string empEmail = "";
+            string empFName = "";
+            string empGender = "";
+            string empHireDate = "";
+            string empLName = "";
+            string empNum = "";
+            string empPhoneNumber = "";
+            string empStartDate = "";
+            string empState = "";
+            string empTermDate = "";
+            string empZip = "";
+            string hourlyRate = "";
+            string jobId = "";
+            string regionId = "";
+            string workStatus = "";
 
             //Varibales for the sql statement
             iDB2Connection conn = new iDB2Connection();
@@ -51,10 +51,10 @@ namespace Pixis_Employees
                             case "txtEmpFName":
                                 empFName = textBox.Text;
                                 break;
-                            case "txtLName":
+                            case "txtEmpLName":
                                 empLName = textBox.Text;
                                 break;
-                            case "txtEmployeeAddress":
+                            case "txtEmpAddress":
                                 empAddress = textBox.Text;
                                 break;
                             case "txtEmpCity":
@@ -104,8 +104,8 @@ namespace Pixis_Employees
                 }
             }
 
-            string cmdText = "UPDATE EMPLOYEE " +
-                             "SET EFNAME = @empFName, " +
+            string cmdText = "UPDATE EMPLOYEE SET " +
+                             "EFNAME = @empName, " +
                              "ELNAME = @empLName, " +
                              "EADDR = @empAddress, " +
                              "ECITY = @empCity, " +
@@ -122,16 +122,37 @@ namespace Pixis_Employees
                              "EMSTARTDT = @empStartDate, " +
                              "EMTERMDT = @empTermDate, " +
                              "REGIONID = @regionId " +
-                             "WHERE EMPNO = @empNum";
+                             "WHERE EMPNO = @empNum ";
 
-            string connName = "Provider = IBMDA400.DataSource.1; Data Source = deathstar.gtc.edu; User ID = itpa638; Initial Catalog = S101FF5C";
+            string connName = "Data Source=deathstar.gtc.edu;User ID=itpa638;Initial Catalog=S101FF5C";
 
             try
             {
                 conn = new iDB2Connection(connName);
                 conn.Open();
 
-                iDB2Command cmd = new iDB2Command(cmdText);
+                iDB2Command cmd = new iDB2Command(cmdText, conn);
+                cmd.DeriveParameters();
+
+                cmd.Parameters.AddWithValue("@empFName", empFName);
+                cmd.Parameters.AddWithValue("@empLName", empLName);
+                cmd.Parameters.AddWithValue("@empAddress", empAddress);
+                cmd.Parameters.AddWithValue("@empCity", empCity);
+                cmd.Parameters.AddWithValue("@empState", empState);
+                cmd.Parameters.AddWithValue("@empZip", empZip);
+                cmd.Parameters.AddWithValue("@empPhoneNumber", empPhoneNumber);
+                cmd.Parameters.AddWithValue("@empEmail", empEmail);
+                cmd.Parameters.AddWithValue("@empDOB", empDOB);
+                cmd.Parameters.AddWithValue("@empGender", empGender);
+                cmd.Parameters.AddWithValue("@jobId", jobId);
+                cmd.Parameters.AddWithValue("@workStatus", workStatus);
+                cmd.Parameters.AddWithValue("@hourlyRate", hourlyRate);
+                cmd.Parameters.AddWithValue("@empHireDate", empHireDate);
+                cmd.Parameters.AddWithValue("@empStartDate", empStartDate);
+                cmd.Parameters.AddWithValue("@empTermDate", empTermDate);
+                cmd.Parameters.AddWithValue("@regionId", regionId);
+                cmd.Parameters.AddWithValue("@empNum", empNum);
+
                 cmd.ExecuteNonQuery();
 
                 conn.Close();

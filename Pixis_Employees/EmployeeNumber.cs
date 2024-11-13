@@ -41,10 +41,5 @@ namespace Pixis_Employees
             employee.Show();
             this.Close();
         }
-
-        private void EmployeeNumber_Load(object sender, EventArgs e)
-        {
-            
-        }
     }
 }
