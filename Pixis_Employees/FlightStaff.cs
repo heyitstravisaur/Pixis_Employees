@@ -57,13 +57,49 @@ namespace Pixis_Employees
             {
                 connection = new iDB2Connection(connectionString);
                 connection.Open();
+
+                //retrieves EMPNO from STAFFSCHED for the given flight number
                 command = new iDB2Command(sqlStaffSched, connection);
                 command.Parameters.AddWithValue("@FlightNum", flightNum);
                 reader = command.ExecuteReader();
 
+                //collects EMPNO's
                 while (reader.Read())
                 {
                     empNoList.Add(reader["EMPNO"].ToString());
+                }
+
+                reader.Close();
+                command.Dispose();
+
+                if(empNoList.Count == 0)
+                {
+                    lboxStaff.Items.Add("No employees found for the given flight number.");
+                    return;
+                }
+
+                string sqlEmployee = "SELECT EFNAME, ELNAME FROM EMPLOYEE WHERE EMPNO = @EmpNo";
+                List<string> employeeNames = new List<string>();
+
+                foreach(var empNo in empNoList)
+                {
+                    command = new iDB2Command(sqlEmployee, connection);
+                    command.Parameters.AddWithValue("@EmpNo", empNo);
+                    reader = command.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+                        string fullName = $"{reader["EFNAME"]} {reader["ELNAME"]}";
+                        employeeNames.Add(fullName);
+                    }
+
+                    reader.Close();
+                    command.Dispose();
+                }
+
+                foreach(var name in employeeNames)
+                {
+                    lboxStaff.Items.Add($"{name}");
                 }
             }
             catch (Exception ex)
