@@ -13,6 +13,7 @@ namespace Pixis_Employees
 {
     public partial class FlightStaff : Form
     {
+        string connectionString = "Data Source=deathstar.gtc.edu;User ID=itpa641;Initial Catalog=S101FF5C";
         private BindingSource bindingSource = new BindingSource();
         private iDB2DataAdapter dataAdapter = new iDB2DataAdapter();
         DataTable table;
@@ -33,6 +34,48 @@ namespace Pixis_Employees
         private void FlightStaff_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnFlightStaff_Click(object sender, EventArgs e)
+        {
+            string flightNum = txtboxFlightNum.Text;
+            if (string.IsNullOrEmpty(flightNum) )
+            {
+                MessageBox.Show("Please enter a flight number.");
+                return;
+            }
+
+            
+            string sqlStaffSched = "SELECT EMPNO FROM STAFFSCHED WHERE FLIGHTNO = @FlightNum";
+
+            List<string> empNoList = new List<string>();
+
+            iDB2Connection connection = null;
+            iDB2Command command = null;
+            iDB2DataReader reader = null;
+            try
+            {
+                connection = new iDB2Connection(connectionString);
+                connection.Open();
+                command = new iDB2Command(sqlStaffSched, connection);
+                command.Parameters.AddWithValue("@FlightNum", flightNum);
+                reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    empNoList.Add(reader["EMPNO"].ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                if (reader != null) reader.Close();
+                if (command != null) command.Dispose();
+                if (connection != null) connection.Close();
+            }
         }
     }
 }

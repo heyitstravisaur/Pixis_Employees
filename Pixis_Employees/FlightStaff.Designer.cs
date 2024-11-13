@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.btnExit = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtboxFlightNum = new System.Windows.Forms.TextBox();
+            this.lboxStaff = new System.Windows.Forms.ListBox();
+            this.btnFlightStaff = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnExit
@@ -45,41 +45,42 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // textBox1
+            // txtboxFlightNum
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(12, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(124, 23);
-            this.textBox1.TabIndex = 11;
-            this.textBox1.Text = "Enter Flight Number";
+            this.txtboxFlightNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtboxFlightNum.Location = new System.Drawing.Point(12, 19);
+            this.txtboxFlightNum.Name = "txtboxFlightNum";
+            this.txtboxFlightNum.Size = new System.Drawing.Size(124, 23);
+            this.txtboxFlightNum.TabIndex = 11;
+            this.txtboxFlightNum.Text = "Enter Flight Number";
             // 
-            // listBox1
+            // lboxStaff
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(12, 73);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(390, 134);
-            this.listBox1.TabIndex = 12;
+            this.lboxStaff.FormattingEnabled = true;
+            this.lboxStaff.Location = new System.Drawing.Point(12, 73);
+            this.lboxStaff.Name = "lboxStaff";
+            this.lboxStaff.Size = new System.Drawing.Size(390, 134);
+            this.lboxStaff.TabIndex = 12;
             // 
-            // button1
+            // btnFlightStaff
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(151, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(125, 56);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Check Flight Staff";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnFlightStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFlightStaff.Location = new System.Drawing.Point(151, 2);
+            this.btnFlightStaff.Name = "btnFlightStaff";
+            this.btnFlightStaff.Size = new System.Drawing.Size(125, 56);
+            this.btnFlightStaff.TabIndex = 13;
+            this.btnFlightStaff.Text = "Check Flight Staff";
+            this.btnFlightStaff.UseVisualStyleBackColor = true;
+            this.btnFlightStaff.Click += new System.EventHandler(this.btnFlightStaff_Click);
             // 
             // FlightStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(464, 274);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btnFlightStaff);
+            this.Controls.Add(this.lboxStaff);
+            this.Controls.Add(this.txtboxFlightNum);
             this.Controls.Add(this.btnExit);
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FlightStaff";
@@ -93,8 +94,8 @@
         #endregion
 
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtboxFlightNum;
+        private System.Windows.Forms.ListBox lboxStaff;
+        private System.Windows.Forms.Button btnFlightStaff;
     }
 }
