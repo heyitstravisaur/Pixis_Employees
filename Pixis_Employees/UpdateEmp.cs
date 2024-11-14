@@ -105,12 +105,12 @@ namespace Pixis_Employees
             }
 
             string cmdText = "UPDATE EMPLOYEE SET " +
-                             "EFNAME = @empName, " +
-                             "ELNAME = @empLName, " +
-                             "EADDR = @empAddress, " +
-                             "ECITY = @empCity, " +
-                             "ESTATE = @empState, " +
-                             "EZIP = @empZip, " +
+                             "EFNAME = " + empFName + ", " +
+                             "ELNAME = " + empLName + ", " +
+                             "EADDR = " + empAddress + ", " +
+                             "ECITY = " + empCity + ", " +
+                             "ESTATE = " + empState + ", " +
+                             "EZIP = " + empZip + ", " +
                              "EPHONE = @empPhoneNumber, " +
                              "EMAIL = @empEmail, " +
                              "DOB = @empDOB, " +
@@ -132,33 +132,12 @@ namespace Pixis_Employees
                 conn.Open();
 
                 iDB2Command cmd = new iDB2Command(cmdText, conn);
-                cmd.DeriveParameters();
-
-                cmd.Parameters.AddWithValue("@empFName", empFName);
-                cmd.Parameters.AddWithValue("@empLName", empLName);
-                cmd.Parameters.AddWithValue("@empAddress", empAddress);
-                cmd.Parameters.AddWithValue("@empCity", empCity);
-                cmd.Parameters.AddWithValue("@empState", empState);
-                cmd.Parameters.AddWithValue("@empZip", empZip);
-                cmd.Parameters.AddWithValue("@empPhoneNumber", empPhoneNumber);
-                cmd.Parameters.AddWithValue("@empEmail", empEmail);
-                cmd.Parameters.AddWithValue("@empDOB", empDOB);
-                cmd.Parameters.AddWithValue("@empGender", empGender);
-                cmd.Parameters.AddWithValue("@jobId", jobId);
-                cmd.Parameters.AddWithValue("@workStatus", workStatus);
-                cmd.Parameters.AddWithValue("@hourlyRate", hourlyRate);
-                cmd.Parameters.AddWithValue("@empHireDate", empHireDate);
-                cmd.Parameters.AddWithValue("@empStartDate", empStartDate);
-                cmd.Parameters.AddWithValue("@empTermDate", empTermDate);
-                cmd.Parameters.AddWithValue("@regionId", regionId);
-                cmd.Parameters.AddWithValue("@empNum", empNum);
-
                 cmd.ExecuteNonQuery();
 
                 conn.Close();
 
             }
-            catch (Exception ex) {  }
+            catch (Exception ex) { MessageBox.Show("Error updating employee: " + ex.Message); }
             finally { conn.Close(); }
         }
     }
