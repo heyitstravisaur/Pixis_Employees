@@ -105,24 +105,24 @@ namespace Pixis_Employees
             }
 
             string cmdText = "UPDATE EMPLOYEE SET " +
-                             "EFNAME = " + empFName + ", " +
-                             "ELNAME = " + empLName + ", " +
-                             "EADDR = " + empAddress + ", " +
+                             "EFNAME = '" + empFName + "', " +
+                             "ELNAME = '" + empLName + "', " +
+                             "EADDR = '" + empAddress + "', " +
                              "ECITY = " + empCity + ", " +
                              "ESTATE = " + empState + ", " +
                              "EZIP = " + empZip + ", " +
-                             "EPHONE = @empPhoneNumber, " +
-                             "EMAIL = @empEmail, " +
-                             "DOB = @empDOB, " +
-                             "GENDER = @empGender, " +
-                             "JOBID = @jobId, " +
-                             "WRKSTATUS = @workStatus, " +
-                             "HRLYRATE = @hourlyRate, " +
-                             "EMHIREDT = @empHireDate, " +
-                             "EMSTARTDT = @empStartDate, " +
-                             "EMTERMDT = @empTermDate, " +
-                             "REGIONID = @regionId " +
-                             "WHERE EMPNO = @empNum ";
+                             "EPHONE = " + empPhoneNumber + ", " +
+                             "EMAIL = " + empEmail + ", " +
+                             "DOB = " + empDOB + ", " +
+                             "GENDER = " + empGender + ", " +
+                             "JOBID = " + jobId + ", " +
+                             "WRKSTATUS = " + workStatus + ", " +
+                             "HRLYRATE = " + hourlyRate + ", " +
+                             "EMHIREDT = " + empHireDate + ", " +
+                             "EMSTARTDT = " + empStartDate + ", " +
+                             "EMTERMDT = " + empTermDate + ", " +
+                             "REGIONID = " + regionId + " " +
+                             "WHERE EMPNO = '" + empNum + "' ";
 
             string connName = "Data Source=deathstar.gtc.edu;User ID=itpa638;Initial Catalog=S101FF5C";
 
