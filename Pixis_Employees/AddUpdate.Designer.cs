@@ -283,7 +283,7 @@
             this.txtEmpAddress.Location = new System.Drawing.Point(25, 90);
             this.txtEmpAddress.Name = "txtEmpAddress";
             this.txtEmpAddress.Size = new System.Drawing.Size(100, 20);
-            this.txtEmpAddress.TabIndex = 44;
+            this.txtEmpAddress.TabIndex = 4;
             // 
             // eMPLOYEEBindingSource
             // 
@@ -301,7 +301,7 @@
             this.txtEmpGender.Location = new System.Drawing.Point(25, 272);
             this.txtEmpGender.Name = "txtEmpGender";
             this.txtEmpGender.Size = new System.Drawing.Size(100, 20);
-            this.txtEmpGender.TabIndex = 43;
+            this.txtEmpGender.TabIndex = 11;
             // 
             // txtJobId
             // 
@@ -309,7 +309,7 @@
             this.txtJobId.Location = new System.Drawing.Point(25, 298);
             this.txtJobId.Name = "txtJobId";
             this.txtJobId.Size = new System.Drawing.Size(100, 20);
-            this.txtJobId.TabIndex = 42;
+            this.txtJobId.TabIndex = 12;
             // 
             // txtWorkStatus
             // 
@@ -317,7 +317,7 @@
             this.txtWorkStatus.Location = new System.Drawing.Point(25, 324);
             this.txtWorkStatus.Name = "txtWorkStatus";
             this.txtWorkStatus.Size = new System.Drawing.Size(100, 20);
-            this.txtWorkStatus.TabIndex = 41;
+            this.txtWorkStatus.TabIndex = 13;
             // 
             // txtHourlyRate
             // 
@@ -325,7 +325,7 @@
             this.txtHourlyRate.Location = new System.Drawing.Point(25, 350);
             this.txtHourlyRate.Name = "txtHourlyRate";
             this.txtHourlyRate.Size = new System.Drawing.Size(100, 20);
-            this.txtHourlyRate.TabIndex = 40;
+            this.txtHourlyRate.TabIndex = 14;
             // 
             // txtEmpHireDate
             // 
@@ -333,7 +333,7 @@
             this.txtEmpHireDate.Location = new System.Drawing.Point(25, 376);
             this.txtEmpHireDate.Name = "txtEmpHireDate";
             this.txtEmpHireDate.Size = new System.Drawing.Size(100, 20);
-            this.txtEmpHireDate.TabIndex = 39;
+            this.txtEmpHireDate.TabIndex = 15;
             // 
             // txtEmpStartDate
             // 
@@ -341,7 +341,7 @@
             this.txtEmpStartDate.Location = new System.Drawing.Point(25, 402);
             this.txtEmpStartDate.Name = "txtEmpStartDate";
             this.txtEmpStartDate.Size = new System.Drawing.Size(100, 20);
-            this.txtEmpStartDate.TabIndex = 38;
+            this.txtEmpStartDate.TabIndex = 16;
             // 
             // txtEmpTermDate
             // 
@@ -349,7 +349,7 @@
             this.txtEmpTermDate.Location = new System.Drawing.Point(25, 428);
             this.txtEmpTermDate.Name = "txtEmpTermDate";
             this.txtEmpTermDate.Size = new System.Drawing.Size(100, 20);
-            this.txtEmpTermDate.TabIndex = 37;
+            this.txtEmpTermDate.TabIndex = 17;
             // 
             // txtRegionId
             // 
@@ -357,7 +357,7 @@
             this.txtRegionId.Location = new System.Drawing.Point(25, 454);
             this.txtRegionId.Name = "txtRegionId";
             this.txtRegionId.Size = new System.Drawing.Size(100, 20);
-            this.txtRegionId.TabIndex = 36;
+            this.txtRegionId.TabIndex = 18;
             // 
             // txtEmpFName
             // 
@@ -365,7 +365,7 @@
             this.txtEmpFName.Location = new System.Drawing.Point(25, 38);
             this.txtEmpFName.Name = "txtEmpFName";
             this.txtEmpFName.Size = new System.Drawing.Size(100, 20);
-            this.txtEmpFName.TabIndex = 35;
+            this.txtEmpFName.TabIndex = 2;
             // 
             // txtEmpLName
             // 
@@ -373,7 +373,7 @@
             this.txtEmpLName.Location = new System.Drawing.Point(25, 64);
             this.txtEmpLName.Name = "txtEmpLName";
             this.txtEmpLName.Size = new System.Drawing.Size(100, 20);
-            this.txtEmpLName.TabIndex = 34;
+            this.txtEmpLName.TabIndex = 3;
             // 
             // txtEmpCity
             // 
@@ -381,7 +381,7 @@
             this.txtEmpCity.Location = new System.Drawing.Point(25, 116);
             this.txtEmpCity.Name = "txtEmpCity";
             this.txtEmpCity.Size = new System.Drawing.Size(100, 20);
-            this.txtEmpCity.TabIndex = 33;
+            this.txtEmpCity.TabIndex = 5;
             // 
             // txtEmpState
             // 
@@ -389,7 +389,7 @@
             this.txtEmpState.Location = new System.Drawing.Point(25, 142);
             this.txtEmpState.Name = "txtEmpState";
             this.txtEmpState.Size = new System.Drawing.Size(100, 20);
-            this.txtEmpState.TabIndex = 32;
+            this.txtEmpState.TabIndex = 6;
             // 
             // txtEmpZip
             // 
@@ -397,7 +397,7 @@
             this.txtEmpZip.Location = new System.Drawing.Point(25, 168);
             this.txtEmpZip.Name = "txtEmpZip";
             this.txtEmpZip.Size = new System.Drawing.Size(100, 20);
-            this.txtEmpZip.TabIndex = 31;
+            this.txtEmpZip.TabIndex = 7;
             // 
             // txtEmpPhoneNumber
             // 
@@ -405,7 +405,7 @@
             this.txtEmpPhoneNumber.Location = new System.Drawing.Point(25, 194);
             this.txtEmpPhoneNumber.Name = "txtEmpPhoneNumber";
             this.txtEmpPhoneNumber.Size = new System.Drawing.Size(100, 20);
-            this.txtEmpPhoneNumber.TabIndex = 30;
+            this.txtEmpPhoneNumber.TabIndex = 8;
             // 
             // txtEmpEmail
             // 
@@ -413,7 +413,7 @@
             this.txtEmpEmail.Location = new System.Drawing.Point(25, 220);
             this.txtEmpEmail.Name = "txtEmpEmail";
             this.txtEmpEmail.Size = new System.Drawing.Size(100, 20);
-            this.txtEmpEmail.TabIndex = 29;
+            this.txtEmpEmail.TabIndex = 9;
             // 
             // txtEmpDOB
             // 
@@ -421,7 +421,7 @@
             this.txtEmpDOB.Location = new System.Drawing.Point(25, 246);
             this.txtEmpDOB.Name = "txtEmpDOB";
             this.txtEmpDOB.Size = new System.Drawing.Size(100, 20);
-            this.txtEmpDOB.TabIndex = 28;
+            this.txtEmpDOB.TabIndex = 10;
             // 
             // txtEmpNum
             // 
@@ -429,7 +429,7 @@
             this.txtEmpNum.Location = new System.Drawing.Point(25, 12);
             this.txtEmpNum.Name = "txtEmpNum";
             this.txtEmpNum.Size = new System.Drawing.Size(100, 20);
-            this.txtEmpNum.TabIndex = 27;
+            this.txtEmpNum.TabIndex = 1;
             // 
             // label18
             // 

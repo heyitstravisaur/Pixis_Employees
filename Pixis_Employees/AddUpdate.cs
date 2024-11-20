@@ -33,7 +33,9 @@ namespace Pixis_Employees
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            
+            Add.addEmp(groups);
+            employee.Show();
+            this.Close();
         }
 
         private void AddUpdate_Load(object sender, EventArgs e)
