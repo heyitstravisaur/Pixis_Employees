@@ -11,6 +11,8 @@ using IBM.Data.DB2.iSeries;
 
 namespace Pixis_Employees
 {
+    //delete this line
+
     public partial class Employee : Form
     {
         private PyxisairFlightReservationSystem pfrs;
@@ -53,7 +55,7 @@ namespace Pixis_Employees
 
         private void display()
         {
-            string connectionString = "DataSource=deathstar.gtc.edu;User ID=itpa638";
+            string connectionString = "DataSource=deathstar.gtc.edu";
             string sql = "SELECT * FROM EMPLOYEE";
 
             try
