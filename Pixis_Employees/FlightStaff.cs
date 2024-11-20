@@ -15,7 +15,7 @@ namespace Pixis_Employees
     {
         string connectionString = "Data Source=deathstar.gtc.edu;User ID=itpa641;Initial Catalog=S101FF5C";
         private BindingSource bindingSource = new BindingSource();
-        private iDB2DataAdapter dataAdapter = new iDB2DataAdapter();
+        //private iDB2DataAdapter dataAdapter = new iDB2DataAdapter();
         DataTable table;
         private PyxisairFlightReservationSystem pfrs;
 
@@ -33,84 +33,127 @@ namespace Pixis_Employees
 
         private void FlightStaff_Load(object sender, EventArgs e)
         {
+            LoadFlightNumbers();
+        }
 
+        private void LoadFlightNumbers()
+        {
+            string sqlFlightNumbers = "SELECT DISTINCT FLIGHTNO FROM STAFFSCHED";
+
+            using(iDB2Connection connection = new iDB2Connection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    using(iDB2Command command = new iDB2Command(sqlFlightNumbers, connection))
+                    using(iDB2DataReader reader = command.ExecuteReader())
+                    {
+                        lboxStaff.Items.Clear();
+
+                        while(reader.Read())
+                        {
+                            lboxStaff.Items.Add(reader["FLIGHTNO"].ToString());
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error loading flight number: " +  ex.Message);
+                }
+            }
+        }
+        private void lboxStaff_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (lboxStaff.SelectedIndex == null) return;
+
+            string selectedFlightNo = lboxStaff.SelectedItem.ToString();
+            LoadEmployeeDetails(selectedFlightNo);
+        }
+        private void lboxStaff_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void LoadEmployeeDetails(string flightNo)
+        {
+            string sqlStaffSched = "SELECT EMPNO FROM STAFFSCHED WHERE FLIGHTNO = @FlightNo";
+            string sqlEmployee = "SELECT EFNAME, ELNAME FROM EMPLOYEE WHERE EMPNO = @EmpNo";
+
+            List<string> empNoList = new List<string>();
+            List<string> employeeNames = new List<string>();
+
+            using(iDB2Connection connection = new iDB2Connection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    using(iDB2Command command = new iDB2Command(sqlStaffSched, connection))
+                    {
+                        command.Parameters.AddWithValue("@FlightNo", flightNo);
+
+                        using(iDB2DataReader  reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                empNoList.Add(reader["EMPNO"].ToString());
+                            }
+                        }
+                    }
+
+                    foreach(var empNo in empNoList)
+                    {
+                        using(iDB2Command command = new iDB2Command(sqlEmployee, connection))
+                        {
+                            command.Parameters.AddWithValue("@EmpNo", empNo);
+
+                            using(iDB2DataReader reader = command.ExecuteReader())
+                            {
+                                if (reader.Read())
+                                {
+                                    string fullName = $"{reader["EFNAME"]} {reader["ELNAME"]}";
+                                    employeeNames.Add(fullName);
+                                }
+                            }
+                        }
+                    }
+
+                    lboxStaff.Items.Clear();
+                    if(employeeNames.Count > 0)
+                    {
+                        foreach(var name in employeeNames)
+                        {
+                            lboxStaff.Items.Add(name);
+                        }
+                    }
+                    else
+                    {
+                        lboxStaff.Items.Add("No employees found for the selected flight.");
+                    }
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Error loading employee details: " +  ex.Message);
+                }
+            }
         }
 
         private void btnFlightStaff_Click(object sender, EventArgs e)
         {
-            string flightNum = txtboxFlightNum.Text;
-            if (string.IsNullOrEmpty(flightNum) )
-            {
-                MessageBox.Show("Please enter a flight number.");
-                return;
-            }
-
             
-            string sqlStaffSched = "SELECT EMPNO FROM STAFFSCHED WHERE FLIGHTNO = @FlightNum";
+        }
 
-            List<string> empNoList = new List<string>();
-
-            iDB2Connection connection = null;
-            iDB2Command command = null;
-            iDB2DataReader reader = null;
+        private void btnReset_Click(object sender, EventArgs e)
+        {
             try
             {
-                connection = new iDB2Connection(connectionString);
-                connection.Open();
+                lboxStaff.Items.Clear();
 
-                //retrieves EMPNO from STAFFSCHED for the given flight number
-                command = new iDB2Command(sqlStaffSched, connection);
-                command.Parameters.AddWithValue("@FlightNum", flightNum);
-                reader = command.ExecuteReader();
-
-                //collects EMPNO's
-                while (reader.Read())
-                {
-                    empNoList.Add(reader["EMPNO"].ToString());
-                }
-
-                reader.Close();
-                command.Dispose();
-
-                if(empNoList.Count == 0)
-                {
-                    lboxStaff.Items.Add("No employees found for the given flight number.");
-                    return;
-                }
-
-                string sqlEmployee = "SELECT EFNAME, ELNAME FROM EMPLOYEE WHERE EMPNO = @EmpNo";
-                List<string> employeeNames = new List<string>();
-
-                foreach(var empNo in empNoList)
-                {
-                    command = new iDB2Command(sqlEmployee, connection);
-                    command.Parameters.AddWithValue("@EmpNo", empNo);
-                    reader = command.ExecuteReader();
-
-                    if (reader.Read())
-                    {
-                        string fullName = $"{reader["EFNAME"]} {reader["ELNAME"]}";
-                        employeeNames.Add(fullName);
-                    }
-
-                    reader.Close();
-                    command.Dispose();
-                }
-
-                foreach(var name in employeeNames)
-                {
-                    lboxStaff.Items.Add($"{name}");
-                }
+                LoadFlightNumbers();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                if (reader != null) reader.Close();
-                if (command != null) command.Dispose();
-                if (connection != null) connection.Close();
+                MessageBox.Show("Error resetting listbox: " + ex.Message);
             }
         }
     }
