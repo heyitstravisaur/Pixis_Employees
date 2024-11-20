@@ -38,6 +38,7 @@
             this.labelZip = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.labelState = new System.Windows.Forms.Label();
+            this.labelMessage = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnExit
@@ -98,6 +99,7 @@
             this.buttonAddUpdate.TabIndex = 16;
             this.buttonAddUpdate.Text = "Add/Update";
             this.buttonAddUpdate.UseVisualStyleBackColor = true;
+            this.buttonAddUpdate.Click += new System.EventHandler(this.buttonAddUpdate_Click);
             // 
             // labelZip
             // 
@@ -126,11 +128,20 @@
             this.labelState.TabIndex = 19;
             this.labelState.Text = "State";
             // 
+            // labelMessage
+            // 
+            this.labelMessage.AutoSize = true;
+            this.labelMessage.Location = new System.Drawing.Point(12, 274);
+            this.labelMessage.Name = "labelMessage";
+            this.labelMessage.Size = new System.Drawing.Size(0, 13);
+            this.labelMessage.TabIndex = 20;
+            // 
             // Location
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(326, 292);
+            this.Controls.Add(this.labelMessage);
             this.Controls.Add(this.labelState);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.labelZip);
@@ -161,5 +172,6 @@
         private System.Windows.Forms.Label labelZip;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelState;
+        private System.Windows.Forms.Label labelMessage;
     }
 }

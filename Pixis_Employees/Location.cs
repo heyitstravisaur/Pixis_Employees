@@ -53,12 +53,63 @@ namespace Pixis_Employees
                 foreach (DataRow pRow in dataset.Tables[0].Rows)
                     listBoxZipCodeTable.Items.Add(pRow[0] + "         " + pRow[1] + "        " + pRow[2]);
                 listBoxZipCodeTable.Items.Add("---------------------------------------------------------------------------------------------------------");
-                conn.Close();
+                //conn.Close(); moved this to the finally
 
             }
             catch (Exception ex)
             {
                 listBoxZipCodeTable.Items.Add(ex.Message);
+            }
+            finally { conn.Close(); }
+        }
+
+        private void buttonAddUpdate_Click(object sender, EventArgs e)
+        {
+            {
+                string zipCode = textBoxZip.Text;
+                string city = textBoxCity.Text;
+                string state = textBoxState.Text;
+
+                try
+                {
+                    conn = new iDB2Connection("DataSource=10.250.0.30");
+                    conn.Open();
+
+                    string selectCmdText = "SELECT COUNT(*) FROM ZIPCODE WHERE ZIP = @ZIP";
+                    iDB2Command selectCmd = new iDB2Command(selectCmdText, conn);
+                    selectCmd.Parameters.AddWithValue("@ZIP", zipCode);
+
+                    int count = Convert.ToInt32(selectCmd.ExecuteScalar());
+
+                    if (count > 0)
+                    {
+                        string updateCmdText = "UPDATE ZIPCODE SET CITY = @CITY, STATE = @STATE WHERE ZIP = @ZIP";
+                        iDB2Command updateCmd = new iDB2Command(updateCmdText, conn);
+                        updateCmd.Parameters.AddWithValue("@ZIP", zipCode);
+                        updateCmd.Parameters.AddWithValue("@CITY", city);
+                        updateCmd.Parameters.AddWithValue("@STATE", state);
+                        updateCmd.ExecuteNonQuery();
+
+                        labelMessage.Text = "Zip code updated successfully.";
+                       
+                    }
+                    else
+                    {
+                        string insertCmdText = "INSERT INTO ZIPCODE (ZIP, CITY, STATE) VALUES (@ZIP, @CITY, @STATE)";
+                        iDB2Command insertCmd = new iDB2Command(insertCmdText, conn);
+                        insertCmd.Parameters.AddWithValue("@ZIP", zipCode);
+                        insertCmd.Parameters.AddWithValue("@CITY", city);
+                        insertCmd.Parameters.AddWithValue("@STATE", state);
+                        insertCmd.ExecuteNonQuery();
+
+                        labelMessage.Text = "New zip code added successfully.";
+                    }
+                }
+                catch (Exception ex)
+                {
+                    labelMessage.Text = "Error: " + ex.Message;
+                }
+                finally { conn.Close();}
             }
         }
     }
