@@ -52,24 +52,7 @@ namespace Pixis_Employees
         private void Employee_Load(object sender, EventArgs e)
         {
 
-            //try catch block to populate combobox
-            string sql = "SELECT COLUMN0 FROM EMPLOYEE";
-
-            try
-            {
-                string connectionString = "DataSource=deathstar.gtc.edu";
-                comboBoxRegion.DataSource = bindingSource;
-
-                dataAdapter = new iDB2DataAdapter(sql, connectionString);
-                iDB2CommandBuilder commandBuilder = new iDB2CommandBuilder(dataAdapter);
-                table = new DataTable();
-
-                dataAdapter.Fill(table);
-                bindingSource.DataSource = table;
-            }
-            catch (Exception ex) { }
-            //end combobox population
-
+           
             display();
         }
 
@@ -121,6 +104,7 @@ namespace Pixis_Employees
 
 
             //credit to https://stackoverflow.com/questions/21845016/how-can-i-filter-a-datagridview
+            //to help figure out filtering a data grid view by text
             BindingSource bs = new BindingSource();
             bs.DataSource = dataGridView1.DataSource;
             bs.Filter = dataGridView1.Columns[0].HeaderText.ToString() + " LIKE '%" + txt_filter_regionid.Text + "%'";
@@ -223,5 +207,30 @@ namespace Pixis_Employees
 
         }
 
+        private void btn_employees_from_region_Click(object sender, EventArgs e)
+        {
+            String empRegion = txt_filter_regionid.Text;
+
+            if (txt_filter_regionid.Text == "")
+            {
+                var result = MessageBox.Show(
+                    "Your employee region is empty, please populate employee region and then try again.",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
+
+            else
+            {
+                var result = MessageBox.Show(
+                    "Your employees for " + empRegion + " are:",
+                    "Results",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+            }
+
+        }
     }
 }
