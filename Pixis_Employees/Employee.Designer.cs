@@ -64,6 +64,9 @@
             this.txt_filter_ecity = new System.Windows.Forms.TextBox();
             this.txt_filter_estate = new System.Windows.Forms.TextBox();
             this.txt_filter_ezip = new System.Windows.Forms.TextBox();
+            this.comboBoxRegion = new System.Windows.Forms.ComboBox();
+            this.lbl_region = new System.Windows.Forms.Label();
+            this.btn_employees_from_region = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eMPLOYEEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
@@ -341,11 +344,42 @@
             this.txt_filter_ezip.TabIndex = 16;
             this.txt_filter_ezip.TextChanged += new System.EventHandler(this.txt_filter_ezip_TextChanged);
             // 
+            // comboBoxRegion
+            // 
+            this.comboBoxRegion.FormattingEnabled = true;
+            this.comboBoxRegion.Location = new System.Drawing.Point(119, 15);
+            this.comboBoxRegion.Name = "comboBoxRegion";
+            this.comboBoxRegion.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxRegion.TabIndex = 17;
+            this.comboBoxRegion.SelectedIndexChanged += new System.EventHandler(this.comboBoxRegion_SelectedIndexChanged);
+            // 
+            // lbl_region
+            // 
+            this.lbl_region.AutoSize = true;
+            this.lbl_region.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_region.Location = new System.Drawing.Point(42, 16);
+            this.lbl_region.Name = "lbl_region";
+            this.lbl_region.Size = new System.Drawing.Size(71, 20);
+            this.lbl_region.TabIndex = 18;
+            this.lbl_region.Text = "Region:";
+            // 
+            // btn_employees_from_region
+            // 
+            this.btn_employees_from_region.Location = new System.Drawing.Point(246, 12);
+            this.btn_employees_from_region.Name = "btn_employees_from_region";
+            this.btn_employees_from_region.Size = new System.Drawing.Size(172, 27);
+            this.btn_employees_from_region.TabIndex = 19;
+            this.btn_employees_from_region.Text = "See Employees From Region";
+            this.btn_employees_from_region.UseVisualStyleBackColor = true;
+            // 
             // Employee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(883, 754);
+            this.Controls.Add(this.btn_employees_from_region);
+            this.Controls.Add(this.lbl_region);
+            this.Controls.Add(this.comboBoxRegion);
             this.Controls.Add(this.txt_filter_ezip);
             this.Controls.Add(this.txt_filter_estate);
             this.Controls.Add(this.txt_filter_ecity);
@@ -363,6 +397,8 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Employee";
             this.Text = "Employee";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Employee_FormClosing);
+//            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Employee_FormClosed);
             this.Load += new System.EventHandler(this.Employee_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eMPLOYEEBindingSource)).EndInit();
@@ -409,5 +445,8 @@
         private System.Windows.Forms.TextBox txt_filter_ecity;
         private System.Windows.Forms.TextBox txt_filter_estate;
         private System.Windows.Forms.TextBox txt_filter_ezip;
+        private System.Windows.Forms.ComboBox comboBoxRegion;
+        private System.Windows.Forms.Label lbl_region;
+        private System.Windows.Forms.Button btn_employees_from_region;
     }
 }

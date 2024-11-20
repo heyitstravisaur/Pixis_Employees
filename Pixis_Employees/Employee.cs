@@ -51,6 +51,23 @@ namespace Pixis_Employees
         private void Employee_Load(object sender, EventArgs e)
         {
 
+            //try catch block to populate combobox
+            string sql = "SELECT COLUMN0 FROM EMPLOYEE";
+
+            try
+            {
+                string connectionString = "DataSource=deathstar.gtc.edu";
+                comboBoxRegion.DataSource = bindingSource;
+
+                dataAdapter = new iDB2DataAdapter(sql, connectionString);
+                iDB2CommandBuilder commandBuilder = new iDB2CommandBuilder(dataAdapter);
+                table = new DataTable();
+
+                dataAdapter.Fill(table);
+                bindingSource.DataSource = table;
+            }
+            catch (Exception ex) { }
+            //end combobox population
 
             display();
         }
@@ -166,5 +183,39 @@ namespace Pixis_Employees
             bs.Filter = dataGridView1.Columns[7].HeaderText.ToString() + " LIKE '%" + txt_filter_ezip.Text + "%'";
             dataGridView1.DataSource = bs;
         }
+
+        private void comboBoxRegion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Employee_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // Show a confirmation dialog before closing
+
+            //FIX DOUBLE PROMPT ISSUE
+            var result = MessageBox.Show(
+                "Are you sure you want to exit?",
+                "Confirm Exit",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+
+            // Check the user's response
+            if (result == DialogResult.Yes)
+            {
+                // Close the form
+                Application.Exit();
+            }
+
+            if (result == DialogResult.No)
+            {
+                // Cancel the form close
+                e.Cancel = true;
+            }
+
+        }
+
     }
 }
