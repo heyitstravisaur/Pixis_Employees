@@ -50,6 +50,8 @@ namespace Pixis_Employees
 
         private void Employee_Load(object sender, EventArgs e)
         {
+
+
             display();
         }
 
@@ -70,6 +72,99 @@ namespace Pixis_Employees
                 bindingSource.DataSource = table;
             }
             catch (Exception ex) { }
+        }
+
+        private void txt_filter_regionid_TextChanged(object sender, EventArgs e)
+        {
+
+            //Tried a few different attempts in filtering dataGridView1 from different approaches before settling on code below
+
+            //1-//(dataGridView1.DataSource as DataTable).DefaultView.RowFilter = string.Format("Field = '{0}'", txt_filter_regionid.Text);
+
+            //2-//(dataGridView1.DataSource as DataTable).DefaultView.RowFilter = string.Format("Field = '{REGIONID}'", txt_filter_regionid.Text);
+
+            //3-//String columnName = "REGIONID";
+            //String filterValue = txt_filter_regionid.Text;
+            //string rowFilter = string.Format("[{0}] = '{1}'", columnName, filterValue);
+            //(dataGridView1.DataSource as DataTable).DefaultView.RowFilter = rowFilter;
+
+
+            //filter template for use
+
+            //dataGridView1.Columns[0].HeaderText.ToString() + " LIKE '%" + txt_filter_regionid.Text + "%'"
+            //+ dataGridView1.Columns[1].HeaderText.ToString() + " LIKE '%" + txt_filter_empno.Text + "%'"
+            //+ dataGridView1.Columns[2].HeaderText.ToString() + " LIKE '%" + txt_filter_efname.Text + "%'"
+            //+ dataGridView1.Columns[3].HeaderText.ToString() + " LIKE '%" + txt_filter_elname.Text + "%'"
+            //+ dataGridView1.Columns[4].HeaderText.ToString() + " LIKE '%" + txt_filter_eaddr.Text + "%'"
+            //+ dataGridView1.Columns[5].HeaderText.ToString() + " LIKE '%" + txt_filter_ecity.Text + "%'"
+            //+ dataGridView1.Columns[6].HeaderText.ToString() + " LIKE '%" + txt_filter_estate.Text + "%'"
+            //+ dataGridView1.Columns[7].HeaderText.ToString() + " LIKE '%" + txt_filter_ezip.Text + "%'";
+
+
+
+            //credit to https://stackoverflow.com/questions/21845016/how-can-i-filter-a-datagridview
+            BindingSource bs = new BindingSource();
+            bs.DataSource = dataGridView1.DataSource;
+            bs.Filter = dataGridView1.Columns[0].HeaderText.ToString() + " LIKE '%" + txt_filter_regionid.Text + "%'";
+            dataGridView1.DataSource = bs;
+
+
+        }
+
+        private void txt_filter_empno_TextChanged(object sender, EventArgs e)
+        {
+            BindingSource bs = new BindingSource();
+            bs.DataSource = dataGridView1.DataSource;
+            bs.Filter = dataGridView1.Columns[1].HeaderText.ToString() + " LIKE '%" + txt_filter_empno.Text + "%'";
+            dataGridView1.DataSource = bs;
+        }
+
+        private void txt_filter_efname_TextChanged(object sender, EventArgs e)
+        {
+            BindingSource bs = new BindingSource();
+            bs.DataSource = dataGridView1.DataSource;
+            bs.Filter = dataGridView1.Columns[2].HeaderText.ToString() + " LIKE '%" + txt_filter_efname.Text + "%'";
+            dataGridView1.DataSource = bs;
+        }
+
+        private void txt_filter_elname_TextChanged(object sender, EventArgs e)
+        {
+            BindingSource bs = new BindingSource();
+            bs.DataSource = dataGridView1.DataSource;
+            bs.Filter = dataGridView1.Columns[3].HeaderText.ToString() + " LIKE '%" + txt_filter_elname.Text + "%'";
+            dataGridView1.DataSource = bs;
+        }
+
+        private void txt_filter_eaddr_TextChanged(object sender, EventArgs e)
+        {
+            BindingSource bs = new BindingSource();
+            bs.DataSource = dataGridView1.DataSource;
+            bs.Filter = dataGridView1.Columns[4].HeaderText.ToString() + " LIKE '%" + txt_filter_eaddr.Text + "%'";
+            dataGridView1.DataSource = bs;
+        }
+
+        private void txt_filter_ecity_TextChanged(object sender, EventArgs e)
+        {
+            BindingSource bs = new BindingSource();
+            bs.DataSource = dataGridView1.DataSource;
+            bs.Filter = dataGridView1.Columns[5].HeaderText.ToString() + " LIKE '%" + txt_filter_ecity.Text + "%'";
+            dataGridView1.DataSource = bs;
+        }
+
+        private void txt_filter_estate_TextChanged(object sender, EventArgs e)
+        {
+            BindingSource bs = new BindingSource();
+            bs.DataSource = dataGridView1.DataSource;
+            bs.Filter = dataGridView1.Columns[6].HeaderText.ToString() + " LIKE '%" + txt_filter_estate.Text + "%'";
+            dataGridView1.DataSource = bs;
+        }
+
+        private void txt_filter_ezip_TextChanged(object sender, EventArgs e)
+        {
+            BindingSource bs = new BindingSource();
+            bs.DataSource = dataGridView1.DataSource;
+            bs.Filter = dataGridView1.Columns[7].HeaderText.ToString() + " LIKE '%" + txt_filter_ezip.Text + "%'";
+            dataGridView1.DataSource = bs;
         }
     }
 }
