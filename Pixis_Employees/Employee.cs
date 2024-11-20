@@ -193,7 +193,7 @@ namespace Pixis_Employees
         {
             // Show a confirmation dialog before closing
 
-            //FIX DOUBLE PROMPT ISSUE
+            
             var result = MessageBox.Show(
                 "Are you sure you want to exit?",
                 "Confirm Exit",
@@ -206,7 +206,7 @@ namespace Pixis_Employees
             if (result == DialogResult.Yes)
             {
                 // Close the form
-                Application.Exit();
+                Environment.Exit(0);
             }
 
             if (result == DialogResult.No)
