@@ -25,5 +25,10 @@ namespace Pixis_Employees
             pfrs.Show();
             this.Close();
         }
+
+        private void buttonDisplay_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
