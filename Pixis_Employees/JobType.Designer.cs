@@ -35,10 +35,10 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(2, 156);
+            this.btnExit.Location = new System.Drawing.Point(2, 177);
             this.btnExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(520, 31);
+            this.btnExit.Size = new System.Drawing.Size(321, 31);
             this.btnExit.TabIndex = 10;
             this.btnExit.Text = "E&xit";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -49,14 +49,14 @@
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(2, 38);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(520, 108);
+            this.listBox1.Size = new System.Drawing.Size(321, 134);
             this.listBox1.TabIndex = 11;
             // 
             // buttonDisplay
             // 
             this.buttonDisplay.Location = new System.Drawing.Point(2, 9);
             this.buttonDisplay.Name = "buttonDisplay";
-            this.buttonDisplay.Size = new System.Drawing.Size(520, 23);
+            this.buttonDisplay.Size = new System.Drawing.Size(321, 23);
             this.buttonDisplay.TabIndex = 12;
             this.buttonDisplay.Text = "&Display";
             this.buttonDisplay.UseVisualStyleBackColor = true;
@@ -66,7 +66,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(533, 292);
+            this.ClientSize = new System.Drawing.Size(331, 213);
             this.Controls.Add(this.buttonDisplay);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.btnExit);
