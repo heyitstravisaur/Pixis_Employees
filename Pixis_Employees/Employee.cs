@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using IBM.Data.DB2.iSeries;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Pixis_Employees
 {
@@ -132,7 +133,12 @@ namespace Pixis_Employees
         {
             BindingSource bs = new BindingSource();
             bs.DataSource = dataGridView1.DataSource;
-            bs.Filter = dataGridView1.Columns[1].HeaderText.ToString() + " LIKE '%" + txt_filter_empno.Text + "%'";
+            //bs.Filter = dataGridView1.Columns[1].HeaderText.ToString() + " LIKE '%" + txt_filter_empno.Text + "%'";
+
+            //THANKS TO:
+            //https://stackoverflow.com/questions/37022308/using-a-textbox-entry-to-filter-a-datagridview-with-an-int-value-vs-c-sharp
+            //to help figure how how to filter by int rather than string
+            bs.Filter = "Convert(EMPNO, 'System.String') like '%" + txt_filter_empno.Text + "%'";
             dataGridView1.DataSource = bs;
         }
 
