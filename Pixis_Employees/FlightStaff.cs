@@ -14,9 +14,6 @@ namespace Pixis_Employees
     public partial class FlightStaff : Form
     {
         string connectionString = "Data Source=deathstar.gtc.edu;User ID=itpa641;Initial Catalog=S101FF5C";
-        private BindingSource bindingSource = new BindingSource();
-        //private iDB2DataAdapter dataAdapter = new iDB2DataAdapter();
-        DataTable table;
         private PyxisairFlightReservationSystem pfrs;
 
         public FlightStaff(PyxisairFlightReservationSystem form)
@@ -33,128 +30,189 @@ namespace Pixis_Employees
 
         private void FlightStaff_Load(object sender, EventArgs e)
         {
-            LoadFlightNumbers();
-        }
-
-        private void LoadFlightNumbers()
-        {
-            string sqlFlightNumbers = "SELECT DISTINCT FLIGHTNO FROM STAFFSCHED";
-
-            using(iDB2Connection connection = new iDB2Connection(connectionString))
-            {
-                try
-                {
-                    connection.Open();
-                    using(iDB2Command command = new iDB2Command(sqlFlightNumbers, connection))
-                    using(iDB2DataReader reader = command.ExecuteReader())
-                    {
-                        lboxStaff.Items.Clear();
-
-                        while(reader.Read())
-                        {
-                            lboxStaff.Items.Add(reader["FLIGHTNO"].ToString());
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error loading flight number: " +  ex.Message);
-                }
-            }
+            //LoadFlightNumbers();
+            PopulateListBox(lboxStaff, "SELECT DISTINCT FLIGHTNO FROM STAFFSCHED");
         }
         private void lboxStaff_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            if (lboxStaff.SelectedIndex == null) return;
+            //if (lboxStaff.SelectedIndex == null) return;
 
-            string selectedFlightNo = lboxStaff.SelectedItem.ToString();
-            LoadEmployeeDetails(selectedFlightNo);
+            //string selectedFlightNo = lboxStaff.SelectedItem.ToString();
+            //LoadEmployeeDetails(selectedFlightNo);
+
+            if (lboxStaff.SelectedItem is string selectedFlightNo)
+            {
+                LoadEmployeeDetails(selectedFlightNo);
+            }
         }
-        private void lboxStaff_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnReset_Click(object sender, EventArgs e)
         {
-           
+            //try
+            //{
+            //    lboxStaff.Items.Clear();
+
+            //    LoadFlightNumbers();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Error resetting listbox: " + ex.Message);
+            //}
+
+            PopulateListBox(lboxStaff, "SELECT DISTINCT FLIGHTNO FROM STAFFSCHED");
+        }
+
+        private void PopulateListBox(ListBox listBox, string query, Dictionary<string, object> parameters = null)
+        {
+            try
+            {
+                listBox.Items.Clear();
+
+                using (var connection = new iDB2Connection(connectionString))
+                {
+                    connection.Open();
+
+                    using (var command = new iDB2Command(query, connection))
+                    {
+                        if (parameters != null)
+                        {
+                            foreach (var param in parameters)
+                            {
+                                command.Parameters.AddWithValue(param.Key, param.Value);
+                            }
+                        }
+                        using (var reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                listBox.Items.Add(reader[0].ToString());
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error populating list: " + ex.Message);
+            }
         }
 
         private void LoadEmployeeDetails(string flightNo)
         {
-            string sqlStaffSched = "SELECT EMPNO FROM STAFFSCHED WHERE FLIGHTNO = @FlightNo";
-            string sqlEmployee = "SELECT EFNAME, ELNAME FROM EMPLOYEE WHERE EMPNO = @EmpNo";
+            string query = @"SELECT E.EFNAME || ' ' || E.ELNAME AS FullName
+                            FROM STAFFSCHED S
+                            JOIN EMPLOYEE E ON S.EMPNO = E.EMPNO
+                            WHERE S.FLIGHTNO = @FlightNo";
 
-            List<string> empNoList = new List<string>();
-            List<string> employeeNames = new List<string>();
-
-            using(iDB2Connection connection = new iDB2Connection(connectionString))
+            var parameters = new Dictionary<string, object>
             {
-                try
-                {
-                    connection.Open();
+                { "@FlightNo", flightNo }
+            };
 
-                    using(iDB2Command command = new iDB2Command(sqlStaffSched, connection))
-                    {
-                        command.Parameters.AddWithValue("@FlightNo", flightNo);
+            PopulateListBox(lboxStaff, query, parameters);
 
-                        using(iDB2DataReader  reader = command.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                empNoList.Add(reader["EMPNO"].ToString());
-                            }
-                        }
-                    }
-
-                    foreach(var empNo in empNoList)
-                    {
-                        using(iDB2Command command = new iDB2Command(sqlEmployee, connection))
-                        {
-                            command.Parameters.AddWithValue("@EmpNo", empNo);
-
-                            using(iDB2DataReader reader = command.ExecuteReader())
-                            {
-                                if (reader.Read())
-                                {
-                                    string fullName = $"{reader["EFNAME"]} {reader["ELNAME"]}";
-                                    employeeNames.Add(fullName);
-                                }
-                            }
-                        }
-                    }
-
-                    lboxStaff.Items.Clear();
-                    if(employeeNames.Count > 0)
-                    {
-                        foreach(var name in employeeNames)
-                        {
-                            lboxStaff.Items.Add(name);
-                        }
-                    }
-                    else
-                    {
-                        lboxStaff.Items.Add("No employees found for the selected flight.");
-                    }
-                }
-                catch(Exception ex)
-                {
-                    MessageBox.Show("Error loading employee details: " +  ex.Message);
-                }
+            if (lboxStaff.Items.Count == 0)
+            {
+                lboxStaff.Items.Add("No employess found for this flight");
             }
         }
+            //private void LoadFlightNumbers()
+            //{
+            //    string sqlFlightNumbers = "SELECT DISTINCT FLIGHTNO FROM STAFFSCHED";
 
-        private void btnFlightStaff_Click(object sender, EventArgs e)
-        {
-            
-        }
+            //    using(iDB2Connection connection = new iDB2Connection(connectionString))
+            //    {
+            //        try
+            //        {
+            //            connection.Open();
+            //            using(iDB2Command command = new iDB2Command(sqlFlightNumbers, connection))
+            //            using(iDB2DataReader reader = command.ExecuteReader())
+            //            {
+            //                lboxStaff.Items.Clear();
 
-        private void btnReset_Click(object sender, EventArgs e)
-        {
-            try
+            //                while(reader.Read())
+            //                {
+            //                    lboxStaff.Items.Add(reader["FLIGHTNO"].ToString());
+            //                }
+            //            }
+            //        }
+            //        catch (Exception ex)
+            //        {
+            //            MessageBox.Show("Error loading flight number: " +  ex.Message);
+            //        }
+            //    }
+            //}
+
+
+
+            //private void LoadEmployeeDetails(string flightNo)
+            //{
+            //    string sqlStaffSched = "SELECT EMPNO FROM STAFFSCHED WHERE FLIGHTNO = @FlightNo";
+            //    string sqlEmployee = "SELECT EFNAME, ELNAME FROM EMPLOYEE WHERE EMPNO = @EmpNo";
+
+            //    List<string> empNoList = new List<string>();
+            //    List<string> employeeNames = new List<string>();
+
+            //    using(iDB2Connection connection = new iDB2Connection(connectionString))
+            //    {
+            //        try
+            //        {
+            //            connection.Open();
+
+            //            using(iDB2Command command = new iDB2Command(sqlStaffSched, connection))
+            //            {
+            //                command.Parameters.AddWithValue("@FlightNo", flightNo);
+
+            //                using(iDB2DataReader  reader = command.ExecuteReader())
+            //                {
+            //                    while (reader.Read())
+            //                    {
+            //                        empNoList.Add(reader["EMPNO"].ToString());
+            //                    }
+            //                }
+            //            }
+
+            //            foreach(var empNo in empNoList)
+            //            {
+            //                using(iDB2Command command = new iDB2Command(sqlEmployee, connection))
+            //                {
+            //                    command.Parameters.AddWithValue("@EmpNo", empNo);
+
+            //                    using(iDB2DataReader reader = command.ExecuteReader())
+            //                    {
+            //                        if (reader.Read())
+            //                        {
+            //                            string fullName = $"{reader["EFNAME"]} {reader["ELNAME"]}";
+            //                            employeeNames.Add(fullName);
+            //                        }
+            //                    }
+            //                }
+            //            }
+
+            //            lboxStaff.Items.Clear();
+            //            if(employeeNames.Count > 0)
+            //            {
+            //                foreach(var name in employeeNames)
+            //                {
+            //                    lboxStaff.Items.Add(name);
+            //                }
+            //            }
+            //            else
+            //            {
+            //                lboxStaff.Items.Add("No employees found for the selected flight.");
+            //            }
+            //        }
+            //        catch(Exception ex)
+            //        {
+            //            MessageBox.Show("Error loading employee details: " +  ex.Message);
+            //        }
+            //    }
+            //}
+     
+            private void btnFlightStaff_Click(object sender, EventArgs e)
             {
-                lboxStaff.Items.Clear();
 
-                LoadFlightNumbers();
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error resetting listbox: " + ex.Message);
-            }
+        
+
         }
-    }
-}
+    } 
