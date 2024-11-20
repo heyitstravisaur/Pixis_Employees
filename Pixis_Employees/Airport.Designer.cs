@@ -1,6 +1,6 @@
 ﻿namespace Pixis_Employees
 {
-    partial class Form1
+    partial class Airport
     {
         /// <summary>
         /// Required designer variable.
@@ -28,21 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.btnExit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // Form1
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(319, 202);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(162, 47);
+            this.btnExit.TabIndex = 10;
+            this.btnExit.Text = "E&xit";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // Airport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Controls.Add(this.btnExit);
+            this.Name = "Airport";
+            this.Text = "Aiport";
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Button btnExit;
     }
 }
-

@@ -10,16 +10,20 @@ using System.Windows.Forms;
 
 namespace Pixis_Employees
 {
-    public partial class Form1 : Form
+    public partial class Location : Form
     {
-        public Form1()
+        private PyxisairFlightReservationSystem pfrs;
+
+        public Location(PyxisairFlightReservationSystem form)
         {
             InitializeComponent();
+            pfrs = form;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
-            //hello from travis! - Remote PC
+            pfrs.Show();
+            this.Close();
         }
     }
 }
