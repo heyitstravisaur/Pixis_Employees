@@ -33,7 +33,7 @@ namespace Pixis_Employees
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            //this is to add a
+            
         }
 
         private void AddUpdate_Load(object sender, EventArgs e)
@@ -42,10 +42,10 @@ namespace Pixis_Employees
             string connName = "Data Source=deathstar.gtc.edu;User ID=itpa638;Initial Catalog=S101FF5C";
 
             this.Text = title;
-            if (title == "Add")
+            if (title == "Add New Employee")
             {
-                btnAdd.Show();
                 btnUpdate.Hide();
+                btnAdd.Show();
             }
             else
             {
@@ -141,7 +141,7 @@ namespace Pixis_Employees
                     }
 
                 }
-                catch (Exception ex) { listBox1.Items.Add(ex); }
+                catch (Exception ex) { }
 
                 //this.eMPLOYEETableAdapter.Fill(this.dataSet1.EMPLOYEE);
 

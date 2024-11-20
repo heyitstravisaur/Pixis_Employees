@@ -70,7 +70,6 @@
             this.txtEmpDOB = new System.Windows.Forms.TextBox();
             this.txtEmpNum = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.eMPLOYEETableAdapter = new Pixis_Employees.DataSet1TableAdapters.EMPLOYEETableAdapter();
             this.tableAdapterManager = new Pixis_Employees.DataSet1TableAdapters.TableAdapterManager();
             this.groupBox1.SuspendLayout();
@@ -441,16 +440,6 @@
             this.label18.TabIndex = 38;
             this.label18.Text = "Employee Address";
             // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(334, 67);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.listBox1.ScrollAlwaysVisible = true;
-            this.listBox1.Size = new System.Drawing.Size(537, 433);
-            this.listBox1.TabIndex = 39;
-            // 
             // eMPLOYEETableAdapter
             // 
             this.eMPLOYEETableAdapter.ClearBeforeFill = true;
@@ -471,8 +460,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(883, 517);
-            this.Controls.Add(this.listBox1);
+            this.ClientSize = new System.Drawing.Size(486, 517);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnUpdate);
@@ -546,7 +534,6 @@
         private System.Windows.Forms.TextBox txtEmpNum;
         private System.Windows.Forms.TextBox txtEmpAddress;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.ListBox listBox1;
         private DataSet1 dataSet1;
         private System.Windows.Forms.BindingSource eMPLOYEEBindingSource;
         private DataSet1TableAdapters.EMPLOYEETableAdapter eMPLOYEETableAdapter;

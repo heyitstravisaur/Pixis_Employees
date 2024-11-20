@@ -38,6 +38,11 @@ namespace Pixis_Employees
         private void btnAdd_Click(object sender, EventArgs e)
         {
             //going to send a name for the title
+            AddUpdate addUpdate = new AddUpdate(this);
+            string title = "Add New Employee";
+            addUpdate.title = title;
+            addUpdate.Show();
+            this.Hide();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
