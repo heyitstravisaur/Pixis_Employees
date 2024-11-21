@@ -1,18 +1,22 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using IBM.Data.DB2.iSeries;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Pixis_Employees
 {
-    //delete this line
+
 
     public partial class Employee : Form
     {
@@ -93,7 +97,7 @@ namespace Pixis_Employees
             //filter template for use
 
             //dataGridView1.Columns[0].HeaderText.ToString() + " LIKE '%" + txt_filter_regionid.Text + "%'"
-            //+ dataGridView1.Columns[1].HeaderText.ToString() + " LIKE '%" + txt_filter_empno.Text + "%'"
+            //+ bs.Filter = "Convert(EMPNO, 'System.String') like '%" + txt_filter_empno.Text + "%'"
             //+ dataGridView1.Columns[2].HeaderText.ToString() + " LIKE '%" + txt_filter_efname.Text + "%'"
             //+ dataGridView1.Columns[3].HeaderText.ToString() + " LIKE '%" + txt_filter_elname.Text + "%'"
             //+ dataGridView1.Columns[4].HeaderText.ToString() + " LIKE '%" + txt_filter_eaddr.Text + "%'"
@@ -105,10 +109,12 @@ namespace Pixis_Employees
 
             //credit to https://stackoverflow.com/questions/21845016/how-can-i-filter-a-datagridview
             //to help figure out filtering a data grid view by text
+
             BindingSource bs = new BindingSource();
             bs.DataSource = dataGridView1.DataSource;
             bs.Filter = dataGridView1.Columns[0].HeaderText.ToString() + " LIKE '%" + txt_filter_regionid.Text + "%'";
             dataGridView1.DataSource = bs;
+            
 
 
         }
@@ -207,9 +213,16 @@ namespace Pixis_Employees
 
         }
 
+
         private void btn_employees_from_region_Click(object sender, EventArgs e)
         {
+
             String empRegion = txt_filter_regionid.Text;
+
+           //e
+
+
+
 
             if (txt_filter_regionid.Text == "")
             {
@@ -223,6 +236,7 @@ namespace Pixis_Employees
 
             else
             {
+
                 var result = MessageBox.Show(
                     "Your employees for " + empRegion + " are:",
                     "Results",

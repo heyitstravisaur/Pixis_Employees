@@ -68,6 +68,7 @@
             this.btn_employees_from_region = new System.Windows.Forms.Button();
             this.lbl_employee_number = new System.Windows.Forms.Label();
             this.btn_determine_state = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eMPLOYEEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
@@ -146,7 +147,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(864, 622);
+            this.dataGridView1.Size = new System.Drawing.Size(428, 622);
             this.dataGridView1.TabIndex = 7;
             // 
             // rEGIONIDDataGridViewTextBoxColumn
@@ -351,7 +352,7 @@
             this.lbl_region.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_region.Location = new System.Drawing.Point(12, 16);
             this.lbl_region.Name = "lbl_region";
-            this.lbl_region.Size = new System.Drawing.Size(210, 16);
+            this.lbl_region.Size = new System.Drawing.Size(200, 16);
             this.lbl_region.TabIndex = 18;
             this.lbl_region.Text = "4. Filter by Region and then:";
             // 
@@ -371,7 +372,7 @@
             this.lbl_employee_number.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_employee_number.Location = new System.Drawing.Point(415, 17);
             this.lbl_employee_number.Name = "lbl_employee_number";
-            this.lbl_employee_number.Size = new System.Drawing.Size(286, 16);
+            this.lbl_employee_number.Size = new System.Drawing.Size(275, 16);
             this.lbl_employee_number.TabIndex = 20;
             this.lbl_employee_number.Text = "5. Filter by Employee number and then:";
             // 
@@ -384,11 +385,20 @@
             this.btn_determine_state.Text = "Determine State";
             this.btn_determine_state.UseVisualStyleBackColor = true;
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(444, 81);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(449, 615);
+            this.listBox1.TabIndex = 22;
+            // 
             // Employee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(883, 754);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.btn_determine_state);
             this.Controls.Add(this.lbl_employee_number);
             this.Controls.Add(this.btn_employees_from_region);
@@ -461,5 +471,6 @@
         private System.Windows.Forms.Button btn_employees_from_region;
         private System.Windows.Forms.Label lbl_employee_number;
         private System.Windows.Forms.Button btn_determine_state;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
