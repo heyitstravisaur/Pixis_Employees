@@ -30,12 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.btnExit = new System.Windows.Forms.Button();
-            this.dataSet2 = new Pixis_Employees.DataSet2();
-            this.eMPLOYEEBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.eMPLOYEETableAdapter = new Pixis_Employees.DataSet2TableAdapters.EMPLOYEETableAdapter();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.cUSTOMERBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cUSTOMERTableAdapter = new Pixis_Employees.DataSet2TableAdapters.CUSTOMERTableAdapter();
             this.cUSTNODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cFNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cLNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,15 +46,23 @@
             this.cSCCARDNODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cSPYMTSTLDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cPWORDHASHDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eMPLOYEEBindingSource)).BeginInit();
+            this.cUSTOMERBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet2 = new Pixis_Employees.DataSet2();
+            this.eMPLOYEEBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.eMPLOYEETableAdapter = new Pixis_Employees.DataSet2TableAdapters.EMPLOYEETableAdapter();
+            this.cUSTOMERTableAdapter = new Pixis_Employees.DataSet2TableAdapters.CUSTOMERTableAdapter();
+            this.btn_Update = new System.Windows.Forms.Button();
+            this.btn_add = new System.Windows.Forms.Button();
+            this.btn_refresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTOMERBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eMPLOYEEBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(350, 447);
+            this.btnExit.Location = new System.Drawing.Point(662, 465);
             this.btnExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(108, 31);
@@ -67,20 +70,6 @@
             this.btnExit.Text = "&Close";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // dataSet2
-            // 
-            this.dataSet2.DataSetName = "DataSet2";
-            this.dataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // eMPLOYEEBindingSource
-            // 
-            this.eMPLOYEEBindingSource.DataMember = "EMPLOYEE";
-            this.eMPLOYEEBindingSource.DataSource = this.dataSet2;
-            // 
-            // eMPLOYEETableAdapter
-            // 
-            this.eMPLOYEETableAdapter.ClearBeforeFill = true;
             // 
             // dataGridView1
             // 
@@ -103,19 +92,10 @@
             this.cSPYMTSTLDataGridViewTextBoxColumn,
             this.cPWORDHASHDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.cUSTOMERBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(32, 37);
+            this.dataGridView1.Location = new System.Drawing.Point(32, 29);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(738, 372);
+            this.dataGridView1.Size = new System.Drawing.Size(738, 431);
             this.dataGridView1.TabIndex = 11;
-            // 
-            // cUSTOMERBindingSource
-            // 
-            this.cUSTOMERBindingSource.DataMember = "CUSTOMER";
-            this.cUSTOMERBindingSource.DataSource = this.dataSet2;
-            // 
-            // cUSTOMERTableAdapter
-            // 
-            this.cUSTOMERTableAdapter.ClearBeforeFill = true;
             // 
             // cUSTNODataGridViewTextBoxColumn
             // 
@@ -207,22 +187,79 @@
             this.cPWORDHASHDataGridViewTextBoxColumn.HeaderText = "CPWORDHASH";
             this.cPWORDHASHDataGridViewTextBoxColumn.Name = "cPWORDHASHDataGridViewTextBoxColumn";
             // 
+            // cUSTOMERBindingSource
+            // 
+            this.cUSTOMERBindingSource.DataMember = "CUSTOMER";
+            this.cUSTOMERBindingSource.DataSource = this.dataSet2;
+            // 
+            // dataSet2
+            // 
+            this.dataSet2.DataSetName = "DataSet2";
+            this.dataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // eMPLOYEEBindingSource
+            // 
+            this.eMPLOYEEBindingSource.DataMember = "EMPLOYEE";
+            this.eMPLOYEEBindingSource.DataSource = this.dataSet2;
+            // 
+            // eMPLOYEETableAdapter
+            // 
+            this.eMPLOYEETableAdapter.ClearBeforeFill = true;
+            // 
+            // cUSTOMERTableAdapter
+            // 
+            this.cUSTOMERTableAdapter.ClearBeforeFill = true;
+            // 
+            // btn_Update
+            // 
+            this.btn_Update.Location = new System.Drawing.Point(256, 465);
+            this.btn_Update.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Update.Name = "btn_Update";
+            this.btn_Update.Size = new System.Drawing.Size(108, 31);
+            this.btn_Update.TabIndex = 13;
+            this.btn_Update.Text = "&Update";
+            this.btn_Update.UseVisualStyleBackColor = true;
+            // 
+            // btn_add
+            // 
+            this.btn_add.Location = new System.Drawing.Point(144, 465);
+            this.btn_add.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_add.Name = "btn_add";
+            this.btn_add.Size = new System.Drawing.Size(108, 31);
+            this.btn_add.TabIndex = 12;
+            this.btn_add.Text = "&Add";
+            this.btn_add.UseVisualStyleBackColor = true;
+            // 
+            // btn_refresh
+            // 
+            this.btn_refresh.Location = new System.Drawing.Point(32, 465);
+            this.btn_refresh.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_refresh.Name = "btn_refresh";
+            this.btn_refresh.Size = new System.Drawing.Size(108, 31);
+            this.btn_refresh.TabIndex = 14;
+            this.btn_refresh.Text = "&Refresh";
+            this.btn_refresh.UseVisualStyleBackColor = true;
+            this.btn_refresh.Click += new System.EventHandler(this.btn_refresh_Click);
+            // 
             // Customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(802, 507);
+            this.Controls.Add(this.btn_refresh);
+            this.Controls.Add(this.btn_Update);
+            this.Controls.Add(this.btn_add);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnExit);
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Customer";
-            this.Text = "Customer_";
+            this.Text = "Customer";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Customer_FormClosing);
             this.Load += new System.EventHandler(this.Customer_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eMPLOYEEBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTOMERBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eMPLOYEEBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -251,5 +288,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cSCCARDNODataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cSPYMTSTLDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cPWORDHASHDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btn_Update;
+        private System.Windows.Forms.Button btn_add;
+        private System.Windows.Forms.Button btn_refresh;
     }
 }

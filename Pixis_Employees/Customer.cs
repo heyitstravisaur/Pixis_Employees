@@ -36,10 +36,15 @@ namespace Pixis_Employees
             this.Hide();
         }
 
-        private void Customer_Load(object sender, EventArgs e)
+        private void display(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'dataSet2.CUSTOMER' table. You can move, or remove it, as needed.
             this.cUSTOMERTableAdapter.Fill(this.dataSet2.CUSTOMER);
+        }
+
+        private void Customer_Load(object sender, EventArgs e)
+        {
+            display(sender, e);
 
         }
 
@@ -66,6 +71,11 @@ namespace Pixis_Employees
                 // Cancel the form close
                 e.Cancel = true;
             }
+        }
+
+        private void btn_refresh_Click(object sender, EventArgs e)
+        {
+            display(sender, e);
         }
     }
 }
