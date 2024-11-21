@@ -44,7 +44,7 @@
             // btnExit
             // 
             this.btnExit.Location = new System.Drawing.Point(0, 241);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(2);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(318, 31);
             this.btnExit.TabIndex = 10;
@@ -152,9 +152,10 @@
             this.Controls.Add(this.listBoxZipCodeTable);
             this.Controls.Add(this.buttonDisplay);
             this.Controls.Add(this.btnExit);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Location";
             this.Text = "Location";
+            this.Load += new System.EventHandler(this.Location_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
