@@ -12,6 +12,7 @@ namespace Pixis_Employees
 {
     public partial class Airplane : Form
     {
+        string connectionString = "Data Source=deathstar.gtc.edu;User ID=itpa641;Initial Catalog=S101FF5C";
         private PyxisairFlightReservationSystem pfrs;
 
         public Airplane(PyxisairFlightReservationSystem form)
@@ -24,6 +25,13 @@ namespace Pixis_Employees
         {
             pfrs.Show();
             this.Close();
+        }
+
+        private void Airplane_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'dataSet2.AIRPLANE' table. You can move, or remove it, as needed.
+            this.aIRPLANETableAdapter.Fill(this.dataSet2.AIRPLANE);
+
         }
     }
 }

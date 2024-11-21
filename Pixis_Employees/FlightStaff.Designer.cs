@@ -49,7 +49,7 @@
             this.lboxStaff.FormattingEnabled = true;
             this.lboxStaff.Location = new System.Drawing.Point(12, 12);
             this.lboxStaff.Name = "lboxStaff";
-            this.lboxStaff.Size = new System.Drawing.Size(236, 264);
+            this.lboxStaff.Size = new System.Drawing.Size(267, 264);
             this.lboxStaff.TabIndex = 12;
             this.lboxStaff.SelectedIndexChanged += new System.EventHandler(this.lboxStaff_SelectedIndexChanged_1);
             // 
@@ -67,7 +67,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(260, 391);
+            this.ClientSize = new System.Drawing.Size(291, 391);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.lboxStaff);
             this.Controls.Add(this.btnExit);

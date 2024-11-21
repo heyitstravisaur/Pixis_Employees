@@ -107,6 +107,7 @@ namespace Pixis_Employees
             {
                 // error handling in case theres issues populating the list
                 MessageBox.Show("Error populating list: " + ex.Message);
+                MessageBox.Show("DONT DO IT AGAIN");
             }
         }
 
@@ -132,16 +133,9 @@ namespace Pixis_Employees
 
             if (lboxStaff.Items.Count == 0)
             {
-                lboxStaff.Items.Add("No employess found for this flight");
+                lboxStaff.Items.Add("Aw shucks, you messed something up didnt you....");
             }
-        }
-            
-     
-            private void btnFlightStaff_Click(object sender, EventArgs e)
-            {
+        }       
 
-            }
-        
-
-        }
-    } 
+    }
+} 
