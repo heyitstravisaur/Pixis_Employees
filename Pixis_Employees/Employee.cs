@@ -38,7 +38,7 @@ namespace Pixis_Employees
         private void button1_Click(object sender, EventArgs e)
         {
             pfrs.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -190,8 +190,6 @@ namespace Pixis_Employees
         private void Employee_FormClosing(object sender, FormClosingEventArgs e)
         {
             // Show a confirmation dialog before closing
-
-            
             var result = MessageBox.Show(
                 "Are you sure you want to exit?",
                 "Confirm Exit",
@@ -239,11 +237,10 @@ namespace Pixis_Employees
         private void btn_employees_from_region_Click(object sender, EventArgs e)
         {
 
-            String empRegion = txt_filter_regionid.Text;
+            //String empRegion = txt_filter_regionid.Text;
 
             //old filter method
             //String @regionalEmployees = DGVtoString(dataGridView1, '-' );
-           
 
 
             if (txt_filter_regionid.Text == "")
@@ -269,6 +266,7 @@ namespace Pixis_Employees
                     DataSet dataSet;
                     String sql;
 
+                    //build SQL query to pass to DB
                     conn = new iDB2Connection(connectionString);
                     conn.Open();
                     sql = "Select * from EMPLOYEE where REGIONID " + " LIKE '%" + txt_filter_regionid.Text + "%'";
@@ -286,7 +284,15 @@ namespace Pixis_Employees
 
                     conn.Close();
                 }
-                catch (Exception ex) { listBox1.Items.Add(ex.Message); }
+                catch (Exception ex) {
+                    var result = MessageBox.Show(
+                    ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                    );
+                }
+            
 
                 finally
                 {
@@ -294,6 +300,66 @@ namespace Pixis_Employees
                 }
             }
 
+        }
+
+        private void btn_determine_state_Click(object sender, EventArgs e)
+        {
+
+            if (txt_filter_empno.Text == "")
+            {
+                var result = MessageBox.Show(
+                    "Your employee number is empty, please populate employee region and then try again.",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
+
+            else
+            {
+
+                try
+                {
+                    //for IBM database querying
+                    iDB2Connection conn;
+                    iDB2DataAdapter adapter;
+                    DataSet dataSet;
+                    String sql;
+
+
+                    //build SQL query to pass to DB
+                    conn = new iDB2Connection(connectionString);
+                    conn.Open();
+                    sql = "Select * from EMPLOYEE where EMPNO " + " LIKE '%" + txt_filter_empno.Text + "%'";
+                    adapter = new iDB2DataAdapter(sql, conn);
+
+                    dataSet = new DataSet();
+                    adapter.Fill(dataSet);
+
+                    listBox1.Items.Clear();
+                    foreach (DataRow row in dataSet.Tables[0].Rows)
+                    {
+                        //this is a comment
+                        listBox1.Items.Add(row[1] + " " + row[2] + " " + row[3] + " " + row[5]);
+                    }
+
+                    conn.Close();
+                }
+                catch (Exception ex)
+                {
+                    var result = MessageBox.Show(
+                    ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                    );
+                }
+
+                finally
+                {
+                    listBox1.Items.Add("Process has completed.");
+                }
+            }
         }
     }
 }

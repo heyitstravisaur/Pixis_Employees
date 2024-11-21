@@ -384,6 +384,7 @@
             this.btn_determine_state.TabIndex = 21;
             this.btn_determine_state.Text = "Determine State";
             this.btn_determine_state.UseVisualStyleBackColor = true;
+            this.btn_determine_state.Click += new System.EventHandler(this.btn_determine_state_Click);
             // 
             // listBox1
             // 

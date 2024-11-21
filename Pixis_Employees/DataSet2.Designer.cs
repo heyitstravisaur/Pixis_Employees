@@ -26,6 +26,8 @@ namespace Pixis_Employees {
         
         private EMPLOYEEDataTable tableEMPLOYEE;
         
+        private CUSTOMERDataTable tableCUSTOMER;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -57,6 +59,9 @@ namespace Pixis_Employees {
                 if ((ds.Tables["EMPLOYEE"] != null)) {
                     base.Tables.Add(new EMPLOYEEDataTable(ds.Tables["EMPLOYEE"]));
                 }
+                if ((ds.Tables["CUSTOMER"] != null)) {
+                    base.Tables.Add(new CUSTOMERDataTable(ds.Tables["CUSTOMER"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -82,6 +87,16 @@ namespace Pixis_Employees {
         public EMPLOYEEDataTable EMPLOYEE {
             get {
                 return this.tableEMPLOYEE;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public CUSTOMERDataTable CUSTOMER {
+            get {
+                return this.tableCUSTOMER;
             }
         }
         
@@ -155,6 +170,9 @@ namespace Pixis_Employees {
                 if ((ds.Tables["EMPLOYEE"] != null)) {
                     base.Tables.Add(new EMPLOYEEDataTable(ds.Tables["EMPLOYEE"]));
                 }
+                if ((ds.Tables["CUSTOMER"] != null)) {
+                    base.Tables.Add(new CUSTOMERDataTable(ds.Tables["CUSTOMER"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -194,6 +212,12 @@ namespace Pixis_Employees {
                     this.tableEMPLOYEE.InitVars();
                 }
             }
+            this.tableCUSTOMER = ((CUSTOMERDataTable)(base.Tables["CUSTOMER"]));
+            if ((initTable == true)) {
+                if ((this.tableCUSTOMER != null)) {
+                    this.tableCUSTOMER.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -206,11 +230,19 @@ namespace Pixis_Employees {
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableEMPLOYEE = new EMPLOYEEDataTable();
             base.Tables.Add(this.tableEMPLOYEE);
+            this.tableCUSTOMER = new CUSTOMERDataTable();
+            base.Tables.Add(this.tableCUSTOMER);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private bool ShouldSerializeEMPLOYEE() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private bool ShouldSerializeCUSTOMER() {
             return false;
         }
         
@@ -271,6 +303,9 @@ namespace Pixis_Employees {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public delegate void EMPLOYEERowChangeEventHandler(object sender, EMPLOYEERowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public delegate void CUSTOMERRowChangeEventHandler(object sender, CUSTOMERRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -818,6 +853,482 @@ namespace Pixis_Employees {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class CUSTOMERDataTable : global::System.Data.TypedTableBase<CUSTOMERRow> {
+            
+            private global::System.Data.DataColumn columnCUSTNO;
+            
+            private global::System.Data.DataColumn columnCFNAME;
+            
+            private global::System.Data.DataColumn columnCLNAME;
+            
+            private global::System.Data.DataColumn columnCADDR;
+            
+            private global::System.Data.DataColumn columnCCITY;
+            
+            private global::System.Data.DataColumn columnCSTATE;
+            
+            private global::System.Data.DataColumn columnCZIP;
+            
+            private global::System.Data.DataColumn columnCPHONE;
+            
+            private global::System.Data.DataColumn columnCEMAIL;
+            
+            private global::System.Data.DataColumn columnCDOB;
+            
+            private global::System.Data.DataColumn columnCGENDER;
+            
+            private global::System.Data.DataColumn columnCPWORD;
+            
+            private global::System.Data.DataColumn columnCSCCARDNO;
+            
+            private global::System.Data.DataColumn columnCSPYMTSTL;
+            
+            private global::System.Data.DataColumn columnCPWORDHASH;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public CUSTOMERDataTable() {
+                this.TableName = "CUSTOMER";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal CUSTOMERDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected CUSTOMERDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CUSTNOColumn {
+                get {
+                    return this.columnCUSTNO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CFNAMEColumn {
+                get {
+                    return this.columnCFNAME;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CLNAMEColumn {
+                get {
+                    return this.columnCLNAME;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CADDRColumn {
+                get {
+                    return this.columnCADDR;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CCITYColumn {
+                get {
+                    return this.columnCCITY;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CSTATEColumn {
+                get {
+                    return this.columnCSTATE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CZIPColumn {
+                get {
+                    return this.columnCZIP;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CPHONEColumn {
+                get {
+                    return this.columnCPHONE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CEMAILColumn {
+                get {
+                    return this.columnCEMAIL;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CDOBColumn {
+                get {
+                    return this.columnCDOB;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CGENDERColumn {
+                get {
+                    return this.columnCGENDER;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CPWORDColumn {
+                get {
+                    return this.columnCPWORD;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CSCCARDNOColumn {
+                get {
+                    return this.columnCSCCARDNO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CSPYMTSTLColumn {
+                get {
+                    return this.columnCSPYMTSTL;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CPWORDHASHColumn {
+                get {
+                    return this.columnCPWORDHASH;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public CUSTOMERRow this[int index] {
+                get {
+                    return ((CUSTOMERRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event CUSTOMERRowChangeEventHandler CUSTOMERRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event CUSTOMERRowChangeEventHandler CUSTOMERRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event CUSTOMERRowChangeEventHandler CUSTOMERRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event CUSTOMERRowChangeEventHandler CUSTOMERRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void AddCUSTOMERRow(CUSTOMERRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public CUSTOMERRow AddCUSTOMERRow(decimal CUSTNO, string CFNAME, string CLNAME, string CADDR, string CCITY, string CSTATE, decimal CZIP, decimal CPHONE, string CEMAIL, string CDOB, string CGENDER, string CPWORD, string CSCCARDNO, decimal CSPYMTSTL, decimal CPWORDHASH) {
+                CUSTOMERRow rowCUSTOMERRow = ((CUSTOMERRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        CUSTNO,
+                        CFNAME,
+                        CLNAME,
+                        CADDR,
+                        CCITY,
+                        CSTATE,
+                        CZIP,
+                        CPHONE,
+                        CEMAIL,
+                        CDOB,
+                        CGENDER,
+                        CPWORD,
+                        CSCCARDNO,
+                        CSPYMTSTL,
+                        CPWORDHASH};
+                rowCUSTOMERRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowCUSTOMERRow);
+                return rowCUSTOMERRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public CUSTOMERRow FindByCUSTNO(decimal CUSTNO) {
+                return ((CUSTOMERRow)(this.Rows.Find(new object[] {
+                            CUSTNO})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                CUSTOMERDataTable cln = ((CUSTOMERDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new CUSTOMERDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal void InitVars() {
+                this.columnCUSTNO = base.Columns["CUSTNO"];
+                this.columnCFNAME = base.Columns["CFNAME"];
+                this.columnCLNAME = base.Columns["CLNAME"];
+                this.columnCADDR = base.Columns["CADDR"];
+                this.columnCCITY = base.Columns["CCITY"];
+                this.columnCSTATE = base.Columns["CSTATE"];
+                this.columnCZIP = base.Columns["CZIP"];
+                this.columnCPHONE = base.Columns["CPHONE"];
+                this.columnCEMAIL = base.Columns["CEMAIL"];
+                this.columnCDOB = base.Columns["CDOB"];
+                this.columnCGENDER = base.Columns["CGENDER"];
+                this.columnCPWORD = base.Columns["CPWORD"];
+                this.columnCSCCARDNO = base.Columns["CSCCARDNO"];
+                this.columnCSPYMTSTL = base.Columns["CSPYMTSTL"];
+                this.columnCPWORDHASH = base.Columns["CPWORDHASH"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            private void InitClass() {
+                this.columnCUSTNO = new global::System.Data.DataColumn("CUSTNO", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCUSTNO);
+                this.columnCFNAME = new global::System.Data.DataColumn("CFNAME", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCFNAME);
+                this.columnCLNAME = new global::System.Data.DataColumn("CLNAME", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCLNAME);
+                this.columnCADDR = new global::System.Data.DataColumn("CADDR", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCADDR);
+                this.columnCCITY = new global::System.Data.DataColumn("CCITY", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCCITY);
+                this.columnCSTATE = new global::System.Data.DataColumn("CSTATE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCSTATE);
+                this.columnCZIP = new global::System.Data.DataColumn("CZIP", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCZIP);
+                this.columnCPHONE = new global::System.Data.DataColumn("CPHONE", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCPHONE);
+                this.columnCEMAIL = new global::System.Data.DataColumn("CEMAIL", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCEMAIL);
+                this.columnCDOB = new global::System.Data.DataColumn("CDOB", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCDOB);
+                this.columnCGENDER = new global::System.Data.DataColumn("CGENDER", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCGENDER);
+                this.columnCPWORD = new global::System.Data.DataColumn("CPWORD", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCPWORD);
+                this.columnCSCCARDNO = new global::System.Data.DataColumn("CSCCARDNO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCSCCARDNO);
+                this.columnCSPYMTSTL = new global::System.Data.DataColumn("CSPYMTSTL", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCSPYMTSTL);
+                this.columnCPWORDHASH = new global::System.Data.DataColumn("CPWORDHASH", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCPWORDHASH);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnCUSTNO}, true));
+                this.columnCUSTNO.AllowDBNull = false;
+                this.columnCUSTNO.Unique = true;
+                this.columnCFNAME.AllowDBNull = false;
+                this.columnCFNAME.MaxLength = 15;
+                this.columnCLNAME.AllowDBNull = false;
+                this.columnCLNAME.MaxLength = 20;
+                this.columnCADDR.AllowDBNull = false;
+                this.columnCADDR.MaxLength = 30;
+                this.columnCCITY.AllowDBNull = false;
+                this.columnCCITY.MaxLength = 30;
+                this.columnCSTATE.AllowDBNull = false;
+                this.columnCSTATE.MaxLength = 2;
+                this.columnCZIP.AllowDBNull = false;
+                this.columnCPHONE.AllowDBNull = false;
+                this.columnCEMAIL.AllowDBNull = false;
+                this.columnCEMAIL.MaxLength = 60;
+                this.columnCDOB.MaxLength = 10;
+                this.columnCGENDER.AllowDBNull = false;
+                this.columnCGENDER.MaxLength = 1;
+                this.columnCPWORD.AllowDBNull = false;
+                this.columnCPWORD.MaxLength = 20;
+                this.columnCSCCARDNO.AllowDBNull = false;
+                this.columnCSCCARDNO.MaxLength = 16;
+                this.columnCSPYMTSTL.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public CUSTOMERRow NewCUSTOMERRow() {
+                return ((CUSTOMERRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new CUSTOMERRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(CUSTOMERRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.CUSTOMERRowChanged != null)) {
+                    this.CUSTOMERRowChanged(this, new CUSTOMERRowChangeEvent(((CUSTOMERRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.CUSTOMERRowChanging != null)) {
+                    this.CUSTOMERRowChanging(this, new CUSTOMERRowChangeEvent(((CUSTOMERRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.CUSTOMERRowDeleted != null)) {
+                    this.CUSTOMERRowDeleted(this, new CUSTOMERRowChangeEvent(((CUSTOMERRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.CUSTOMERRowDeleting != null)) {
+                    this.CUSTOMERRowDeleting(this, new CUSTOMERRowChangeEvent(((CUSTOMERRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void RemoveCUSTOMERRow(CUSTOMERRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSet2 ds = new DataSet2();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "CUSTOMERDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class EMPLOYEERow : global::System.Data.DataRow {
@@ -1048,6 +1559,220 @@ namespace Pixis_Employees {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class CUSTOMERRow : global::System.Data.DataRow {
+            
+            private CUSTOMERDataTable tableCUSTOMER;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal CUSTOMERRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableCUSTOMER = ((CUSTOMERDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal CUSTNO {
+                get {
+                    return ((decimal)(this[this.tableCUSTOMER.CUSTNOColumn]));
+                }
+                set {
+                    this[this.tableCUSTOMER.CUSTNOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string CFNAME {
+                get {
+                    return ((string)(this[this.tableCUSTOMER.CFNAMEColumn]));
+                }
+                set {
+                    this[this.tableCUSTOMER.CFNAMEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string CLNAME {
+                get {
+                    return ((string)(this[this.tableCUSTOMER.CLNAMEColumn]));
+                }
+                set {
+                    this[this.tableCUSTOMER.CLNAMEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string CADDR {
+                get {
+                    return ((string)(this[this.tableCUSTOMER.CADDRColumn]));
+                }
+                set {
+                    this[this.tableCUSTOMER.CADDRColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string CCITY {
+                get {
+                    return ((string)(this[this.tableCUSTOMER.CCITYColumn]));
+                }
+                set {
+                    this[this.tableCUSTOMER.CCITYColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string CSTATE {
+                get {
+                    return ((string)(this[this.tableCUSTOMER.CSTATEColumn]));
+                }
+                set {
+                    this[this.tableCUSTOMER.CSTATEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal CZIP {
+                get {
+                    return ((decimal)(this[this.tableCUSTOMER.CZIPColumn]));
+                }
+                set {
+                    this[this.tableCUSTOMER.CZIPColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal CPHONE {
+                get {
+                    return ((decimal)(this[this.tableCUSTOMER.CPHONEColumn]));
+                }
+                set {
+                    this[this.tableCUSTOMER.CPHONEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string CEMAIL {
+                get {
+                    return ((string)(this[this.tableCUSTOMER.CEMAILColumn]));
+                }
+                set {
+                    this[this.tableCUSTOMER.CEMAILColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string CDOB {
+                get {
+                    try {
+                        return ((string)(this[this.tableCUSTOMER.CDOBColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CDOB\' in table \'CUSTOMER\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCUSTOMER.CDOBColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string CGENDER {
+                get {
+                    return ((string)(this[this.tableCUSTOMER.CGENDERColumn]));
+                }
+                set {
+                    this[this.tableCUSTOMER.CGENDERColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string CPWORD {
+                get {
+                    return ((string)(this[this.tableCUSTOMER.CPWORDColumn]));
+                }
+                set {
+                    this[this.tableCUSTOMER.CPWORDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string CSCCARDNO {
+                get {
+                    return ((string)(this[this.tableCUSTOMER.CSCCARDNOColumn]));
+                }
+                set {
+                    this[this.tableCUSTOMER.CSCCARDNOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal CSPYMTSTL {
+                get {
+                    return ((decimal)(this[this.tableCUSTOMER.CSPYMTSTLColumn]));
+                }
+                set {
+                    this[this.tableCUSTOMER.CSPYMTSTLColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal CPWORDHASH {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableCUSTOMER.CPWORDHASHColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CPWORDHASH\' in table \'CUSTOMER\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCUSTOMER.CPWORDHASHColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsCDOBNull() {
+                return this.IsNull(this.tableCUSTOMER.CDOBColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetCDOBNull() {
+                this[this.tableCUSTOMER.CDOBColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsCPWORDHASHNull() {
+                return this.IsNull(this.tableCUSTOMER.CPWORDHASHColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetCPWORDHASHNull() {
+                this[this.tableCUSTOMER.CPWORDHASHColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -1067,6 +1792,40 @@ namespace Pixis_Employees {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public EMPLOYEERow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public class CUSTOMERRowChangeEvent : global::System.EventArgs {
+            
+            private CUSTOMERRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public CUSTOMERRowChangeEvent(CUSTOMERRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public CUSTOMERRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -1458,6 +2217,329 @@ namespace Pixis_Employees.DataSet2TableAdapters {
     }
     
     /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class CUSTOMERTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.OleDb.OleDbDataAdapter _adapter;
+        
+        private global::System.Data.OleDb.OleDbConnection _connection;
+        
+        private global::System.Data.OleDb.OleDbTransaction _transaction;
+        
+        private global::System.Data.OleDb.OleDbCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public CUSTOMERTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected internal global::System.Data.OleDb.OleDbDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.OleDb.OleDbConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.OleDb.OleDbCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.OleDb.OleDbTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected global::System.Data.OleDb.OleDbCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.OleDb.OleDbDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "CUSTOMER";
+            tableMapping.ColumnMappings.Add("CUSTNO", "CUSTNO");
+            tableMapping.ColumnMappings.Add("CFNAME", "CFNAME");
+            tableMapping.ColumnMappings.Add("CLNAME", "CLNAME");
+            tableMapping.ColumnMappings.Add("CADDR", "CADDR");
+            tableMapping.ColumnMappings.Add("CCITY", "CCITY");
+            tableMapping.ColumnMappings.Add("CSTATE", "CSTATE");
+            tableMapping.ColumnMappings.Add("CZIP", "CZIP");
+            tableMapping.ColumnMappings.Add("CPHONE", "CPHONE");
+            tableMapping.ColumnMappings.Add("CEMAIL", "CEMAIL");
+            tableMapping.ColumnMappings.Add("CDOB", "CDOB");
+            tableMapping.ColumnMappings.Add("CGENDER", "CGENDER");
+            tableMapping.ColumnMappings.Add("CPWORD", "CPWORD");
+            tableMapping.ColumnMappings.Add("CSCCARDNO", "CSCCARDNO");
+            tableMapping.ColumnMappings.Add("CSPYMTSTL", "CSPYMTSTL");
+            tableMapping.ColumnMappings.Add("CPWORDHASH", "CPWORDHASH");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO S101FF5C.ITPA648.CUSTOMER (CUSTNO, CFNAME, CLNAME, CADDR, CCITY, CSTA" +
+                "TE, CZIP, CPHONE, CEMAIL, CDOB, CGENDER, CPWORD, CSCCARDNO, CSPYMTSTL, CPWORDHAS" +
+                "H) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("CUSTNO", global::System.Data.OleDb.OleDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, ((byte)(9)), ((byte)(0)), "CUSTNO", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("CFNAME", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CFNAME", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("CLNAME", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CLNAME", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("CADDR", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CADDR", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("CCITY", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CCITY", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("CSTATE", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CSTATE", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("CZIP", global::System.Data.OleDb.OleDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, ((byte)(9)), ((byte)(0)), "CZIP", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("CPHONE", global::System.Data.OleDb.OleDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, ((byte)(10)), ((byte)(0)), "CPHONE", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("CEMAIL", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CEMAIL", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("CDOB", global::System.Data.OleDb.OleDbType.Char, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CDOB", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("CGENDER", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CGENDER", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("CPWORD", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CPWORD", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("CSCCARDNO", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CSCCARDNO", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("CSPYMTSTL", global::System.Data.OleDb.OleDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, ((byte)(9)), ((byte)(2)), "CSPYMTSTL", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("CPWORDHASH", global::System.Data.OleDb.OleDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, ((byte)(4)), ((byte)(0)), "CPWORDHASH", global::System.Data.DataRowVersion.Current, false, null));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.OleDb.OleDbConnection();
+            this._connection.ConnectionString = global::Pixis_Employees.Properties.Settings.Default.IBM_DB2_TDUNK;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
+            this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT CUSTNO, CFNAME, CLNAME, CADDR, CCITY, CSTATE, CZIP, CPHONE, CEMAIL, CDOB, " +
+                "CGENDER, CPWORD, CSCCARDNO, CSPYMTSTL, CPWORDHASH FROM ITPA648.CUSTOMER";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(DataSet2.CUSTOMERDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DataSet2.CUSTOMERDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            DataSet2.CUSTOMERDataTable dataTable = new DataSet2.CUSTOMERDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(DataSet2.CUSTOMERDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(DataSet2 dataSet) {
+            return this.Adapter.Update(dataSet, "CUSTOMER");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(decimal CUSTNO, string CFNAME, string CLNAME, string CADDR, string CCITY, string CSTATE, decimal CZIP, decimal CPHONE, string CEMAIL, string CDOB, string CGENDER, string CPWORD, string CSCCARDNO, decimal CSPYMTSTL, global::System.Nullable<decimal> CPWORDHASH) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((decimal)(CUSTNO));
+            if ((CFNAME == null)) {
+                throw new global::System.ArgumentNullException("CFNAME");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(CFNAME));
+            }
+            if ((CLNAME == null)) {
+                throw new global::System.ArgumentNullException("CLNAME");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(CLNAME));
+            }
+            if ((CADDR == null)) {
+                throw new global::System.ArgumentNullException("CADDR");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(CADDR));
+            }
+            if ((CCITY == null)) {
+                throw new global::System.ArgumentNullException("CCITY");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(CCITY));
+            }
+            if ((CSTATE == null)) {
+                throw new global::System.ArgumentNullException("CSTATE");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(CSTATE));
+            }
+            this.Adapter.InsertCommand.Parameters[6].Value = ((decimal)(CZIP));
+            this.Adapter.InsertCommand.Parameters[7].Value = ((decimal)(CPHONE));
+            if ((CEMAIL == null)) {
+                throw new global::System.ArgumentNullException("CEMAIL");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(CEMAIL));
+            }
+            if ((CDOB == null)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(CDOB));
+            }
+            if ((CGENDER == null)) {
+                throw new global::System.ArgumentNullException("CGENDER");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(CGENDER));
+            }
+            if ((CPWORD == null)) {
+                throw new global::System.ArgumentNullException("CPWORD");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(CPWORD));
+            }
+            if ((CSCCARDNO == null)) {
+                throw new global::System.ArgumentNullException("CSCCARDNO");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(CSCCARDNO));
+            }
+            this.Adapter.InsertCommand.Parameters[13].Value = ((decimal)(CSPYMTSTL));
+            if ((CPWORDHASH.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[14].Value = ((decimal)(CPWORDHASH.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+    }
+    
+    /// <summary>
     ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     ///</summary>
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1470,6 +2552,8 @@ namespace Pixis_Employees.DataSet2TableAdapters {
         private UpdateOrderOption _updateOrder;
         
         private EMPLOYEETableAdapter _eMPLOYEETableAdapter;
+        
+        private CUSTOMERTableAdapter _cUSTOMERTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1502,6 +2586,20 @@ namespace Pixis_Employees.DataSet2TableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public CUSTOMERTableAdapter CUSTOMERTableAdapter {
+            get {
+                return this._cUSTOMERTableAdapter;
+            }
+            set {
+                this._cUSTOMERTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public bool BackupDataSetBeforeUpdate {
             get {
                 return this._backupDataSetBeforeUpdate;
@@ -1523,6 +2621,10 @@ namespace Pixis_Employees.DataSet2TableAdapters {
                             && (this._eMPLOYEETableAdapter.Connection != null))) {
                     return this._eMPLOYEETableAdapter.Connection;
                 }
+                if (((this._cUSTOMERTableAdapter != null) 
+                            && (this._cUSTOMERTableAdapter.Connection != null))) {
+                    return this._cUSTOMERTableAdapter.Connection;
+                }
                 return null;
             }
             set {
@@ -1537,6 +2639,9 @@ namespace Pixis_Employees.DataSet2TableAdapters {
             get {
                 int count = 0;
                 if ((this._eMPLOYEETableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._cUSTOMERTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1559,6 +2664,15 @@ namespace Pixis_Employees.DataSet2TableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._cUSTOMERTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.CUSTOMER.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._cUSTOMERTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             return result;
         }
         
@@ -1577,6 +2691,14 @@ namespace Pixis_Employees.DataSet2TableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._cUSTOMERTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.CUSTOMER.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._cUSTOMERTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             return result;
         }
         
@@ -1587,6 +2709,14 @@ namespace Pixis_Employees.DataSet2TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private int UpdateDeletedRows(DataSet2 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
+            if ((this._cUSTOMERTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.CUSTOMER.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._cUSTOMERTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._eMPLOYEETableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.EMPLOYEE.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -1639,6 +2769,11 @@ namespace Pixis_Employees.DataSet2TableAdapters {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
+            if (((this._cUSTOMERTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._cUSTOMERTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
+            }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
                 throw new global::System.ApplicationException("TableAdapterManager contains no connection information. Set each TableAdapterMana" +
@@ -1678,6 +2813,15 @@ namespace Pixis_Employees.DataSet2TableAdapters {
                     if (this._eMPLOYEETableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._eMPLOYEETableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._eMPLOYEETableAdapter.Adapter);
+                    }
+                }
+                if ((this._cUSTOMERTableAdapter != null)) {
+                    revertConnections.Add(this._cUSTOMERTableAdapter, this._cUSTOMERTableAdapter.Connection);
+                    this._cUSTOMERTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(workConnection));
+                    this._cUSTOMERTableAdapter.Transaction = ((global::System.Data.OleDb.OleDbTransaction)(workTransaction));
+                    if (this._cUSTOMERTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._cUSTOMERTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._cUSTOMERTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1741,6 +2885,10 @@ namespace Pixis_Employees.DataSet2TableAdapters {
                 if ((this._eMPLOYEETableAdapter != null)) {
                     this._eMPLOYEETableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._eMPLOYEETableAdapter]));
                     this._eMPLOYEETableAdapter.Transaction = null;
+                }
+                if ((this._cUSTOMERTableAdapter != null)) {
+                    this._cUSTOMERTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._cUSTOMERTableAdapter]));
+                    this._cUSTOMERTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
