@@ -214,14 +214,35 @@ namespace Pixis_Employees
         }
 
 
+        //ayoooo, here's where we NEED TO DO WORK
+        public static string DGVtoString(DataGridView dgv, char delimiter)
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (DataGridViewRow row in dgv.Rows)
+            {
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    sb.Append(cell.Value);
+                    sb.Append(delimiter);
+                }
+                sb.Remove(sb.Length - 1, 1); // Removes the last delimiter
+                //sb.Append("\n");
+                //sb.AppendLine();
+            }
+
+
+            return sb.ToString();
+        }
+
+
         private void btn_employees_from_region_Click(object sender, EventArgs e)
         {
 
             String empRegion = txt_filter_regionid.Text;
 
+            //ayoooo, here's where we NEED TO DO WORK
+            String regionalEmployees = DGVtoString(dataGridView1, '-' );
            
-
-
 
 
             if (txt_filter_regionid.Text == "")
@@ -236,13 +257,7 @@ namespace Pixis_Employees
 
             else
             {
-
-                var result = MessageBox.Show(
-                    "Your employees for " + empRegion + " are:",
-                    "Results",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information
-                );
+                listBox1.Items.Add(regionalEmployees);
             }
 
         }
