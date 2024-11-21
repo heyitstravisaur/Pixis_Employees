@@ -142,15 +142,15 @@ namespace Pixis_Employees
                 cmd.Parameters["@EZIP"].Value = empZip;
                 cmd.Parameters["@EPHONE"].Value = empPhoneNumber;
                 cmd.Parameters["@EMAIL"].Value = empEmail;
-                cmd.Parameters["@DOB"].Value = DateTime.Parse(empDOB);
+                cmd.Parameters["@DOB"].Value = string.IsNullOrWhiteSpace(empDOB) ? "0001-01-01" : empDOB;
                 cmd.Parameters["@GENDER"].Value = empGender;
                 cmd.Parameters["@JOBID"].Value = jobId;
                 cmd.Parameters["@WRKSTATUS"].Value = workStatus;
                 cmd.Parameters["@HRLYRATE"].Value = hourlyRate;
-                cmd.Parameters["@EMHIREDT"].Value = DateTime.Parse(empHireDate);
-                cmd.Parameters["@EMSTARTDT"].Value = DateTime.Parse(empStartDate);
-                cmd.Parameters["@EMTERMDT"].Value = DateTime.Parse(empTermDate);
-                cmd.Parameters["@REGIONID"].Value = regionId;
+                cmd.Parameters["@EMHIREDT"].Value = string.IsNullOrWhiteSpace(empHireDate) ? "0001-01-01" : empHireDate;
+                cmd.Parameters["@EMSTARTDT"].Value = string.IsNullOrWhiteSpace(empStartDate) ? "0001-01-01" : empStartDate;
+                cmd.Parameters["@EMTERMDT"].Value = string.IsNullOrWhiteSpace(empTermDate) ? "0001-01-01" : empTermDate;
+                cmd.Parameters["@REGIONID"].Value = regionId.ToUpper();
 
                 int rowsAffected = cmd.ExecuteNonQuery();
 
