@@ -256,8 +256,6 @@ namespace Pixis_Employees
             else
             {
 
-
-
                 try
                 {
                     //for IBM database querying
@@ -277,8 +275,7 @@ namespace Pixis_Employees
 
                     listBox1.Items.Clear();
                     foreach (DataRow row in dataSet.Tables[0].Rows)
-                    {
-                        //this is a comment
+                    {                        
                         listBox1.Items.Add(row[0] + " " + row[1] + " " + row[2] + " " + row[3] + " " + row[4] + " " + row[5]);
                     }
 
@@ -292,7 +289,6 @@ namespace Pixis_Employees
                     MessageBoxIcon.Error
                     );
                 }
-            
 
                 finally
                 {
