@@ -147,7 +147,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(428, 622);
+            this.dataGridView1.Size = new System.Drawing.Size(861, 270);
             this.dataGridView1.TabIndex = 7;
             // 
             // rEGIONIDDataGridViewTextBoxColumn
@@ -388,9 +388,9 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(444, 81);
+            this.listBox1.Location = new System.Drawing.Point(11, 356);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(449, 615);
+            this.listBox1.Size = new System.Drawing.Size(861, 342);
             this.listBox1.TabIndex = 22;
             // 
             // Employee

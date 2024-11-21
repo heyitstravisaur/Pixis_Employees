@@ -25,6 +25,10 @@ namespace Pixis_Employees
         private iDB2DataAdapter dataAdapter = new iDB2DataAdapter();
         DataTable table;
 
+        string connectionString = "DataSource=deathstar.gtc.edu";
+        string sql = "SELECT * FROM EMPLOYEE";
+
+
         public Employee(PyxisairFlightReservationSystem form)
         {
             InitializeComponent();
@@ -60,10 +64,9 @@ namespace Pixis_Employees
             display();
         }
 
+        //display Data Grid View Table on form load
         private void display()
         {
-            string connectionString = "DataSource=deathstar.gtc.edu";
-            string sql = "SELECT * FROM EMPLOYEE";
 
             try
             {
@@ -95,7 +98,6 @@ namespace Pixis_Employees
 
 
             //filter template for use
-
             //dataGridView1.Columns[0].HeaderText.ToString() + " LIKE '%" + txt_filter_regionid.Text + "%'"
             //+ bs.Filter = "Convert(EMPNO, 'System.String') like '%" + txt_filter_empno.Text + "%'"
             //+ dataGridView1.Columns[2].HeaderText.ToString() + " LIKE '%" + txt_filter_efname.Text + "%'"
@@ -214,24 +216,23 @@ namespace Pixis_Employees
         }
 
 
-        //ayoooo, here's where we NEED TO DO WORK
+        //Method for taking filtered values from datagrid to string, not using in current version
         public static string DGVtoString(DataGridView dgv, char delimiter)
         {
-            StringBuilder sb = new StringBuilder();
+            StringBuilder @sb = new StringBuilder();
             foreach (DataGridViewRow row in dgv.Rows)
             {
                 foreach (DataGridViewCell cell in row.Cells)
                 {
                     sb.Append(cell.Value);
-                    sb.Append(delimiter);
+                    sb.Append(delimiter);                  
                 }
                 sb.Remove(sb.Length - 1, 1); // Removes the last delimiter
                 //sb.Append("\n");
-                //sb.AppendLine();
+                sb.AppendLine();
             }
 
-
-            return sb.ToString();
+            return @sb.ToString();
         }
 
 
@@ -240,8 +241,8 @@ namespace Pixis_Employees
 
             String empRegion = txt_filter_regionid.Text;
 
-            //ayoooo, here's where we NEED TO DO WORK
-            String regionalEmployees = DGVtoString(dataGridView1, '-' );
+            //old filter method
+            //String @regionalEmployees = DGVtoString(dataGridView1, '-' );
            
 
 
@@ -257,7 +258,40 @@ namespace Pixis_Employees
 
             else
             {
-                listBox1.Items.Add(regionalEmployees);
+
+
+
+                try
+                {
+                    //for IBM database querying
+                    iDB2Connection conn;
+                    iDB2DataAdapter adapter;
+                    DataSet dataSet;
+                    String sql;
+
+                    conn = new iDB2Connection(connectionString);
+                    conn.Open();
+                    sql = "Select * from EMPLOYEE where REGIONID " + " LIKE '%" + txt_filter_regionid.Text + "%'";
+                    adapter = new iDB2DataAdapter(sql, conn);
+
+                    dataSet = new DataSet();
+                    adapter.Fill(dataSet);
+
+                    listBox1.Items.Clear();
+                    foreach (DataRow row in dataSet.Tables[0].Rows)
+                    {
+                        //this is a comment
+                        listBox1.Items.Add(row[0] + " " + row[1] + " " + row[2] + " " + row[3] + " " + row[4] + " " + row[5]);
+                    }
+
+                    conn.Close();
+                }
+                catch (Exception ex) { listBox1.Items.Add(ex.Message); }
+
+                finally
+                {
+                    listBox1.Items.Add("Process has completed.");
+                }
             }
 
         }
