@@ -41,5 +41,10 @@ namespace Pixis_Employees
             employee.Show();
             this.Close();
         }
+
+        private void EmployeeNumber_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            employee.Show();
+        }
     }
 }

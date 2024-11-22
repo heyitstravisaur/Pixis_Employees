@@ -484,6 +484,7 @@
             this.Controls.Add(this.label1);
             this.Name = "AddUpdate";
             this.Text = "AddUpdate";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddUpdate_FormClosed);
             this.Load += new System.EventHandler(this.AddUpdate_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

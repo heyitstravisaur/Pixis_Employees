@@ -74,5 +74,10 @@ namespace Pixis_Employees
             }
             catch (Exception ex) { }
         }
+
+        private void Employee_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            pfrs.Show();
+        }
     }
 }
