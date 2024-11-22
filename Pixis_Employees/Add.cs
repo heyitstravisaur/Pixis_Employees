@@ -154,7 +154,6 @@ namespace Pixis_Employees
 
                 int rowsAffected = cmd.ExecuteNonQuery();
 
-                // Optionally check if the update was successful
                 if (rowsAffected > 0)
                 {
                     MessageBox.Show("Employee updated successfully!");
@@ -169,7 +168,6 @@ namespace Pixis_Employees
             }
             catch (Exception ex)
             {
-                // Handle exceptions (e.g., SQL errors)
                 MessageBox.Show("Error updating employee: " + ex.Message);
             }
             finally { conn.Close(); }
