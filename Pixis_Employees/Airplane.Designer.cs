@@ -87,7 +87,7 @@
             this.dataGridView1.DataSource = this.aIRPLANEBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 120);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1344, 395);
+            this.dataGridView1.Size = new System.Drawing.Size(1351, 395);
             this.dataGridView1.TabIndex = 11;
             // 
             // pLANENODataGridViewTextBoxColumn

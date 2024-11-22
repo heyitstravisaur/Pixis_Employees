@@ -25,5 +25,27 @@ namespace Pixis_Employees
             pfrs.Show();
             this.Close();
         }
+
+        private void Airport_Load(object sender, EventArgs e)
+        {
+            
+            this.aIRPORTTableAdapter.Fill(this.dataSet2.AIRPORT);
+
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
