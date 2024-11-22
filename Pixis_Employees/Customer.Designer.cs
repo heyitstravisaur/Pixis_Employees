@@ -63,7 +63,7 @@
             // btnExit
             // 
             this.btnExit.Location = new System.Drawing.Point(662, 465);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(2);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(108, 31);
             this.btnExit.TabIndex = 10;
@@ -219,6 +219,7 @@
             this.btn_Update.TabIndex = 13;
             this.btn_Update.Text = "&Update";
             this.btn_Update.UseVisualStyleBackColor = true;
+            this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
             // 
             // btn_add
             // 
@@ -229,6 +230,7 @@
             this.btn_add.TabIndex = 12;
             this.btn_add.Text = "&Add";
             this.btn_add.UseVisualStyleBackColor = true;
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // btn_refresh
             // 
@@ -251,7 +253,7 @@
             this.Controls.Add(this.btn_add);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnExit);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Customer";
             this.Text = "Customer";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Customer_FormClosing);

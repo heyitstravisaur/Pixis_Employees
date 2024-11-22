@@ -77,5 +77,15 @@ namespace Pixis_Employees
         {
             display(sender, e);
         }
+
+        private void btn_add_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Update_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
