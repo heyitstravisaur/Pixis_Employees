@@ -73,7 +73,7 @@
             this.txtbxPAirpCode = new System.Windows.Forms.TextBox();
             this.txtbxAirActDate = new System.Windows.Forms.TextBox();
             this.txtbxStatus = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtbxDateLastMain = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aIRPLANEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).BeginInit();
@@ -421,19 +421,19 @@
             this.txtbxStatus.Size = new System.Drawing.Size(100, 20);
             this.txtbxStatus.TabIndex = 38;
             // 
-            // textBox1
+            // txtbxDateLastMain
             // 
-            this.textBox1.Location = new System.Drawing.Point(135, 216);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 39;
+            this.txtbxDateLastMain.Location = new System.Drawing.Point(135, 216);
+            this.txtbxDateLastMain.Name = "txtbxDateLastMain";
+            this.txtbxDateLastMain.Size = new System.Drawing.Size(100, 20);
+            this.txtbxDateLastMain.TabIndex = 39;
             // 
             // Airplane
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1137, 527);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtbxDateLastMain);
             this.Controls.Add(this.txtbxStatus);
             this.Controls.Add(this.txtbxAirActDate);
             this.Controls.Add(this.txtbxPAirpCode);
@@ -520,6 +520,6 @@
         private System.Windows.Forms.TextBox txtbxPAirpCode;
         private System.Windows.Forms.TextBox txtbxAirActDate;
         private System.Windows.Forms.TextBox txtbxStatus;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtbxDateLastMain;
     }
 }
