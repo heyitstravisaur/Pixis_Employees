@@ -81,9 +81,9 @@
             this.aRTIMEZNMDataGridViewTextBoxColumn,
             this.aRTIMEZOFDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.aIRPORTBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 286);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 115);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1148, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(1148, 467);
             this.dataGridView1.TabIndex = 11;
             // 
             // dataSet2
@@ -168,10 +168,10 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(453, 25);
+            this.btnAdd.Location = new System.Drawing.Point(452, 11);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(108, 31);
+            this.btnAdd.Size = new System.Drawing.Size(147, 99);
             this.btnAdd.TabIndex = 12;
             this.btnAdd.Text = "Add Date";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -179,10 +179,10 @@
             // 
             // btnReload
             // 
-            this.btnReload.Location = new System.Drawing.Point(251, 36);
+            this.btnReload.Location = new System.Drawing.Point(232, 11);
             this.btnReload.Margin = new System.Windows.Forms.Padding(2);
             this.btnReload.Name = "btnReload";
-            this.btnReload.Size = new System.Drawing.Size(108, 31);
+            this.btnReload.Size = new System.Drawing.Size(147, 99);
             this.btnReload.TabIndex = 13;
             this.btnReload.Text = "Reload Table";
             this.btnReload.UseVisualStyleBackColor = true;
@@ -190,10 +190,10 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(49, 25);
+            this.btnUpdate.Location = new System.Drawing.Point(12, 11);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(108, 31);
+            this.btnUpdate.Size = new System.Drawing.Size(147, 99);
             this.btnUpdate.TabIndex = 14;
             this.btnUpdate.Text = "Update Table";
             this.btnUpdate.UseVisualStyleBackColor = true;

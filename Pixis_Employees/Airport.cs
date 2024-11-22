@@ -68,11 +68,11 @@ namespace Pixis_Employees
                     if (row.IsNewRow) continue;
                     foreach (DataGridViewCell cell in row.Cells)
                     {
-                        if (cell.Value == null || string.IsNullOrWhiteSpace(cell.Value.ToString()))
-                        {
-                            MessageBox.Show($"Row {row.Index + 1} has empty fields. Please complete all fields before updating.");
-                            return;
-                        }
+                        //if (cell.Value == null || string.IsNullOrWhiteSpace(cell.Value.ToString()))
+                        //{
+                        //    MessageBox.Show($"Row {row.Index + 1} has empty fields. Please complete all fields before updating.");
+                        //    return;
+                        //}
                     }
                 }
 
@@ -80,14 +80,15 @@ namespace Pixis_Employees
 
                 using(iDB2Connection conn = new iDB2Connection(connectionString))
                 {
+
                     string updateQuery = @"UPDATE AIRPORT SET
                             ARNM = @ARNM, ARCITYNM = @ARCITYNM, ARCNCD = @ARCNCD,
                             ARFAACD = @ARFAACD, ARICAOCD = @ARICAOCD, ARTIMEZNM = @ARTIMEZNM,
                             ARLATITUDE = @ARLATITUDE, ARLNGITUDE = @ARLNGITUDE,
-                            ARTIMEZOF = @ARTIMEZOF, ARALTITDE = @ARALTITDE
+                            ARTIMEZOF = @ARTIMEZOF, ARALTITUDE = @ARALTITUDE
                             WHERE ARCD = @ARCD";
 
-                    foreach(DataRow in airportDataSet.Tables["AIRPORT"].Rows)
+                    foreach(DataRow row in airportDataSet.Tables["AIRPORT"].Rows)
                     {
                         if(row.RowState == DataRowState.Modified)
                         {
@@ -102,11 +103,19 @@ namespace Pixis_Employees
                             cmd.Parameters.Add(new iDB2Parameter("@ARLATITUDE", iDB2DbType.iDB2Decimal) { Value = Convert.ToDecimal(row["ARLATITUDE"]) });
                             cmd.Parameters.Add(new iDB2Parameter("@ARLNGITUDE", iDB2DbType.iDB2Decimal) { Value = Convert.ToDecimal(row["ARLNGITUDE"]) });
                             cmd.Parameters.Add(new iDB2Parameter("@ARTIMEZOF", iDB2DbType.iDB2Decimal) { Value = Convert.ToDecimal(row["ARTIMEZOF"]) });
-                            cmd.Parameters.Add(new iDB2Parameter("@ARALTITDE", iDB2DbType.iDB2Binary) { Value = Convert.ToInt32(row["ARALTITDE"]) });
+                            cmd.Parameters.Add(new iDB2Parameter("@ARALTITUDE", iDB2DbType.iDB2Binary) { Value = Convert.ToInt32(row["ARALTITUDE"]) });
                             cmd.ExecuteNonQuery();
                         }
                     }
                 }
+            }
+            catch (FormatException fex)
+            {
+                MessageBox.Show("data format error: " + fex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error while updating records: " + ex.Message);
             }
         }
 
