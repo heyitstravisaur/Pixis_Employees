@@ -88,7 +88,7 @@ namespace Pixis_Employees
                                            MAXDIST = @MAXDIST, FCLASS = @FCLASS, 
                                            CCLASS = @CCLASS, PAVAIL = @PAVAIL, 
                                            MAINTMILES = @MAINTMILES, PLANEMODEL = @PLANEMODEL, 
-                                           PMAKE = @PMAKE, APARCD = @APARCD, 
+                                           PMAKE = @PMAKE, APARCD = @APARCD, APIACTDT = @APIACTDT, 
                                            APACTDT = @APACTDT, STATUS = @STATUS, 
                                            DATEMAINT = @DATEMAINT 
                                            WHERE PLANENO = @PLANENO";
@@ -108,6 +108,7 @@ namespace Pixis_Employees
                             cmd.Parameters.Add(new iDB2Parameter("@PMAKE", iDB2DbType.iDB2Char) { Value = row["PMAKE"].ToString() });
                             cmd.Parameters.Add(new iDB2Parameter("@APARCD", iDB2DbType.iDB2Char) { Value = row["APARCD"].ToString() });
                             cmd.Parameters.Add(new iDB2Parameter("@APACTDT", iDB2DbType.iDB2Date) { Value = DateTime.Parse(row["APACTDT"].ToString()) });
+                            cmd.Parameters.Add(new iDB2Parameter("@APIACTDT", iDB2DbType.iDB2Date) { Value = DateTime.Parse(row["APIACTDT"].ToString()) });
                             cmd.Parameters.Add(new iDB2Parameter("@STATUS", iDB2DbType.iDB2Char) { Value = row["STATUS"].ToString() });
                             cmd.Parameters.Add(new iDB2Parameter("@DATEMAINT", iDB2DbType.iDB2Date) { Value = DateTime.Parse(row["DATEMAINT"].ToString()) });
                             cmd.ExecuteNonQuery();

@@ -68,11 +68,11 @@ namespace Pixis_Employees
                     if (row.IsNewRow) continue;
                     foreach (DataGridViewCell cell in row.Cells)
                     {
-                        //if (cell.Value == null || string.IsNullOrWhiteSpace(cell.Value.ToString()))
-                        //{
-                        //    MessageBox.Show($"Row {row.Index + 1} has empty fields. Please complete all fields before updating.");
-                        //    return;
-                        //}
+                        if (cell.Value == null || string.IsNullOrWhiteSpace(cell.Value.ToString()))
+                        {
+                            MessageBox.Show($"Row {row.Index + 1} has empty fields. Please complete all fields before updating.");
+                            return;
+                        }
                     }
                 }
 
