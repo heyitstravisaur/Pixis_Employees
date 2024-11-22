@@ -50,30 +50,6 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnReload = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.lblPlaneNo = new System.Windows.Forms.Label();
-            this.txtbxPlaneNo = new System.Windows.Forms.TextBox();
-            this.lblMaxDist = new System.Windows.Forms.Label();
-            this.lblAvail = new System.Windows.Forms.Label();
-            this.lblCClass = new System.Windows.Forms.Label();
-            this.lblPlaneMod = new System.Windows.Forms.Label();
-            this.lblMSLM = new System.Windows.Forms.Label();
-            this.lblPlaneMan = new System.Windows.Forms.Label();
-            this.lblPAirpCode = new System.Windows.Forms.Label();
-            this.lblAirpActDate = new System.Windows.Forms.Label();
-            this.lblFClass = new System.Windows.Forms.Label();
-            this.lblPlaceStat = new System.Windows.Forms.Label();
-            this.lblDateLastMaint = new System.Windows.Forms.Label();
-            this.txtbxMaxDist = new System.Windows.Forms.TextBox();
-            this.txtbxFClass = new System.Windows.Forms.TextBox();
-            this.txtbxCClass = new System.Windows.Forms.TextBox();
-            this.txtbxAvail = new System.Windows.Forms.TextBox();
-            this.txtbxMSLM = new System.Windows.Forms.TextBox();
-            this.txtbxPlaneMod = new System.Windows.Forms.TextBox();
-            this.txtbxPlaneMan = new System.Windows.Forms.TextBox();
-            this.txtbxPAirpCode = new System.Windows.Forms.TextBox();
-            this.txtbxAirActDate = new System.Windows.Forms.TextBox();
-            this.txtbxStatus = new System.Windows.Forms.TextBox();
-            this.txtbxDateLastMain = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aIRPLANEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).BeginInit();
@@ -109,9 +85,9 @@
             this.sTATUSDataGridViewTextBoxColumn,
             this.dATEMAINTDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.aIRPLANEBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 242);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 120);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1113, 273);
+            this.dataGridView1.Size = new System.Drawing.Size(1344, 395);
             this.dataGridView1.TabIndex = 11;
             // 
             // pLANENODataGridViewTextBoxColumn
@@ -208,9 +184,9 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(682, 89);
+            this.btnUpdate.Location = new System.Drawing.Point(12, 11);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(101, 54);
+            this.btnUpdate.Size = new System.Drawing.Size(151, 103);
             this.btnUpdate.TabIndex = 12;
             this.btnUpdate.Text = "Update Table";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -218,9 +194,9 @@
             // 
             // btnReload
             // 
-            this.btnReload.Location = new System.Drawing.Point(559, 11);
+            this.btnReload.Location = new System.Drawing.Point(558, 11);
             this.btnReload.Name = "btnReload";
-            this.btnReload.Size = new System.Drawing.Size(75, 23);
+            this.btnReload.Size = new System.Drawing.Size(151, 103);
             this.btnReload.TabIndex = 13;
             this.btnReload.Text = "Reload List";
             this.btnReload.UseVisualStyleBackColor = true;
@@ -228,235 +204,19 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(640, 15);
+            this.btnAdd.Location = new System.Drawing.Point(285, 11);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.Size = new System.Drawing.Size(151, 103);
             this.btnAdd.TabIndex = 14;
             this.btnAdd.Text = "Add Data";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // lblPlaneNo
-            // 
-            this.lblPlaneNo.AutoSize = true;
-            this.lblPlaneNo.Location = new System.Drawing.Point(24, 6);
-            this.lblPlaneNo.Name = "lblPlaneNo";
-            this.lblPlaneNo.Size = new System.Drawing.Size(74, 13);
-            this.lblPlaneNo.TabIndex = 15;
-            this.lblPlaneNo.Text = "Plane Number";
-            // 
-            // txtbxPlaneNo
-            // 
-            this.txtbxPlaneNo.Location = new System.Drawing.Point(12, 22);
-            this.txtbxPlaneNo.Name = "txtbxPlaneNo";
-            this.txtbxPlaneNo.Size = new System.Drawing.Size(100, 20);
-            this.txtbxPlaneNo.TabIndex = 16;
-            // 
-            // lblMaxDist
-            // 
-            this.lblMaxDist.AutoSize = true;
-            this.lblMaxDist.Location = new System.Drawing.Point(11, 45);
-            this.lblMaxDist.Name = "lblMaxDist";
-            this.lblMaxDist.Size = new System.Drawing.Size(100, 13);
-            this.lblMaxDist.TabIndex = 17;
-            this.lblMaxDist.Text = "Max Flight Distance";
-            // 
-            // lblAvail
-            // 
-            this.lblAvail.AutoSize = true;
-            this.lblAvail.Location = new System.Drawing.Point(22, 162);
-            this.lblAvail.Name = "lblAvail";
-            this.lblAvail.Size = new System.Drawing.Size(79, 13);
-            this.lblAvail.TabIndex = 18;
-            this.lblAvail.Text = "Avail for Sched";
-            // 
-            // lblCClass
-            // 
-            this.lblCClass.AutoSize = true;
-            this.lblCClass.Location = new System.Drawing.Point(8, 123);
-            this.lblCClass.Name = "lblCClass";
-            this.lblCClass.Size = new System.Drawing.Size(106, 13);
-            this.lblCClass.TabIndex = 19;
-            this.lblCClass.Text = "# Coach Class Seats";
-            // 
-            // lblPlaneMod
-            // 
-            this.lblPlaneMod.AutoSize = true;
-            this.lblPlaneMod.Location = new System.Drawing.Point(153, 6);
-            this.lblPlaneMod.Name = "lblPlaneMod";
-            this.lblPlaneMod.Size = new System.Drawing.Size(66, 13);
-            this.lblPlaneMod.TabIndex = 20;
-            this.lblPlaneMod.Text = "Plane Model";
-            // 
-            // lblMSLM
-            // 
-            this.lblMSLM.AutoSize = true;
-            this.lblMSLM.Location = new System.Drawing.Point(5, 201);
-            this.lblMSLM.Name = "lblMSLM";
-            this.lblMSLM.Size = new System.Drawing.Size(113, 13);
-            this.lblMSLM.TabIndex = 21;
-            this.lblMSLM.Text = "Miles Since Last Maint";
-            // 
-            // lblPlaneMan
-            // 
-            this.lblPlaneMan.AutoSize = true;
-            this.lblPlaneMan.Location = new System.Drawing.Point(136, 45);
-            this.lblPlaneMan.Name = "lblPlaneMan";
-            this.lblPlaneMan.Size = new System.Drawing.Size(100, 13);
-            this.lblPlaneMan.TabIndex = 22;
-            this.lblPlaneMan.Text = "Plane Manufacturer";
-            // 
-            // lblPAirpCode
-            // 
-            this.lblPAirpCode.AutoSize = true;
-            this.lblPAirpCode.Location = new System.Drawing.Point(135, 84);
-            this.lblPAirpCode.Name = "lblPAirpCode";
-            this.lblPAirpCode.Size = new System.Drawing.Size(102, 13);
-            this.lblPAirpCode.TabIndex = 23;
-            this.lblPAirpCode.Text = "Primary Airport Code";
-            // 
-            // lblAirpActDate
-            // 
-            this.lblAirpActDate.AutoSize = true;
-            this.lblAirpActDate.Location = new System.Drawing.Point(134, 123);
-            this.lblAirpActDate.Name = "lblAirpActDate";
-            this.lblAirpActDate.Size = new System.Drawing.Size(104, 13);
-            this.lblAirpActDate.TabIndex = 24;
-            this.lblAirpActDate.Text = "Airplane Active Date";
-            // 
-            // lblFClass
-            // 
-            this.lblFClass.AutoSize = true;
-            this.lblFClass.Location = new System.Drawing.Point(14, 84);
-            this.lblFClass.Name = "lblFClass";
-            this.lblFClass.Size = new System.Drawing.Size(94, 13);
-            this.lblFClass.TabIndex = 26;
-            this.lblFClass.Text = "# First Class Seats";
-            // 
-            // lblPlaceStat
-            // 
-            this.lblPlaceStat.AutoSize = true;
-            this.lblPlaceStat.Location = new System.Drawing.Point(113, 162);
-            this.lblPlaceStat.Name = "lblPlaceStat";
-            this.lblPlaceStat.Size = new System.Drawing.Size(147, 13);
-            this.lblPlaceStat.TabIndex = 27;
-            this.lblPlaceStat.Text = "Status (Active, Inactive, Sold)";
-            // 
-            // lblDateLastMaint
-            // 
-            this.lblDateLastMaint.AutoSize = true;
-            this.lblDateLastMaint.Location = new System.Drawing.Point(139, 201);
-            this.lblDateLastMaint.Name = "lblDateLastMaint";
-            this.lblDateLastMaint.Size = new System.Drawing.Size(94, 13);
-            this.lblDateLastMaint.TabIndex = 28;
-            this.lblDateLastMaint.Text = "Date of Last Maint";
-            // 
-            // txtbxMaxDist
-            // 
-            this.txtbxMaxDist.Location = new System.Drawing.Point(12, 61);
-            this.txtbxMaxDist.Name = "txtbxMaxDist";
-            this.txtbxMaxDist.Size = new System.Drawing.Size(100, 20);
-            this.txtbxMaxDist.TabIndex = 29;
-            // 
-            // txtbxFClass
-            // 
-            this.txtbxFClass.Location = new System.Drawing.Point(12, 100);
-            this.txtbxFClass.Name = "txtbxFClass";
-            this.txtbxFClass.Size = new System.Drawing.Size(100, 20);
-            this.txtbxFClass.TabIndex = 30;
-            // 
-            // txtbxCClass
-            // 
-            this.txtbxCClass.Location = new System.Drawing.Point(12, 139);
-            this.txtbxCClass.Name = "txtbxCClass";
-            this.txtbxCClass.Size = new System.Drawing.Size(100, 20);
-            this.txtbxCClass.TabIndex = 31;
-            // 
-            // txtbxAvail
-            // 
-            this.txtbxAvail.Location = new System.Drawing.Point(12, 178);
-            this.txtbxAvail.Name = "txtbxAvail";
-            this.txtbxAvail.Size = new System.Drawing.Size(100, 20);
-            this.txtbxAvail.TabIndex = 32;
-            // 
-            // txtbxMSLM
-            // 
-            this.txtbxMSLM.Location = new System.Drawing.Point(11, 216);
-            this.txtbxMSLM.Name = "txtbxMSLM";
-            this.txtbxMSLM.Size = new System.Drawing.Size(100, 20);
-            this.txtbxMSLM.TabIndex = 33;
-            // 
-            // txtbxPlaneMod
-            // 
-            this.txtbxPlaneMod.Location = new System.Drawing.Point(135, 22);
-            this.txtbxPlaneMod.Name = "txtbxPlaneMod";
-            this.txtbxPlaneMod.Size = new System.Drawing.Size(100, 20);
-            this.txtbxPlaneMod.TabIndex = 34;
-            // 
-            // txtbxPlaneMan
-            // 
-            this.txtbxPlaneMan.Location = new System.Drawing.Point(135, 61);
-            this.txtbxPlaneMan.Name = "txtbxPlaneMan";
-            this.txtbxPlaneMan.Size = new System.Drawing.Size(100, 20);
-            this.txtbxPlaneMan.TabIndex = 35;
-            // 
-            // txtbxPAirpCode
-            // 
-            this.txtbxPAirpCode.Location = new System.Drawing.Point(135, 100);
-            this.txtbxPAirpCode.Name = "txtbxPAirpCode";
-            this.txtbxPAirpCode.Size = new System.Drawing.Size(100, 20);
-            this.txtbxPAirpCode.TabIndex = 36;
-            // 
-            // txtbxAirActDate
-            // 
-            this.txtbxAirActDate.Location = new System.Drawing.Point(135, 139);
-            this.txtbxAirActDate.Name = "txtbxAirActDate";
-            this.txtbxAirActDate.Size = new System.Drawing.Size(100, 20);
-            this.txtbxAirActDate.TabIndex = 37;
-            // 
-            // txtbxStatus
-            // 
-            this.txtbxStatus.Location = new System.Drawing.Point(135, 178);
-            this.txtbxStatus.Name = "txtbxStatus";
-            this.txtbxStatus.Size = new System.Drawing.Size(100, 20);
-            this.txtbxStatus.TabIndex = 38;
-            // 
-            // txtbxDateLastMain
-            // 
-            this.txtbxDateLastMain.Location = new System.Drawing.Point(135, 216);
-            this.txtbxDateLastMain.Name = "txtbxDateLastMain";
-            this.txtbxDateLastMain.Size = new System.Drawing.Size(100, 20);
-            this.txtbxDateLastMain.TabIndex = 39;
-            // 
             // Airplane
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1137, 527);
-            this.Controls.Add(this.txtbxDateLastMain);
-            this.Controls.Add(this.txtbxStatus);
-            this.Controls.Add(this.txtbxAirActDate);
-            this.Controls.Add(this.txtbxPAirpCode);
-            this.Controls.Add(this.txtbxPlaneMan);
-            this.Controls.Add(this.txtbxPlaneMod);
-            this.Controls.Add(this.txtbxMSLM);
-            this.Controls.Add(this.txtbxAvail);
-            this.Controls.Add(this.txtbxCClass);
-            this.Controls.Add(this.txtbxFClass);
-            this.Controls.Add(this.txtbxMaxDist);
-            this.Controls.Add(this.lblDateLastMaint);
-            this.Controls.Add(this.lblPlaceStat);
-            this.Controls.Add(this.lblFClass);
-            this.Controls.Add(this.lblAirpActDate);
-            this.Controls.Add(this.lblPAirpCode);
-            this.Controls.Add(this.lblPlaneMan);
-            this.Controls.Add(this.lblMSLM);
-            this.Controls.Add(this.lblPlaneMod);
-            this.Controls.Add(this.lblCClass);
-            this.Controls.Add(this.lblAvail);
-            this.Controls.Add(this.lblMaxDist);
-            this.Controls.Add(this.txtbxPlaneNo);
-            this.Controls.Add(this.lblPlaneNo);
+            this.ClientSize = new System.Drawing.Size(1516, 527);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnReload);
             this.Controls.Add(this.btnUpdate);
@@ -470,7 +230,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.aIRPLANEBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -497,29 +256,5 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnReload;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Label lblPlaneNo;
-        private System.Windows.Forms.TextBox txtbxPlaneNo;
-        private System.Windows.Forms.Label lblMaxDist;
-        private System.Windows.Forms.Label lblAvail;
-        private System.Windows.Forms.Label lblCClass;
-        private System.Windows.Forms.Label lblPlaneMod;
-        private System.Windows.Forms.Label lblMSLM;
-        private System.Windows.Forms.Label lblPlaneMan;
-        private System.Windows.Forms.Label lblPAirpCode;
-        private System.Windows.Forms.Label lblAirpActDate;
-        private System.Windows.Forms.Label lblFClass;
-        private System.Windows.Forms.Label lblPlaceStat;
-        private System.Windows.Forms.Label lblDateLastMaint;
-        private System.Windows.Forms.TextBox txtbxMaxDist;
-        private System.Windows.Forms.TextBox txtbxFClass;
-        private System.Windows.Forms.TextBox txtbxCClass;
-        private System.Windows.Forms.TextBox txtbxAvail;
-        private System.Windows.Forms.TextBox txtbxMSLM;
-        private System.Windows.Forms.TextBox txtbxPlaneMod;
-        private System.Windows.Forms.TextBox txtbxPlaneMan;
-        private System.Windows.Forms.TextBox txtbxPAirpCode;
-        private System.Windows.Forms.TextBox txtbxAirActDate;
-        private System.Windows.Forms.TextBox txtbxStatus;
-        private System.Windows.Forms.TextBox txtbxDateLastMain;
     }
 }
