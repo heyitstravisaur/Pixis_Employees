@@ -133,24 +133,24 @@ namespace Pixis_Employees
                 iDB2Command cmd = new iDB2Command(cmdText, conn);
                 cmd.DeriveParameters();
 
-                cmd.Parameters["@EMPNO"].Value = empNum;
-                cmd.Parameters["@EFNAME"].Value = empFName;
-                cmd.Parameters["@ELNAME"].Value = empLName;
-                cmd.Parameters["@EADDR"].Value = empAddress;
-                cmd.Parameters["@ECITY"].Value = empCity;
-                cmd.Parameters["@ESTATE"].Value = empState;
-                cmd.Parameters["@EZIP"].Value = empZip;
-                cmd.Parameters["@EPHONE"].Value = empPhoneNumber;
-                cmd.Parameters["@EMAIL"].Value = empEmail;
+                cmd.Parameters["@EMPNO"].Value =empNum;
+                cmd.Parameters["@EFNAME"].Value = string.IsNullOrWhiteSpace(empFName) ? " " : ToUpperCase(empFName);
+                cmd.Parameters["@ELNAME"].Value = string.IsNullOrWhiteSpace(empLName) ? " " : ToUpperCase(empLName);
+                cmd.Parameters["@EADDR"].Value = string.IsNullOrWhiteSpace(empAddress) ? " " : empAddress;
+                cmd.Parameters["@ECITY"].Value = string.IsNullOrWhiteSpace(empCity) ? " " : ToUpperCase(empCity);
+                cmd.Parameters["@ESTATE"].Value = string.IsNullOrWhiteSpace(empState) ? " " : ToUpperCase(empState);
+                cmd.Parameters["@EZIP"].Value = string.IsNullOrWhiteSpace(empZip) ? " " : empZip;
+                cmd.Parameters["@EPHONE"].Value = string.IsNullOrWhiteSpace(empPhoneNumber) ? " " : empPhoneNumber;
+                cmd.Parameters["@EMAIL"].Value = string.IsNullOrWhiteSpace(empPhoneNumber) ? " " : empEmail;
                 cmd.Parameters["@DOB"].Value = string.IsNullOrWhiteSpace(empDOB) ? "0001-01-01" : empDOB;
-                cmd.Parameters["@GENDER"].Value = empGender;
-                cmd.Parameters["@JOBID"].Value = jobId;
-                cmd.Parameters["@WRKSTATUS"].Value = workStatus;
-                cmd.Parameters["@HRLYRATE"].Value = hourlyRate;
+                cmd.Parameters["@GENDER"].Value = string.IsNullOrWhiteSpace(empGender) ? " " : empGender.ToUpper();
+                cmd.Parameters["@JOBID"].Value = string.IsNullOrWhiteSpace(jobId) ? " " : jobId;
+                cmd.Parameters["@WRKSTATUS"].Value = string.IsNullOrWhiteSpace(workStatus) ? " " : ToUpperCase(workStatus);
+                cmd.Parameters["@HRLYRATE"].Value = string.IsNullOrWhiteSpace(hourlyRate) ? " " : hourlyRate;
                 cmd.Parameters["@EMHIREDT"].Value = string.IsNullOrWhiteSpace(empHireDate) ? "0001-01-01" : empHireDate;
                 cmd.Parameters["@EMSTARTDT"].Value = string.IsNullOrWhiteSpace(empStartDate) ? "0001-01-01" : empStartDate;
                 cmd.Parameters["@EMTERMDT"].Value = string.IsNullOrWhiteSpace(empTermDate) ? "0001-01-01" : empTermDate;
-                cmd.Parameters["@REGIONID"].Value = regionId.ToUpper();
+                cmd.Parameters["@REGIONID"].Value = string.IsNullOrWhiteSpace(empGender) ? " " : regionId.ToUpper();
 
                 int rowsAffected = cmd.ExecuteNonQuery();
 
@@ -176,5 +176,9 @@ namespace Pixis_Employees
 
         }
 
+        public static string ToUpperCase(string word)
+        {
+            return char.ToUpper(word[0]) + word.Substring(1);
+        }
     }
 }
