@@ -8,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using IBM.Data.DB2.iSeries;
 
 namespace Pixis_Employees
 {
