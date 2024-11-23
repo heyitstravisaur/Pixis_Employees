@@ -84,7 +84,57 @@ namespace Pixis_Employees
 
         private void btn_Update_Click(object sender, EventArgs e)
         {
-            
+            //grab data from dataGridView
+
+            try
+            {
+                //for IBM database querying
+                iDB2Connection conn;
+                iDB2DataAdapter adapter;
+                DataSet dataSet;
+                String sql;
+
+                //build SQL query to pass to DB
+                conn = new iDB2Connection(connectionString);
+                conn.Open();
+                sql = "Select * from CUSTOMER; ";
+                    //where REGIONID " + " LIKE '%" + txt_filter_regionid.Text + "%'";
+                adapter = new iDB2DataAdapter(sql, conn);
+
+                dataSet = new DataSet();
+                adapter.Fill(dataSet);
+
+                //listBox1.Items.Clear();
+                foreach (DataRow row in dataSet.Tables[0].Rows)
+                {
+                    //listBox1.Items.Add(row[0] + " " + row[1] + " " + row[2] + " " + row[3] + " " + row[4] + " " + row[5]);
+                }
+
+                //show form
+                UpdateCustomer updateCustomer = new UpdateCustomer();
+                updateCustomer.Show();
+
+                //conn.Close();
+            }
+            catch (Exception ex)
+            {
+                var result = MessageBox.Show(
+                ex.Message,
+                "Error",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error
+                );
+            }
+
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            {
+                MessageBox.Show(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
+            }
         }
     }
 }
