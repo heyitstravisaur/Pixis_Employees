@@ -16,64 +16,59 @@ namespace Pixis_Employees
 
 
         String sql;
+        string connectionString = "DataSource=deathstar.gtc.edu";
 
 
         public string selectedCustomer { get; set; }
-        public string connectionString { get; set; }
         public iDB2Connection conn { get; set; }
         public iDB2DataAdapter adapter { get; set; }
         public DataSet dataSet { get; set; }
 
-        public UpdateCustomer(string selectedCustomer, string connectionString, iDB2Connection conn, iDB2DataAdapter ada
-            )
+        public UpdateCustomer(string selectedCustomer, string connectionString, iDB2Connection conn, iDB2DataAdapter adapter)
         {
-           
+
             InitializeComponent();
 
-            
+
 
         }
 
        
-
         
-        private void UpdateCustomer_Load(object sender, EventArgs e)
+        protected void UpdateCustomer_Load(object sender, EventArgs e)
         {
 
-           
 
-           
         }
 
         //method to add to customer table
-        private void AddCustomerRecord(object sender, EventArgs e)
+        private void AddCustomerRecord(object sender, string connectionString, iDB2Connection conn, EventArgs e)
         {
-            string connName = "IBM_DB2_TDUNK";
-            string cmdText = "INSERT INTO CUSTOMER Values(CUSTNO, CFNAME, CLNAME, CADDR, CCITY, CSTATE, CSTATE, CPHONE, CEMAIL, CDOB, CGENDER, CPWORD, CSCCARD, CSPYMTSTL, CPWORDHASH);";
+            
+            string cmdText = "INSERT INTO CUSTOMER Values(@CUSTNO, @CFNAME, @CLNAME, @CADDR, @CCITY, @CSTATE, @CSTATE, @CPHONE, @CEMAIL, @CDOB, @CGENDER, @CPWORD, @CSCCARD, @CSPYMTSTL, @CPWORDHASH);";
 
             try
             {
-                conn = new iDB2Connection(connectionString);
-                conn.Open();
+            
 
                 iDB2Command cmd = new iDB2Command(cmdText, conn);
                 cmd.DeriveParameters();
 
-                cmd.Parameters["CUSTNO"].Value = txtCustNum.Text;
-                cmd.Parameters["CFNAME"].Value = txtCustFName.Text;
-                cmd.Parameters["CLNAME"].Value = txtCustLName.Text;
-                cmd.Parameters["CADDR"].Value = txtCustAddress.Text;
-                cmd.Parameters["CCITY"].Value = txtCustCity.Text;
-                cmd.Parameters["CSTATE"].Value = txtCustState.Text;
-                cmd.Parameters["CPHONE"].Value = txtCustPhoneNumber.Text;
-                cmd.Parameters["CEMAIL"].Value = txtCustEmail.Text;
-                cmd.Parameters["CDOB"].Value = txtCustDOB.Text;
-                cmd.Parameters["CGENDER"].Value = txtCustGender.Text;
-                cmd.Parameters["CPWORD"].Value = txtCustPassword.Text;
-                cmd.Parameters["CSCCARD"].Value = txtCustCreditCard.Text;
-                cmd.Parameters["CSPYMTSTL"].Value = txtCustCSPYMTSTL.Text;
-                cmd.Parameters["CPWORDHASH"].Value = txtCustPasswordHash.Text;
-                cmd.ExecuteNonQuery();
+                cmd.Parameters["@CUSTNO"].Value = txtCustNum.Text;
+                cmd.Parameters["@CFNAME"].Value = txtCustFName.Text;
+                cmd.Parameters["@CLNAME"].Value = txtCustLName.Text;
+                cmd.Parameters["@CADDR"].Value = txtCustAddress.Text;
+                cmd.Parameters["@CCITY"].Value = txtCustCity.Text;
+                cmd.Parameters["@CSTATE"].Value = txtCustState.Text;
+                cmd.Parameters["@CPHONE"].Value = txtCustPhoneNumber.Text;
+                cmd.Parameters["@CEMAIL"].Value = txtCustEmail.Text;
+                cmd.Parameters["@CDOB"].Value = txtCustDOB.Text;
+                cmd.Parameters["@CGENDER"].Value = txtCustGender.Text;
+                cmd.Parameters["@CPWORD"].Value = txtCustPassword.Text;
+                cmd.Parameters["@CSCCARD"].Value = txtCustCreditCard.Text;
+                cmd.Parameters["@CSPYMTSTL"].Value = txtCustCSPYMTSTL.Text;
+                cmd.Parameters["@CPWORDHASH"].Value = txtCustPasswordHash.Text;
+                //cmd.ExecuteNonQuery();
 
 
                 listBox1.Items.Add(cmd.Parameters.ToString());
@@ -93,10 +88,6 @@ namespace Pixis_Employees
             try
 
             {
-                //open connection to IDB2 to update live data, pass through connectionstring from Customer form
-                conn = new iDB2Connection(connectionString);
-                conn.Open();
-
 
                 //sql statement building, taking selectedCustomer from Customer form
                 sql = "Select * from CUSTOMER where CUSTNO " + " LIKE '%" + selectedCustomer + "%'";
@@ -199,9 +190,17 @@ namespace Pixis_Employees
             }
         }
 
+
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            AddCustomerRecord(sender, e);  
+            conn = new iDB2Connection(connectionString);
+            conn.Open();
+
+            //open connection to IDB2 to update live data, pass through connectionstring from Customer form
+
+
+            AddCustomerRecord(sender, connectionString, conn, e);  
         }
     }
 }

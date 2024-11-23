@@ -32,6 +32,7 @@ namespace Pixis_Employees
 
 
 
+
         //string to hold the selected customer from dataGridView - passes into update button
         String selectedCustomer;
 
@@ -107,6 +108,7 @@ namespace Pixis_Employees
 
         private void btn_add_Click(object sender, EventArgs e)
         {
+
             //show form
             UpdateCustomer addCustomer = new UpdateCustomer(selectedCustomer, connectionString, conn, adapter);
             addCustomer.Show();
