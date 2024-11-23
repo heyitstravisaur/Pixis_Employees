@@ -80,7 +80,7 @@ namespace Pixis_Employees
 
                 using(iDB2Connection conn = new iDB2Connection(connectionString))
                 {
-
+                    conn.Open();
                     string updateQuery = @"UPDATE AIRPORT SET
                             ARNM = @ARNM, ARCITYNM = @ARCITYNM, ARCNCD = @ARCNCD,
                             ARFAACD = @ARFAACD, ARICAOCD = @ARICAOCD, ARTIMEZNM = @ARTIMEZNM,
@@ -103,7 +103,7 @@ namespace Pixis_Employees
                             cmd.Parameters.Add(new iDB2Parameter("@ARLATITUDE", iDB2DbType.iDB2Decimal) { Value = Convert.ToDecimal(row["ARLATITUDE"]) });
                             cmd.Parameters.Add(new iDB2Parameter("@ARLNGITUDE", iDB2DbType.iDB2Decimal) { Value = Convert.ToDecimal(row["ARLNGITUDE"]) });
                             cmd.Parameters.Add(new iDB2Parameter("@ARTIMEZOF", iDB2DbType.iDB2Decimal) { Value = Convert.ToDecimal(row["ARTIMEZOF"]) });
-                            cmd.Parameters.Add(new iDB2Parameter("@ARALTITUDE", iDB2DbType.iDB2Binary) { Value = Convert.ToInt32(row["ARALTITUDE"]) });
+                            cmd.Parameters.Add(new iDB2Parameter("@ARALTITUDE", iDB2DbType.iDB2Integer) { Value = (int)row["ARALTITUDE"] });
                             cmd.ExecuteNonQuery();
                         }
                     }

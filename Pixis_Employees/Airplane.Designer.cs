@@ -194,17 +194,17 @@
             // 
             // btnReload
             // 
-            this.btnReload.Location = new System.Drawing.Point(558, 11);
+            this.btnReload.Location = new System.Drawing.Point(263, 11);
             this.btnReload.Name = "btnReload";
             this.btnReload.Size = new System.Drawing.Size(151, 103);
             this.btnReload.TabIndex = 13;
-            this.btnReload.Text = "Reload List";
+            this.btnReload.Text = "Reload Table";
             this.btnReload.UseVisualStyleBackColor = true;
             this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(285, 11);
+            this.btnAdd.Location = new System.Drawing.Point(508, 11);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(151, 103);
             this.btnAdd.TabIndex = 14;

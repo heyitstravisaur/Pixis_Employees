@@ -31,9 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.btnExit = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataSet2 = new Pixis_Employees.DataSet2();
-            this.aIRPORTBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.aIRPORTTableAdapter = new Pixis_Employees.DataSet2TableAdapters.AIRPORTTableAdapter();
             this.aRCDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aRNMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aRCITYNMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,18 +42,21 @@
             this.aRALTITUDEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aRTIMEZNMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aRTIMEZOFDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aIRPORTBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet2 = new Pixis_Employees.DataSet2();
+            this.aIRPORTTableAdapter = new Pixis_Employees.DataSet2TableAdapters.AIRPORTTableAdapter();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnReload = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aIRPORTBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnExit
             // 
             this.btnExit.Location = new System.Drawing.Point(769, 25);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(2);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(108, 31);
             this.btnExit.TabIndex = 10;
@@ -83,22 +83,8 @@
             this.dataGridView1.DataSource = this.aIRPORTBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 115);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1148, 467);
+            this.dataGridView1.Size = new System.Drawing.Size(1161, 467);
             this.dataGridView1.TabIndex = 11;
-            // 
-            // dataSet2
-            // 
-            this.dataSet2.DataSetName = "DataSet2";
-            this.dataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // aIRPORTBindingSource
-            // 
-            this.aIRPORTBindingSource.DataMember = "AIRPORT";
-            this.aIRPORTBindingSource.DataSource = this.dataSet2;
-            // 
-            // aIRPORTTableAdapter
-            // 
-            this.aIRPORTTableAdapter.ClearBeforeFill = true;
             // 
             // aRCDDataGridViewTextBoxColumn
             // 
@@ -166,6 +152,20 @@
             this.aRTIMEZOFDataGridViewTextBoxColumn.HeaderText = "ARTIMEZOF";
             this.aRTIMEZOFDataGridViewTextBoxColumn.Name = "aRTIMEZOFDataGridViewTextBoxColumn";
             // 
+            // aIRPORTBindingSource
+            // 
+            this.aIRPORTBindingSource.DataMember = "AIRPORT";
+            this.aIRPORTBindingSource.DataSource = this.dataSet2;
+            // 
+            // dataSet2
+            // 
+            this.dataSet2.DataSetName = "DataSet2";
+            this.dataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // aIRPORTTableAdapter
+            // 
+            this.aIRPORTTableAdapter.ClearBeforeFill = true;
+            // 
             // btnAdd
             // 
             this.btnAdd.Location = new System.Drawing.Point(452, 11);
@@ -173,7 +173,7 @@
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(147, 99);
             this.btnAdd.TabIndex = 12;
-            this.btnAdd.Text = "Add Date";
+            this.btnAdd.Text = "Add Data";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -209,13 +209,13 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnExit);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Airport";
             this.Text = "Aiport";
             this.Load += new System.EventHandler(this.Airport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aIRPORTBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).EndInit();
             this.ResumeLayout(false);
 
         }
