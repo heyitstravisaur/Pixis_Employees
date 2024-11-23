@@ -97,6 +97,7 @@ namespace Pixis_Employees
             {
                 //take value of Customernumber from selected cell row and populate to string for update button
                 SelectedCustomer = (dataGridView1.CurrentRow.Cells[0].Value.ToString());
+                
 
             }
         }
@@ -113,114 +114,18 @@ namespace Pixis_Employees
 
         private void btn_Update_Click(object sender, EventArgs e)
         {
-            //grab data from dataGridView
+            
 
             try
+
             {
-                //for IBM database querying
-                iDB2Connection conn;
-                iDB2DataAdapter adapter;
-                DataSet dataSet;
-                String sql;
-
-                //build SQL query to pass to DB
-                conn = new iDB2Connection(connectionString);
-                conn.Open();
-                sql = "Select * from CUSTOMER where CUSTNO " + " LIKE '%" + selectedCustomer + "%'";
-                adapter = new iDB2DataAdapter(sql, conn);
-
-                dataSet = new DataSet();
-                adapter.Fill(dataSet);
-
+                //passing Customer to Updatecustomer value
+                selectedCustomer = SelectedCustomer;
 
                 //show form
-                UpdateCustomer updateCustomer = new UpdateCustomer();
+                UpdateCustomer updateCustomer = new UpdateCustomer(selectedCustomer, connectionString, conn, adapter);
                 updateCustomer.Show();
 
-                if (dataSet.Tables.Count > 0 && dataSet.Tables[0].Rows.Count > 0)
-                {
-                    DataRow row = dataSet.Tables[0].Rows[0];
-
-                    foreach (GroupBox group in groups)
-                    {
-
-                        // Loop through each control inside the GroupBox
-                        foreach (Control control in group.Controls)
-                        {
-                            if (control is TextBox textBox)
-                            {
-                                // Use the TextBox Name property to identify which data to assign
-                                switch (textBox.Name)
-                                {
-                                    case "txtEmpNum":
-                                        textBox.Text = row["EMPNO"].ToString();
-                                        break;
-                                    case "txtEmpFName":
-                                        textBox.Text = row["EFNAME"].ToString();
-                                        break;
-                                    case "txtEmpLName":
-                                        textBox.Text = row["ELNAME"].ToString();
-                                        break;
-                                    case "txtEmpAddress":
-                                        textBox.Text = row["EADDR"].ToString();
-                                        break;
-                                    case "txtEmpCity":
-                                        textBox.Text = row["ECITY"].ToString();
-                                        break;
-                                    case "txtEmpState":
-                                        textBox.Text = row["ESTATE"].ToString();
-                                        break;
-                                    case "txtEmpZip":
-                                        textBox.Text = row["EZIP"].ToString();
-                                        break;
-                                    case "txtEmpPhoneNumber":
-                                        textBox.Text = row["EPHONE"].ToString();
-                                        break;
-                                    case "txtEmpEmail":
-                                        textBox.Text = row["EMAIL"].ToString();
-                                        break;
-                                    case "txtEmpDOB":
-                                        textBox.Text = row["DOB"].ToString();
-                                        break;
-                                    case "txtEmpGender":
-                                        textBox.Text = row["GENDER"].ToString();
-                                        break;
-                                    case "txtJobId":
-                                        textBox.Text = row["JOBID"].ToString();
-                                        break;
-                                    case "txtWorkStatus":
-                                        textBox.Text = row["WRKSTATUS"].ToString();
-                                        break;
-                                    case "txtHourlyRate":
-                                        textBox.Text = row["HRLYRATE"].ToString();
-                                        break;
-                                    case "txtEmpHireDate":
-                                        textBox.Text = row["EMHIREDT"].ToString();
-                                        break;
-                                    case "txtEmpStartDate":
-                                        textBox.Text = row["EMSTARTDT"].ToString();
-                                        break;
-                                    case "txtEmpTermDate":
-                                        textBox.Text = row["EMTERMDT"].ToString();
-                                        break;
-                                    case "txtRegionId":
-                                        textBox.Text = row["REGIONID"].ToString();
-                                        break;
-                                        // Add more cases as needed for additional TextBoxes
-                                }
-
-                            }
-                        }
-                    }
-                }
-
-
-
-
-
-
-
-                conn.Close();
             }
             catch (Exception ex)
             {

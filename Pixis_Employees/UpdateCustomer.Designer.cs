@@ -383,6 +383,7 @@
             this.Controls.Add(this.lbl_custno);
             this.Name = "UpdateCustomer";
             this.Text = "UpdateCustomer";
+            this.Load += new System.EventHandler(this.UpdateCustomer_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
