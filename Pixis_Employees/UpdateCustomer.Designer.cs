@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.label18 = new System.Windows.Forms.Label();
+            this.lbl_custAddress = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtEmpAddress = new System.Windows.Forms.TextBox();
             this.txtEmpGender = new System.Windows.Forms.TextBox();
@@ -37,9 +37,6 @@
             this.txtWorkStatus = new System.Windows.Forms.TextBox();
             this.txtHourlyRate = new System.Windows.Forms.TextBox();
             this.txtEmpHireDate = new System.Windows.Forms.TextBox();
-            this.txtEmpStartDate = new System.Windows.Forms.TextBox();
-            this.txtEmpTermDate = new System.Windows.Forms.TextBox();
-            this.txtRegionId = new System.Windows.Forms.TextBox();
             this.txtEmpFName = new System.Windows.Forms.TextBox();
             this.txtEmpLName = new System.Windows.Forms.TextBox();
             this.txtEmpCity = new System.Windows.Forms.TextBox();
@@ -51,23 +48,20 @@
             this.txtEmpNum = new System.Windows.Forms.TextBox();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_custGender = new System.Windows.Forms.Label();
+            this.lbl_custPass = new System.Windows.Forms.Label();
+            this.lbl_custCredit = new System.Windows.Forms.Label();
+            this.lbl_CSPYMTSTL = new System.Windows.Forms.Label();
+            this.lbl_custPassHash = new System.Windows.Forms.Label();
+            this.lbl_custFirstName = new System.Windows.Forms.Label();
+            this.lbl_custLastName = new System.Windows.Forms.Label();
+            this.lbl_customerCity = new System.Windows.Forms.Label();
+            this.lbl_custState = new System.Windows.Forms.Label();
+            this.lbl_custZip = new System.Windows.Forms.Label();
+            this.lbl_custPhone = new System.Windows.Forms.Label();
+            this.lbl_custEmail = new System.Windows.Forms.Label();
+            this.lbl_custDOB = new System.Windows.Forms.Label();
+            this.lbl_custno = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,14 +75,14 @@
             this.listBox1.Size = new System.Drawing.Size(508, 433);
             this.listBox1.TabIndex = 61;
             // 
-            // label18
+            // lbl_custAddress
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(12, 111);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(94, 13);
-            this.label18.TabIndex = 60;
-            this.label18.Text = "Employee Address";
+            this.lbl_custAddress.AutoSize = true;
+            this.lbl_custAddress.Location = new System.Drawing.Point(12, 111);
+            this.lbl_custAddress.Name = "lbl_custAddress";
+            this.lbl_custAddress.Size = new System.Drawing.Size(92, 13);
+            this.lbl_custAddress.TabIndex = 60;
+            this.lbl_custAddress.Text = "Customer Address";
             // 
             // groupBox1
             // 
@@ -98,9 +92,6 @@
             this.groupBox1.Controls.Add(this.txtWorkStatus);
             this.groupBox1.Controls.Add(this.txtHourlyRate);
             this.groupBox1.Controls.Add(this.txtEmpHireDate);
-            this.groupBox1.Controls.Add(this.txtEmpStartDate);
-            this.groupBox1.Controls.Add(this.txtEmpTermDate);
-            this.groupBox1.Controls.Add(this.txtRegionId);
             this.groupBox1.Controls.Add(this.txtEmpFName);
             this.groupBox1.Controls.Add(this.txtEmpLName);
             this.groupBox1.Controls.Add(this.txtEmpCity);
@@ -112,7 +103,7 @@
             this.groupBox1.Controls.Add(this.txtEmpNum);
             this.groupBox1.Location = new System.Drawing.Point(179, 21);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(149, 502);
+            this.groupBox1.Size = new System.Drawing.Size(149, 413);
             this.groupBox1.TabIndex = 59;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
@@ -158,27 +149,6 @@
             this.txtEmpHireDate.Name = "txtEmpHireDate";
             this.txtEmpHireDate.Size = new System.Drawing.Size(100, 20);
             this.txtEmpHireDate.TabIndex = 39;
-            // 
-            // txtEmpStartDate
-            // 
-            this.txtEmpStartDate.Location = new System.Drawing.Point(25, 402);
-            this.txtEmpStartDate.Name = "txtEmpStartDate";
-            this.txtEmpStartDate.Size = new System.Drawing.Size(100, 20);
-            this.txtEmpStartDate.TabIndex = 38;
-            // 
-            // txtEmpTermDate
-            // 
-            this.txtEmpTermDate.Location = new System.Drawing.Point(25, 428);
-            this.txtEmpTermDate.Name = "txtEmpTermDate";
-            this.txtEmpTermDate.Size = new System.Drawing.Size(100, 20);
-            this.txtEmpTermDate.TabIndex = 37;
-            // 
-            // txtRegionId
-            // 
-            this.txtRegionId.Location = new System.Drawing.Point(25, 454);
-            this.txtRegionId.Name = "txtRegionId";
-            this.txtRegionId.Size = new System.Drawing.Size(100, 20);
-            this.txtRegionId.TabIndex = 36;
             // 
             // txtEmpFName
             // 
@@ -261,158 +231,131 @@
             this.btnAdd.Text = "Add New Employee";
             this.btnAdd.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // lbl_custGender
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 293);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 13);
-            this.label2.TabIndex = 56;
-            this.label2.Text = "Employee Gender (M or F)";
+            this.lbl_custGender.AutoSize = true;
+            this.lbl_custGender.Location = new System.Drawing.Point(12, 293);
+            this.lbl_custGender.Name = "lbl_custGender";
+            this.lbl_custGender.Size = new System.Drawing.Size(128, 13);
+            this.lbl_custGender.TabIndex = 56;
+            this.lbl_custGender.Text = "Customer Gender (M or F)";
             // 
-            // label11
+            // lbl_custPass
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(12, 319);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(38, 13);
-            this.label11.TabIndex = 55;
-            this.label11.Text = "Job ID";
+            this.lbl_custPass.AutoSize = true;
+            this.lbl_custPass.Location = new System.Drawing.Point(12, 319);
+            this.lbl_custPass.Name = "lbl_custPass";
+            this.lbl_custPass.Size = new System.Drawing.Size(100, 13);
+            this.lbl_custPass.TabIndex = 55;
+            this.lbl_custPass.Text = "Customer Password";
             // 
-            // label12
+            // lbl_custCredit
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(12, 345);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(66, 13);
-            this.label12.TabIndex = 54;
-            this.label12.Text = "Work Status";
+            this.lbl_custCredit.AutoSize = true;
+            this.lbl_custCredit.Location = new System.Drawing.Point(12, 345);
+            this.lbl_custCredit.Name = "lbl_custCredit";
+            this.lbl_custCredit.Size = new System.Drawing.Size(106, 13);
+            this.lbl_custCredit.TabIndex = 54;
+            this.lbl_custCredit.Text = "Customer Credit Card";
             // 
-            // label13
+            // lbl_CSPYMTSTL
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(12, 371);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(63, 13);
-            this.label13.TabIndex = 53;
-            this.label13.Text = "Hourly Rate";
+            this.lbl_CSPYMTSTL.AutoSize = true;
+            this.lbl_CSPYMTSTL.Location = new System.Drawing.Point(12, 371);
+            this.lbl_CSPYMTSTL.Name = "lbl_CSPYMTSTL";
+            this.lbl_CSPYMTSTL.Size = new System.Drawing.Size(71, 13);
+            this.lbl_CSPYMTSTL.TabIndex = 53;
+            this.lbl_CSPYMTSTL.Text = "CSPYMTSTL";
             // 
-            // label14
+            // lbl_custPassHash
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(12, 397);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(101, 13);
-            this.label14.TabIndex = 52;
-            this.label14.Text = "Employee Hire Date";
+            this.lbl_custPassHash.AutoSize = true;
+            this.lbl_custPassHash.Location = new System.Drawing.Point(12, 397);
+            this.lbl_custPassHash.Name = "lbl_custPassHash";
+            this.lbl_custPassHash.Size = new System.Drawing.Size(128, 13);
+            this.lbl_custPassHash.TabIndex = 52;
+            this.lbl_custPassHash.Text = "Customer Password Hash";
             // 
-            // label15
+            // lbl_custFirstName
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(12, 423);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(104, 13);
-            this.label15.TabIndex = 51;
-            this.label15.Text = "Employee Start Date";
+            this.lbl_custFirstName.AutoSize = true;
+            this.lbl_custFirstName.Location = new System.Drawing.Point(12, 59);
+            this.lbl_custFirstName.Name = "lbl_custFirstName";
+            this.lbl_custFirstName.Size = new System.Drawing.Size(104, 13);
+            this.lbl_custFirstName.TabIndex = 48;
+            this.lbl_custFirstName.Text = "Customer First Name";
             // 
-            // label16
+            // lbl_custLastName
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(12, 449);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(137, 13);
-            this.label16.TabIndex = 50;
-            this.label16.Text = "Employee Termination Date";
+            this.lbl_custLastName.AutoSize = true;
+            this.lbl_custLastName.Location = new System.Drawing.Point(12, 85);
+            this.lbl_custLastName.Name = "lbl_custLastName";
+            this.lbl_custLastName.Size = new System.Drawing.Size(105, 13);
+            this.lbl_custLastName.TabIndex = 47;
+            this.lbl_custLastName.Text = "Customer Last Name";
             // 
-            // label17
+            // lbl_customerCity
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(12, 475);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(55, 13);
-            this.label17.TabIndex = 49;
-            this.label17.Text = "Region ID";
+            this.lbl_customerCity.AutoSize = true;
+            this.lbl_customerCity.Location = new System.Drawing.Point(12, 137);
+            this.lbl_customerCity.Name = "lbl_customerCity";
+            this.lbl_customerCity.Size = new System.Drawing.Size(71, 13);
+            this.lbl_customerCity.TabIndex = 46;
+            this.lbl_customerCity.Text = "Customer City";
             // 
-            // label10
+            // lbl_custState
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(12, 59);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(106, 13);
-            this.label10.TabIndex = 48;
-            this.label10.Text = "Employee First Name";
+            this.lbl_custState.AutoSize = true;
+            this.lbl_custState.Location = new System.Drawing.Point(12, 163);
+            this.lbl_custState.Name = "lbl_custState";
+            this.lbl_custState.Size = new System.Drawing.Size(79, 13);
+            this.lbl_custState.TabIndex = 45;
+            this.lbl_custState.Text = "Customer State";
             // 
-            // label9
+            // lbl_custZip
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 85);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(107, 13);
-            this.label9.TabIndex = 47;
-            this.label9.Text = "Employee Last Name";
+            this.lbl_custZip.AutoSize = true;
+            this.lbl_custZip.Location = new System.Drawing.Point(12, 189);
+            this.lbl_custZip.Name = "lbl_custZip";
+            this.lbl_custZip.Size = new System.Drawing.Size(97, 13);
+            this.lbl_custZip.TabIndex = 44;
+            this.lbl_custZip.Text = "Customer Zip Code";
             // 
-            // label8
+            // lbl_custPhone
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 137);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(73, 13);
-            this.label8.TabIndex = 46;
-            this.label8.Text = "Employee City";
+            this.lbl_custPhone.AutoSize = true;
+            this.lbl_custPhone.Location = new System.Drawing.Point(12, 215);
+            this.lbl_custPhone.Name = "lbl_custPhone";
+            this.lbl_custPhone.Size = new System.Drawing.Size(125, 13);
+            this.lbl_custPhone.TabIndex = 43;
+            this.lbl_custPhone.Text = "Customer Phone Number";
             // 
-            // label7
+            // lbl_custEmail
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 163);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(81, 13);
-            this.label7.TabIndex = 45;
-            this.label7.Text = "Employee State";
+            this.lbl_custEmail.AutoSize = true;
+            this.lbl_custEmail.Location = new System.Drawing.Point(12, 241);
+            this.lbl_custEmail.Name = "lbl_custEmail";
+            this.lbl_custEmail.Size = new System.Drawing.Size(79, 13);
+            this.lbl_custEmail.TabIndex = 42;
+            this.lbl_custEmail.Text = "Customer Email";
             // 
-            // label6
+            // lbl_custDOB
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 189);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(99, 13);
-            this.label6.TabIndex = 44;
-            this.label6.Text = "Employee Zip Code";
+            this.lbl_custDOB.AutoSize = true;
+            this.lbl_custDOB.Location = new System.Drawing.Point(12, 267);
+            this.lbl_custDOB.Name = "lbl_custDOB";
+            this.lbl_custDOB.Size = new System.Drawing.Size(154, 13);
+            this.lbl_custDOB.TabIndex = 41;
+            this.lbl_custDOB.Text = "Customer Date of Birth (D.O.B.)";
             // 
-            // label5
+            // lbl_custno
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 215);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(127, 13);
-            this.label5.TabIndex = 43;
-            this.label5.Text = "Employee Phone Number";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 241);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 13);
-            this.label4.TabIndex = 42;
-            this.label4.Text = "Employee Email";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 267);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(156, 13);
-            this.label3.TabIndex = 41;
-            this.label3.Text = "Employee Date of Birth (D.O.B.)";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 13);
-            this.label1.TabIndex = 40;
-            this.label1.Text = "Employee Number";
+            this.lbl_custno.AutoSize = true;
+            this.lbl_custno.Location = new System.Drawing.Point(12, 33);
+            this.lbl_custno.Name = "lbl_custno";
+            this.lbl_custno.Size = new System.Drawing.Size(91, 13);
+            this.lbl_custno.TabIndex = 40;
+            this.lbl_custno.Text = "Customer Number";
             // 
             // UpdateCustomer
             // 
@@ -420,27 +363,24 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(854, 671);
             this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.label18);
+            this.Controls.Add(this.lbl_custAddress);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.label17);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbl_custGender);
+            this.Controls.Add(this.lbl_custPass);
+            this.Controls.Add(this.lbl_custCredit);
+            this.Controls.Add(this.lbl_CSPYMTSTL);
+            this.Controls.Add(this.lbl_custPassHash);
+            this.Controls.Add(this.lbl_custFirstName);
+            this.Controls.Add(this.lbl_custLastName);
+            this.Controls.Add(this.lbl_customerCity);
+            this.Controls.Add(this.lbl_custState);
+            this.Controls.Add(this.lbl_custZip);
+            this.Controls.Add(this.lbl_custPhone);
+            this.Controls.Add(this.lbl_custEmail);
+            this.Controls.Add(this.lbl_custDOB);
+            this.Controls.Add(this.lbl_custno);
             this.Name = "UpdateCustomer";
             this.Text = "UpdateCustomer";
             this.groupBox1.ResumeLayout(false);
@@ -453,7 +393,7 @@
         #endregion
 
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label lbl_custAddress;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtEmpAddress;
         private System.Windows.Forms.TextBox txtEmpGender;
@@ -461,9 +401,6 @@
         private System.Windows.Forms.TextBox txtWorkStatus;
         private System.Windows.Forms.TextBox txtHourlyRate;
         private System.Windows.Forms.TextBox txtEmpHireDate;
-        private System.Windows.Forms.TextBox txtEmpStartDate;
-        private System.Windows.Forms.TextBox txtEmpTermDate;
-        private System.Windows.Forms.TextBox txtRegionId;
         private System.Windows.Forms.TextBox txtEmpFName;
         private System.Windows.Forms.TextBox txtEmpLName;
         private System.Windows.Forms.TextBox txtEmpCity;
@@ -475,22 +412,19 @@
         private System.Windows.Forms.TextBox txtEmpNum;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_custGender;
+        private System.Windows.Forms.Label lbl_custPass;
+        private System.Windows.Forms.Label lbl_custCredit;
+        private System.Windows.Forms.Label lbl_CSPYMTSTL;
+        private System.Windows.Forms.Label lbl_custPassHash;
+        private System.Windows.Forms.Label lbl_custFirstName;
+        private System.Windows.Forms.Label lbl_custLastName;
+        private System.Windows.Forms.Label lbl_customerCity;
+        private System.Windows.Forms.Label lbl_custState;
+        private System.Windows.Forms.Label lbl_custZip;
+        private System.Windows.Forms.Label lbl_custPhone;
+        private System.Windows.Forms.Label lbl_custEmail;
+        private System.Windows.Forms.Label lbl_custDOB;
+        private System.Windows.Forms.Label lbl_custno;
     }
 }

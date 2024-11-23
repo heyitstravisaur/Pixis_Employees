@@ -14,6 +14,13 @@ namespace Pixis_Employees
    
     public partial class Customer : Form
     {
+
+        //for IBM database querying
+        iDB2Connection conn;
+        iDB2DataAdapter adapter;
+        DataSet dataSet;
+        
+
         private PyxisairFlightReservationSystem pfrs;
         private BindingSource bindingSource = new BindingSource();
         private iDB2DataAdapter dataAdapter = new iDB2DataAdapter();
@@ -21,6 +28,15 @@ namespace Pixis_Employees
 
         string connectionString = "DataSource=deathstar.gtc.edu";
         string sql = "SELECT * FROM CUSTOMER";
+
+
+
+
+        //string to hold the selected customer from dataGridView - passes into update button
+        String selectedCustomer;
+
+        public string SelectedCustomer { get => selectedCustomer; set => selectedCustomer = value; }
+
 
 
         public Customer(PyxisairFlightReservationSystem form)
@@ -72,6 +88,19 @@ namespace Pixis_Employees
             }
         }
 
+
+
+
+        protected void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            {
+                //take value of Customernumber from selected cell row and populate to string for update button
+                SelectedCustomer = (dataGridView1.CurrentRow.Cells[0].Value.ToString());
+
+            }
+        }
+
         private void btn_refresh_Click(object sender, EventArgs e)
         {
             display(sender, e);
@@ -97,24 +126,20 @@ namespace Pixis_Employees
                 //build SQL query to pass to DB
                 conn = new iDB2Connection(connectionString);
                 conn.Open();
-                sql = "Select * from CUSTOMER; ";
-                    //where REGIONID " + " LIKE '%" + txt_filter_regionid.Text + "%'";
+                sql = "Select * from CUSTOMER where CUSTNO " + " LIKE '%" + selectedCustomer + "%'";
                 adapter = new iDB2DataAdapter(sql, conn);
 
                 dataSet = new DataSet();
                 adapter.Fill(dataSet);
 
-                //listBox1.Items.Clear();
-                foreach (DataRow row in dataSet.Tables[0].Rows)
-                {
-                    //listBox1.Items.Add(row[0] + " " + row[1] + " " + row[2] + " " + row[3] + " " + row[4] + " " + row[5]);
-                }
+
 
                 //show form
                 UpdateCustomer updateCustomer = new UpdateCustomer();
                 updateCustomer.Show();
 
-                //conn.Close();
+
+                conn.Close();
             }
             catch (Exception ex)
             {
@@ -129,12 +154,5 @@ namespace Pixis_Employees
 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
-            {
-                MessageBox.Show(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
-            }
-        }
     }
 }
