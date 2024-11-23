@@ -31,21 +31,21 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.lbl_custAddress = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtEmpAddress = new System.Windows.Forms.TextBox();
-            this.txtEmpGender = new System.Windows.Forms.TextBox();
-            this.txtJobId = new System.Windows.Forms.TextBox();
-            this.txtWorkStatus = new System.Windows.Forms.TextBox();
-            this.txtHourlyRate = new System.Windows.Forms.TextBox();
-            this.txtEmpHireDate = new System.Windows.Forms.TextBox();
-            this.txtEmpFName = new System.Windows.Forms.TextBox();
-            this.txtEmpLName = new System.Windows.Forms.TextBox();
-            this.txtEmpCity = new System.Windows.Forms.TextBox();
-            this.txtEmpState = new System.Windows.Forms.TextBox();
-            this.txtEmpZip = new System.Windows.Forms.TextBox();
-            this.txtEmpPhoneNumber = new System.Windows.Forms.TextBox();
-            this.txtEmpEmail = new System.Windows.Forms.TextBox();
-            this.txtEmpDOB = new System.Windows.Forms.TextBox();
-            this.txtEmpNum = new System.Windows.Forms.TextBox();
+            this.txtCustAddress = new System.Windows.Forms.TextBox();
+            this.txtCustGender = new System.Windows.Forms.TextBox();
+            this.txtCustPassword = new System.Windows.Forms.TextBox();
+            this.txtCustCreditCard = new System.Windows.Forms.TextBox();
+            this.txtCustCSPYMTSTL = new System.Windows.Forms.TextBox();
+            this.txtCustPasswordHash = new System.Windows.Forms.TextBox();
+            this.txtCustFName = new System.Windows.Forms.TextBox();
+            this.txtCustLName = new System.Windows.Forms.TextBox();
+            this.txtCustCity = new System.Windows.Forms.TextBox();
+            this.txtCustState = new System.Windows.Forms.TextBox();
+            this.txtCustZip = new System.Windows.Forms.TextBox();
+            this.txtCustPhoneNumber = new System.Windows.Forms.TextBox();
+            this.txtCustEmail = new System.Windows.Forms.TextBox();
+            this.txtCustDOB = new System.Windows.Forms.TextBox();
+            this.txtCustNum = new System.Windows.Forms.TextBox();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.lbl_custGender = new System.Windows.Forms.Label();
@@ -86,21 +86,21 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtEmpAddress);
-            this.groupBox1.Controls.Add(this.txtEmpGender);
-            this.groupBox1.Controls.Add(this.txtJobId);
-            this.groupBox1.Controls.Add(this.txtWorkStatus);
-            this.groupBox1.Controls.Add(this.txtHourlyRate);
-            this.groupBox1.Controls.Add(this.txtEmpHireDate);
-            this.groupBox1.Controls.Add(this.txtEmpFName);
-            this.groupBox1.Controls.Add(this.txtEmpLName);
-            this.groupBox1.Controls.Add(this.txtEmpCity);
-            this.groupBox1.Controls.Add(this.txtEmpState);
-            this.groupBox1.Controls.Add(this.txtEmpZip);
-            this.groupBox1.Controls.Add(this.txtEmpPhoneNumber);
-            this.groupBox1.Controls.Add(this.txtEmpEmail);
-            this.groupBox1.Controls.Add(this.txtEmpDOB);
-            this.groupBox1.Controls.Add(this.txtEmpNum);
+            this.groupBox1.Controls.Add(this.txtCustAddress);
+            this.groupBox1.Controls.Add(this.txtCustGender);
+            this.groupBox1.Controls.Add(this.txtCustPassword);
+            this.groupBox1.Controls.Add(this.txtCustCreditCard);
+            this.groupBox1.Controls.Add(this.txtCustCSPYMTSTL);
+            this.groupBox1.Controls.Add(this.txtCustPasswordHash);
+            this.groupBox1.Controls.Add(this.txtCustFName);
+            this.groupBox1.Controls.Add(this.txtCustLName);
+            this.groupBox1.Controls.Add(this.txtCustCity);
+            this.groupBox1.Controls.Add(this.txtCustState);
+            this.groupBox1.Controls.Add(this.txtCustZip);
+            this.groupBox1.Controls.Add(this.txtCustPhoneNumber);
+            this.groupBox1.Controls.Add(this.txtCustEmail);
+            this.groupBox1.Controls.Add(this.txtCustDOB);
+            this.groupBox1.Controls.Add(this.txtCustNum);
             this.groupBox1.Location = new System.Drawing.Point(179, 21);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(149, 413);
@@ -108,114 +108,114 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
-            // txtEmpAddress
+            // txtCustAddress
             // 
-            this.txtEmpAddress.Location = new System.Drawing.Point(25, 90);
-            this.txtEmpAddress.Name = "txtEmpAddress";
-            this.txtEmpAddress.Size = new System.Drawing.Size(100, 20);
-            this.txtEmpAddress.TabIndex = 44;
+            this.txtCustAddress.Location = new System.Drawing.Point(25, 90);
+            this.txtCustAddress.Name = "txtCustAddress";
+            this.txtCustAddress.Size = new System.Drawing.Size(100, 20);
+            this.txtCustAddress.TabIndex = 44;
             // 
-            // txtEmpGender
+            // txtCustGender
             // 
-            this.txtEmpGender.Location = new System.Drawing.Point(25, 272);
-            this.txtEmpGender.Name = "txtEmpGender";
-            this.txtEmpGender.Size = new System.Drawing.Size(100, 20);
-            this.txtEmpGender.TabIndex = 43;
+            this.txtCustGender.Location = new System.Drawing.Point(25, 272);
+            this.txtCustGender.Name = "txtCustGender";
+            this.txtCustGender.Size = new System.Drawing.Size(100, 20);
+            this.txtCustGender.TabIndex = 43;
             // 
-            // txtJobId
+            // txtCustPassword
             // 
-            this.txtJobId.Location = new System.Drawing.Point(25, 298);
-            this.txtJobId.Name = "txtJobId";
-            this.txtJobId.Size = new System.Drawing.Size(100, 20);
-            this.txtJobId.TabIndex = 42;
+            this.txtCustPassword.Location = new System.Drawing.Point(25, 298);
+            this.txtCustPassword.Name = "txtCustPassword";
+            this.txtCustPassword.Size = new System.Drawing.Size(100, 20);
+            this.txtCustPassword.TabIndex = 42;
             // 
-            // txtWorkStatus
+            // txtCustCreditCard
             // 
-            this.txtWorkStatus.Location = new System.Drawing.Point(25, 324);
-            this.txtWorkStatus.Name = "txtWorkStatus";
-            this.txtWorkStatus.Size = new System.Drawing.Size(100, 20);
-            this.txtWorkStatus.TabIndex = 41;
+            this.txtCustCreditCard.Location = new System.Drawing.Point(25, 324);
+            this.txtCustCreditCard.Name = "txtCustCreditCard";
+            this.txtCustCreditCard.Size = new System.Drawing.Size(100, 20);
+            this.txtCustCreditCard.TabIndex = 41;
             // 
-            // txtHourlyRate
+            // txtCustCSPYMTSTL
             // 
-            this.txtHourlyRate.Location = new System.Drawing.Point(25, 350);
-            this.txtHourlyRate.Name = "txtHourlyRate";
-            this.txtHourlyRate.Size = new System.Drawing.Size(100, 20);
-            this.txtHourlyRate.TabIndex = 40;
+            this.txtCustCSPYMTSTL.Location = new System.Drawing.Point(25, 350);
+            this.txtCustCSPYMTSTL.Name = "txtCustCSPYMTSTL";
+            this.txtCustCSPYMTSTL.Size = new System.Drawing.Size(100, 20);
+            this.txtCustCSPYMTSTL.TabIndex = 40;
             // 
-            // txtEmpHireDate
+            // txtCustPasswordHash
             // 
-            this.txtEmpHireDate.Location = new System.Drawing.Point(25, 376);
-            this.txtEmpHireDate.Name = "txtEmpHireDate";
-            this.txtEmpHireDate.Size = new System.Drawing.Size(100, 20);
-            this.txtEmpHireDate.TabIndex = 39;
+            this.txtCustPasswordHash.Location = new System.Drawing.Point(25, 376);
+            this.txtCustPasswordHash.Name = "txtCustPasswordHash";
+            this.txtCustPasswordHash.Size = new System.Drawing.Size(100, 20);
+            this.txtCustPasswordHash.TabIndex = 39;
             // 
-            // txtEmpFName
+            // txtCustFName
             // 
-            this.txtEmpFName.Location = new System.Drawing.Point(25, 38);
-            this.txtEmpFName.Name = "txtEmpFName";
-            this.txtEmpFName.Size = new System.Drawing.Size(100, 20);
-            this.txtEmpFName.TabIndex = 35;
+            this.txtCustFName.Location = new System.Drawing.Point(25, 38);
+            this.txtCustFName.Name = "txtCustFName";
+            this.txtCustFName.Size = new System.Drawing.Size(100, 20);
+            this.txtCustFName.TabIndex = 35;
             // 
-            // txtEmpLName
+            // txtCustLName
             // 
-            this.txtEmpLName.Location = new System.Drawing.Point(25, 64);
-            this.txtEmpLName.Name = "txtEmpLName";
-            this.txtEmpLName.Size = new System.Drawing.Size(100, 20);
-            this.txtEmpLName.TabIndex = 34;
+            this.txtCustLName.Location = new System.Drawing.Point(25, 64);
+            this.txtCustLName.Name = "txtCustLName";
+            this.txtCustLName.Size = new System.Drawing.Size(100, 20);
+            this.txtCustLName.TabIndex = 34;
             // 
-            // txtEmpCity
+            // txtCustCity
             // 
-            this.txtEmpCity.Location = new System.Drawing.Point(25, 116);
-            this.txtEmpCity.Name = "txtEmpCity";
-            this.txtEmpCity.Size = new System.Drawing.Size(100, 20);
-            this.txtEmpCity.TabIndex = 33;
+            this.txtCustCity.Location = new System.Drawing.Point(25, 116);
+            this.txtCustCity.Name = "txtCustCity";
+            this.txtCustCity.Size = new System.Drawing.Size(100, 20);
+            this.txtCustCity.TabIndex = 33;
             // 
-            // txtEmpState
+            // txtCustState
             // 
-            this.txtEmpState.Location = new System.Drawing.Point(25, 142);
-            this.txtEmpState.Name = "txtEmpState";
-            this.txtEmpState.Size = new System.Drawing.Size(100, 20);
-            this.txtEmpState.TabIndex = 32;
+            this.txtCustState.Location = new System.Drawing.Point(25, 142);
+            this.txtCustState.Name = "txtCustState";
+            this.txtCustState.Size = new System.Drawing.Size(100, 20);
+            this.txtCustState.TabIndex = 32;
             // 
-            // txtEmpZip
+            // txtCustZip
             // 
-            this.txtEmpZip.Location = new System.Drawing.Point(25, 168);
-            this.txtEmpZip.Name = "txtEmpZip";
-            this.txtEmpZip.Size = new System.Drawing.Size(100, 20);
-            this.txtEmpZip.TabIndex = 31;
+            this.txtCustZip.Location = new System.Drawing.Point(25, 168);
+            this.txtCustZip.Name = "txtCustZip";
+            this.txtCustZip.Size = new System.Drawing.Size(100, 20);
+            this.txtCustZip.TabIndex = 31;
             // 
-            // txtEmpPhoneNumber
+            // txtCustPhoneNumber
             // 
-            this.txtEmpPhoneNumber.Location = new System.Drawing.Point(25, 194);
-            this.txtEmpPhoneNumber.Name = "txtEmpPhoneNumber";
-            this.txtEmpPhoneNumber.Size = new System.Drawing.Size(100, 20);
-            this.txtEmpPhoneNumber.TabIndex = 30;
+            this.txtCustPhoneNumber.Location = new System.Drawing.Point(25, 194);
+            this.txtCustPhoneNumber.Name = "txtCustPhoneNumber";
+            this.txtCustPhoneNumber.Size = new System.Drawing.Size(100, 20);
+            this.txtCustPhoneNumber.TabIndex = 30;
             // 
-            // txtEmpEmail
+            // txtCustEmail
             // 
-            this.txtEmpEmail.Location = new System.Drawing.Point(25, 220);
-            this.txtEmpEmail.Name = "txtEmpEmail";
-            this.txtEmpEmail.Size = new System.Drawing.Size(100, 20);
-            this.txtEmpEmail.TabIndex = 29;
+            this.txtCustEmail.Location = new System.Drawing.Point(25, 220);
+            this.txtCustEmail.Name = "txtCustEmail";
+            this.txtCustEmail.Size = new System.Drawing.Size(100, 20);
+            this.txtCustEmail.TabIndex = 29;
             // 
-            // txtEmpDOB
+            // txtCustDOB
             // 
-            this.txtEmpDOB.Location = new System.Drawing.Point(25, 246);
-            this.txtEmpDOB.Name = "txtEmpDOB";
-            this.txtEmpDOB.Size = new System.Drawing.Size(100, 20);
-            this.txtEmpDOB.TabIndex = 28;
+            this.txtCustDOB.Location = new System.Drawing.Point(25, 246);
+            this.txtCustDOB.Name = "txtCustDOB";
+            this.txtCustDOB.Size = new System.Drawing.Size(100, 20);
+            this.txtCustDOB.TabIndex = 28;
             // 
-            // txtEmpNum
+            // txtCustNum
             // 
-            this.txtEmpNum.Location = new System.Drawing.Point(25, 12);
-            this.txtEmpNum.Name = "txtEmpNum";
-            this.txtEmpNum.Size = new System.Drawing.Size(100, 20);
-            this.txtEmpNum.TabIndex = 27;
+            this.txtCustNum.Location = new System.Drawing.Point(25, 12);
+            this.txtCustNum.Name = "txtCustNum";
+            this.txtCustNum.Size = new System.Drawing.Size(100, 20);
+            this.txtCustNum.TabIndex = 27;
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(334, 30);
+            this.btnUpdate.Location = new System.Drawing.Point(477, 30);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(137, 46);
             this.btnUpdate.TabIndex = 58;
@@ -230,6 +230,7 @@
             this.btnAdd.TabIndex = 57;
             this.btnAdd.Text = "Add New Employee";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // lbl_custGender
             // 
@@ -396,21 +397,21 @@
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label lbl_custAddress;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtEmpAddress;
-        private System.Windows.Forms.TextBox txtEmpGender;
-        private System.Windows.Forms.TextBox txtJobId;
-        private System.Windows.Forms.TextBox txtWorkStatus;
-        private System.Windows.Forms.TextBox txtHourlyRate;
-        private System.Windows.Forms.TextBox txtEmpHireDate;
-        private System.Windows.Forms.TextBox txtEmpFName;
-        private System.Windows.Forms.TextBox txtEmpLName;
-        private System.Windows.Forms.TextBox txtEmpCity;
-        private System.Windows.Forms.TextBox txtEmpState;
-        private System.Windows.Forms.TextBox txtEmpZip;
-        private System.Windows.Forms.TextBox txtEmpPhoneNumber;
-        private System.Windows.Forms.TextBox txtEmpEmail;
-        private System.Windows.Forms.TextBox txtEmpDOB;
-        private System.Windows.Forms.TextBox txtEmpNum;
+        private System.Windows.Forms.TextBox txtCustAddress;
+        private System.Windows.Forms.TextBox txtCustGender;
+        private System.Windows.Forms.TextBox txtCustPassword;
+        private System.Windows.Forms.TextBox txtCustCreditCard;
+        private System.Windows.Forms.TextBox txtCustCSPYMTSTL;
+        private System.Windows.Forms.TextBox txtCustPasswordHash;
+        private System.Windows.Forms.TextBox txtCustFName;
+        private System.Windows.Forms.TextBox txtCustLName;
+        private System.Windows.Forms.TextBox txtCustCity;
+        private System.Windows.Forms.TextBox txtCustState;
+        private System.Windows.Forms.TextBox txtCustZip;
+        private System.Windows.Forms.TextBox txtCustPhoneNumber;
+        private System.Windows.Forms.TextBox txtCustEmail;
+        private System.Windows.Forms.TextBox txtCustDOB;
+        private System.Windows.Forms.TextBox txtCustNum;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label lbl_custGender;

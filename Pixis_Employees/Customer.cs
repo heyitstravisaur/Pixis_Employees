@@ -89,8 +89,6 @@ namespace Pixis_Employees
         }
 
 
-
-
         protected void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
@@ -109,7 +107,9 @@ namespace Pixis_Employees
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-
+            //show form
+            UpdateCustomer addCustomer = new UpdateCustomer(selectedCustomer, connectionString, conn, adapter);
+            addCustomer.Show();
         }
 
         private void btn_Update_Click(object sender, EventArgs e)
