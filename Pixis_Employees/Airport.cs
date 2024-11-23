@@ -33,7 +33,7 @@ namespace Pixis_Employees
         private void Airport_Load(object sender, EventArgs e)
         {
             LoadAirportData();
-            this.aIRPORTTableAdapter.Fill(this.dataSet2.AIRPORT);
+            //this.aIRPORTTableAdapter.Fill(this.dataSet2.AIRPORT);
 
         }
 

@@ -39,7 +39,7 @@ namespace Pixis_Employees
 
         private void LoadAirplaneData()
         {
-            //
+            
             try
             {
                 using (iDB2Connection conn = new iDB2Connection(connectionString))
