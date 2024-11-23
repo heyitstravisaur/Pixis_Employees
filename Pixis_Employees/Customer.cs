@@ -114,7 +114,7 @@ namespace Pixis_Employees
 
         private void btn_Update_Click(object sender, EventArgs e)
         {
-            
+
 
             try
 
@@ -122,11 +122,31 @@ namespace Pixis_Employees
                 //passing Customer to Updatecustomer value
                 selectedCustomer = SelectedCustomer;
 
-                //show form
-                UpdateCustomer updateCustomer = new UpdateCustomer(selectedCustomer, connectionString, conn, adapter);
-                updateCustomer.Show();
+                if (selectedCustomer == null)
+                {
+                    throw new ArgumentNullException();
+                }
+
+                else
+                {
+
+                    //show form
+                    UpdateCustomer updateCustomer = new UpdateCustomer(selectedCustomer, connectionString, conn, adapter);
+                    updateCustomer.Show();
+                }
+
 
             }
+            catch (ArgumentNullException ex) 
+            {
+                var result = MessageBox.Show(
+                "Please choose a cell before continuing.",
+                "Error",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error
+                );
+            }
+
             catch (Exception ex)
             {
                 var result = MessageBox.Show(
