@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Pixis_Employees
 {
-   
+
     public partial class Customer : Form
     {
 
@@ -19,7 +19,7 @@ namespace Pixis_Employees
         iDB2Connection conn;
         iDB2DataAdapter adapter;
         DataSet dataSet;
-        
+
 
         private PyxisairFlightReservationSystem pfrs;
         private BindingSource bindingSource = new BindingSource();
@@ -96,7 +96,7 @@ namespace Pixis_Employees
             {
                 //take value of Customernumber from selected cell row and populate to string for update button
                 SelectedCustomer = (dataGridView1.CurrentRow.Cells[0].Value.ToString());
-                
+
 
             }
         }
@@ -108,43 +108,65 @@ namespace Pixis_Employees
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-
+            selectedCustomer = null; //make sure selectedCustomer is nulled out so new record option is chosen on next form.
             //show form
             UpdateCustomer addCustomer = new UpdateCustomer(selectedCustomer, connectionString, conn, adapter);
             addCustomer.Show();
         }
 
 
-        /// <summary>
-        /// WE WERE WORKING HERE
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void btn_Update_Click(object sender, EventArgs e)
         {
-            using (iDB2Connection IDB2connection = new iDB2Connection(connectionString))
+
+            try
             {
-                try
+
+
+                if (selectedCustomer == null || selectedCustomer == "")
                 {
-                    IDB2connection.Open();
+                    var result = MessageBox.Show(
+                    "Please double click a Customer Number before clicking update.",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                    );
+                }
+                else
+                {
+                    //build SQL query to pass to DB
+                    conn = new iDB2Connection(connectionString);
+                    conn.Open();
+
                     string query = "SELECT * FROM CUSTOMER WHERE CUSTNO" + " LIKE '%" + SelectedCustomer + "%'";
-                    iDB2DataAdapter adapter = new iDB2DataAdapter(query, IDB2connection);
+                    iDB2DataAdapter adapter = new iDB2DataAdapter(query, conn);
                     adapter = new iDB2DataAdapter(sql, conn);
+
+
 
                     dataSet = new DataSet();
                     adapter.Fill(dataSet);
 
                     UpdateCustomer updateCustomer = new UpdateCustomer(selectedCustomer, connectionString, conn, adapter, dataSet);
+                    updateCustomer.Show();
 
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error: {ex.Message}");
+
                 }
             }
-        }
+
+            catch (Exception ex)
+
+            {
+                var result = MessageBox.Show(
+                ex.Message,
+                "Error",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error
+                );
+
+            }
 
 
         }
 
+    }
 }

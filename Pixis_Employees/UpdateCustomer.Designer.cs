@@ -31,7 +31,9 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.lbl_custAddress = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtCustCreditCard = new System.Windows.Forms.MaskedTextBox();
             this.txtCustAddress = new System.Windows.Forms.TextBox();
+            this.txtCustPassword = new System.Windows.Forms.MaskedTextBox();
             this.txtCustGender = new System.Windows.Forms.TextBox();
             this.txtCustCSPYMTSTL = new System.Windows.Forms.TextBox();
             this.txtCustPasswordHash = new System.Windows.Forms.TextBox();
@@ -60,8 +62,7 @@
             this.lbl_custEmail = new System.Windows.Forms.Label();
             this.lbl_custDOB = new System.Windows.Forms.Label();
             this.lbl_custno = new System.Windows.Forms.Label();
-            this.txtCustPassword = new System.Windows.Forms.MaskedTextBox();
-            this.txtCustCreditCard = new System.Windows.Forms.MaskedTextBox();
+            this.btn_close = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -108,12 +109,28 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Customer Information:";
             // 
+            // txtCustCreditCard
+            // 
+            this.txtCustCreditCard.Location = new System.Drawing.Point(25, 324);
+            this.txtCustCreditCard.Name = "txtCustCreditCard";
+            this.txtCustCreditCard.PasswordChar = '*';
+            this.txtCustCreditCard.Size = new System.Drawing.Size(100, 20);
+            this.txtCustCreditCard.TabIndex = 12;
+            // 
             // txtCustAddress
             // 
             this.txtCustAddress.Location = new System.Drawing.Point(25, 90);
             this.txtCustAddress.Name = "txtCustAddress";
             this.txtCustAddress.Size = new System.Drawing.Size(100, 20);
             this.txtCustAddress.TabIndex = 3;
+            // 
+            // txtCustPassword
+            // 
+            this.txtCustPassword.Location = new System.Drawing.Point(25, 298);
+            this.txtCustPassword.Name = "txtCustPassword";
+            this.txtCustPassword.PasswordChar = '*';
+            this.txtCustPassword.Size = new System.Drawing.Size(100, 20);
+            this.txtCustPassword.TabIndex = 11;
             // 
             // txtCustGender
             // 
@@ -207,6 +224,7 @@
             this.btnUpdate.TabIndex = 1;
             this.btnUpdate.Text = "Update Existing Customer";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnAdd
             // 
@@ -344,27 +362,22 @@
             this.lbl_custno.TabIndex = 40;
             this.lbl_custno.Text = "Customer Number";
             // 
-            // txtCustPassword
+            // btn_close
             // 
-            this.txtCustPassword.Location = new System.Drawing.Point(25, 298);
-            this.txtCustPassword.Name = "txtCustPassword";
-            this.txtCustPassword.PasswordChar = '*';
-            this.txtCustPassword.Size = new System.Drawing.Size(100, 20);
-            this.txtCustPassword.TabIndex = 11;
-            // 
-            // txtCustCreditCard
-            // 
-            this.txtCustCreditCard.Location = new System.Drawing.Point(25, 324);
-            this.txtCustCreditCard.Name = "txtCustCreditCard";
-            this.txtCustCreditCard.PasswordChar = '*';
-            this.txtCustCreditCard.Size = new System.Drawing.Size(100, 20);
-            this.txtCustCreditCard.TabIndex = 12;
+            this.btn_close.Location = new System.Drawing.Point(705, 613);
+            this.btn_close.Name = "btn_close";
+            this.btn_close.Size = new System.Drawing.Size(137, 46);
+            this.btn_close.TabIndex = 62;
+            this.btn_close.Text = "Close";
+            this.btn_close.UseVisualStyleBackColor = true;
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
             // UpdateCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(854, 671);
+            this.Controls.Add(this.btn_close);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.lbl_custAddress);
             this.Controls.Add(this.groupBox1);
@@ -430,5 +443,6 @@
         private System.Windows.Forms.Label lbl_custno;
         private System.Windows.Forms.MaskedTextBox txtCustCreditCard;
         private System.Windows.Forms.MaskedTextBox txtCustPassword;
+        private System.Windows.Forms.Button btn_close;
     }
 }

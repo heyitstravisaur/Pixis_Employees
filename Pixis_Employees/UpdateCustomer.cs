@@ -26,32 +26,41 @@ namespace Pixis_Employees
         public iDB2DataAdapter adapter { get; set; }
         public DataSet dataSet { get; set; }
 
-        public UpdateCustomer(string selectedCustomer, string connectionString, iDB2Connection conn, iDB2DataAdapter adapter)
+        private void checkAddOrUpdate(string selectedCustomer)
         {
 
-            InitializeComponent();
+            //code if add gets us here, selected customer will be null and let us add record, if not null it's update function and pull customer record
+            if (selectedCustomer != null)
+            {
+                listBox1.Items.Add("\nUpdate Customer form, please edit information and then click Update Existing Customer.");
+            }
+            else
+            {
+                listBox1.Items.Add("\nAdd Customer form, please fill out all information and then click Add New Customer.");
+            }
+        }
 
+        public UpdateCustomer(string selectedCustomer, string connectionString, iDB2Connection conn, iDB2DataAdapter adapter)
+        {
+            //add customer initialize
+            InitializeComponent();
+            checkAddOrUpdate(selectedCustomer);
 
 
         }
 
         public UpdateCustomer(string selectedCustomer, string connectionString, iDB2Connection conn, iDB2DataAdapter adapter, DataSet dataSet)
         {
-
+            //update customer initialize
             InitializeComponent();
-            listBox1.Items.Add(selectedCustomer);
-            listBox1.Items.Add(connectionString); 
-            listBox1.Items.Add(dataSet);
-            
-
-
+            checkAddOrUpdate(selectedCustomer);
+            LoadUpdateCustomerRecord(selectedCustomer, connectionString, conn, adapter, dataSet);  
         }
 
 
 
         protected void UpdateCustomer_Load(object sender, EventArgs e)
         {
-
 
         }
 
@@ -397,8 +406,32 @@ namespace Pixis_Employees
         }
 
         //method to update record to customer table
-        private void UpdateCustomerRecord(object sender, string connectionString, string SelectedCustomer, EventArgs ee)
+        private void LoadUpdateCustomerRecord(string selectedCustomer, string connectionString, iDB2Connection conn, iDB2DataAdapter adapter, DataSet dataSet)
         {
+            //establish connection from pulled customer record into the update form
+            DataSet ds = new DataSet();
+            adapter.Fill(ds);
+            DataRow row = ds.Tables[0].Rows[0];
+
+
+            //start reading data into the text fields
+            txtCustNum.Text = row["CUSTNO"].ToString();
+            txtCustFName.Text = row["CFNAME"].ToString();
+            txtCustLName.Text = row["CLNAME"].ToString();
+            txtCustAddress.Text = row["CADDR"].ToString();
+            txtCustCity.Text = row["CCITY"].ToString();
+            txtCustState.Text = row["CSTATE"].ToString();
+            txtCustZip.Text = row["CZIP"].ToString();
+            txtCustPhoneNumber.Text = row["CPHONE"].ToString();
+            txtCustEmail.Text = row["CEMAIL"].ToString();
+            txtCustDOB.Text = row["CDOB"].ToString();
+            txtCustGender.Text = row["CGENDER"].ToString();
+            txtCustPassword.Text = row["CPWORD"].ToString();
+            txtCustCreditCard.Text = row["CSCCARDNO"].ToString();
+            txtCustCSPYMTSTL.Text = row["CSPYMTSTL"].ToString();
+            txtCustPasswordHash.Text = row["CPWORDHASH"].ToString();
+
+
 
         }
 
@@ -409,6 +442,16 @@ namespace Pixis_Employees
 
             //open connection to IDB2 to update live data, pass through connectionstring from Customer form
             AddCustomerRecord(sender, connectionString, e);  
+        }
+
+        private void btn_close_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
