@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -34,8 +35,20 @@ namespace Pixis_Employees
 
         }
 
-       
-        
+        public UpdateCustomer(string selectedCustomer, string connectionString, iDB2Connection conn, iDB2DataAdapter adapter, DataSet dataSet)
+        {
+
+            InitializeComponent();
+            listBox1.Items.Add(selectedCustomer);
+            listBox1.Items.Add(connectionString); 
+            listBox1.Items.Add(dataSet);
+            
+
+
+        }
+
+
+
         protected void UpdateCustomer_Load(object sender, EventArgs e)
         {
 
@@ -384,40 +397,10 @@ namespace Pixis_Employees
         }
 
         //method to update record to customer table
-        private void UpdateCustomerRecord(object sender, string connectionString, EventArgs ee)
+        private void UpdateCustomerRecord(object sender, string connectionString, string SelectedCustomer, EventArgs ee)
         {
-            string cmdText = "UPDATE CUSTOM SET CRSTTL = 'REVISED PROGRAMMING' WHERE COURSE = 987";
 
-            try
-
-            {
-
-                conn = new iDB2Connection(connectionString);
-                conn.Open();
-
-                iDB2Command cmd = new iDB2Command(cmdText, conn);
-
-                var result = MessageBox.Show(
-                "Record has been updated! Please refresh the table to view.",
-                "Record Added",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information
-                );
-                this.Close();
-
-            }
-
-            catch (Exception ex)
-            {
-                var result = MessageBox.Show(
-                ex.Message,
-                "Error",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Error
-                );
-            }
         }
-
 
 
         private void btnAdd_Click(object sender, EventArgs e)
