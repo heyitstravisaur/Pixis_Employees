@@ -33,5 +33,16 @@ namespace Pixis_Employees.Properties {
                 return ((string)(this["ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Provider=IBMDA400.DataSource.1;Data Source=deathstar.gtc.edu;User ID=itpa648;Init" +
+            "ial Catalog=S101FF5C")]
+        public string IBM_DB2_TDUNK {
+            get {
+                return ((string)(this["IBM_DB2_TDUNK"]));
+            }
+        }
     }
 }
