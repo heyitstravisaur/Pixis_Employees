@@ -138,7 +138,7 @@ namespace Pixis_Employees
                 cmd.Parameters["@ELNAME"].Value = string.IsNullOrWhiteSpace(empLName) ? " " : ToUpperCase(empLName);
                 cmd.Parameters["@EADDR"].Value = string.IsNullOrWhiteSpace(empAddress) ? " " : empAddress;
                 cmd.Parameters["@ECITY"].Value = string.IsNullOrWhiteSpace(empCity) ? " " : ToUpperCase(empCity);
-                cmd.Parameters["@ESTATE"].Value = string.IsNullOrWhiteSpace(empState) ? " " : ToUpperCase(empState);
+                cmd.Parameters["@ESTATE"].Value = string.IsNullOrWhiteSpace(empState) ? " " : empState.ToUpper();
                 cmd.Parameters["@EZIP"].Value = string.IsNullOrWhiteSpace(empZip) ? " " : empZip;
                 cmd.Parameters["@EPHONE"].Value = string.IsNullOrWhiteSpace(empPhoneNumber) ? " " : empPhoneNumber;
                 cmd.Parameters["@EMAIL"].Value = string.IsNullOrWhiteSpace(empPhoneNumber) ? " " : empEmail;
