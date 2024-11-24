@@ -33,8 +33,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtCustAddress = new System.Windows.Forms.TextBox();
             this.txtCustGender = new System.Windows.Forms.TextBox();
-            this.txtCustPassword = new System.Windows.Forms.TextBox();
-            this.txtCustCreditCard = new System.Windows.Forms.TextBox();
             this.txtCustCSPYMTSTL = new System.Windows.Forms.TextBox();
             this.txtCustPasswordHash = new System.Windows.Forms.TextBox();
             this.txtCustFName = new System.Windows.Forms.TextBox();
@@ -62,6 +60,8 @@
             this.lbl_custEmail = new System.Windows.Forms.Label();
             this.lbl_custDOB = new System.Windows.Forms.Label();
             this.lbl_custno = new System.Windows.Forms.Label();
+            this.txtCustPassword = new System.Windows.Forms.MaskedTextBox();
+            this.txtCustCreditCard = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,10 +86,10 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtCustAddress);
-            this.groupBox1.Controls.Add(this.txtCustGender);
-            this.groupBox1.Controls.Add(this.txtCustPassword);
             this.groupBox1.Controls.Add(this.txtCustCreditCard);
+            this.groupBox1.Controls.Add(this.txtCustAddress);
+            this.groupBox1.Controls.Add(this.txtCustPassword);
+            this.groupBox1.Controls.Add(this.txtCustGender);
             this.groupBox1.Controls.Add(this.txtCustCSPYMTSTL);
             this.groupBox1.Controls.Add(this.txtCustPasswordHash);
             this.groupBox1.Controls.Add(this.txtCustFName);
@@ -106,120 +106,106 @@
             this.groupBox1.Size = new System.Drawing.Size(149, 413);
             this.groupBox1.TabIndex = 59;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Text = "Customer Information:";
             // 
             // txtCustAddress
             // 
             this.txtCustAddress.Location = new System.Drawing.Point(25, 90);
             this.txtCustAddress.Name = "txtCustAddress";
             this.txtCustAddress.Size = new System.Drawing.Size(100, 20);
-            this.txtCustAddress.TabIndex = 44;
+            this.txtCustAddress.TabIndex = 3;
             // 
             // txtCustGender
             // 
             this.txtCustGender.Location = new System.Drawing.Point(25, 272);
             this.txtCustGender.Name = "txtCustGender";
             this.txtCustGender.Size = new System.Drawing.Size(100, 20);
-            this.txtCustGender.TabIndex = 43;
-            // 
-            // txtCustPassword
-            // 
-            this.txtCustPassword.Location = new System.Drawing.Point(25, 298);
-            this.txtCustPassword.Name = "txtCustPassword";
-            this.txtCustPassword.Size = new System.Drawing.Size(100, 20);
-            this.txtCustPassword.TabIndex = 42;
-            // 
-            // txtCustCreditCard
-            // 
-            this.txtCustCreditCard.Location = new System.Drawing.Point(25, 324);
-            this.txtCustCreditCard.Name = "txtCustCreditCard";
-            this.txtCustCreditCard.Size = new System.Drawing.Size(100, 20);
-            this.txtCustCreditCard.TabIndex = 41;
+            this.txtCustGender.TabIndex = 10;
             // 
             // txtCustCSPYMTSTL
             // 
             this.txtCustCSPYMTSTL.Location = new System.Drawing.Point(25, 350);
             this.txtCustCSPYMTSTL.Name = "txtCustCSPYMTSTL";
             this.txtCustCSPYMTSTL.Size = new System.Drawing.Size(100, 20);
-            this.txtCustCSPYMTSTL.TabIndex = 40;
+            this.txtCustCSPYMTSTL.TabIndex = 13;
             // 
             // txtCustPasswordHash
             // 
             this.txtCustPasswordHash.Location = new System.Drawing.Point(25, 376);
             this.txtCustPasswordHash.Name = "txtCustPasswordHash";
             this.txtCustPasswordHash.Size = new System.Drawing.Size(100, 20);
-            this.txtCustPasswordHash.TabIndex = 39;
+            this.txtCustPasswordHash.TabIndex = 14;
             // 
             // txtCustFName
             // 
             this.txtCustFName.Location = new System.Drawing.Point(25, 38);
             this.txtCustFName.Name = "txtCustFName";
             this.txtCustFName.Size = new System.Drawing.Size(100, 20);
-            this.txtCustFName.TabIndex = 35;
+            this.txtCustFName.TabIndex = 1;
             // 
             // txtCustLName
             // 
             this.txtCustLName.Location = new System.Drawing.Point(25, 64);
             this.txtCustLName.Name = "txtCustLName";
             this.txtCustLName.Size = new System.Drawing.Size(100, 20);
-            this.txtCustLName.TabIndex = 34;
+            this.txtCustLName.TabIndex = 2;
             // 
             // txtCustCity
             // 
             this.txtCustCity.Location = new System.Drawing.Point(25, 116);
             this.txtCustCity.Name = "txtCustCity";
             this.txtCustCity.Size = new System.Drawing.Size(100, 20);
-            this.txtCustCity.TabIndex = 33;
+            this.txtCustCity.TabIndex = 4;
             // 
             // txtCustState
             // 
             this.txtCustState.Location = new System.Drawing.Point(25, 142);
             this.txtCustState.Name = "txtCustState";
             this.txtCustState.Size = new System.Drawing.Size(100, 20);
-            this.txtCustState.TabIndex = 32;
+            this.txtCustState.TabIndex = 5;
             // 
             // txtCustZip
             // 
             this.txtCustZip.Location = new System.Drawing.Point(25, 168);
             this.txtCustZip.Name = "txtCustZip";
             this.txtCustZip.Size = new System.Drawing.Size(100, 20);
-            this.txtCustZip.TabIndex = 31;
+            this.txtCustZip.TabIndex = 6;
             // 
             // txtCustPhoneNumber
             // 
             this.txtCustPhoneNumber.Location = new System.Drawing.Point(25, 194);
             this.txtCustPhoneNumber.Name = "txtCustPhoneNumber";
             this.txtCustPhoneNumber.Size = new System.Drawing.Size(100, 20);
-            this.txtCustPhoneNumber.TabIndex = 30;
+            this.txtCustPhoneNumber.TabIndex = 7;
             // 
             // txtCustEmail
             // 
             this.txtCustEmail.Location = new System.Drawing.Point(25, 220);
             this.txtCustEmail.Name = "txtCustEmail";
             this.txtCustEmail.Size = new System.Drawing.Size(100, 20);
-            this.txtCustEmail.TabIndex = 29;
+            this.txtCustEmail.TabIndex = 8;
             // 
             // txtCustDOB
             // 
             this.txtCustDOB.Location = new System.Drawing.Point(25, 246);
             this.txtCustDOB.Name = "txtCustDOB";
             this.txtCustDOB.Size = new System.Drawing.Size(100, 20);
-            this.txtCustDOB.TabIndex = 28;
+            this.txtCustDOB.TabIndex = 9;
             // 
             // txtCustNum
             // 
             this.txtCustNum.Location = new System.Drawing.Point(25, 12);
             this.txtCustNum.Name = "txtCustNum";
             this.txtCustNum.Size = new System.Drawing.Size(100, 20);
-            this.txtCustNum.TabIndex = 27;
+            this.txtCustNum.TabIndex = 0;
             // 
             // btnUpdate
             // 
             this.btnUpdate.Location = new System.Drawing.Point(477, 30);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(137, 46);
-            this.btnUpdate.TabIndex = 58;
-            this.btnUpdate.Text = "Update Existing Employee";
+            this.btnUpdate.TabIndex = 1;
+            this.btnUpdate.Text = "Update Existing Customer";
             this.btnUpdate.UseVisualStyleBackColor = true;
             // 
             // btnAdd
@@ -227,8 +213,8 @@
             this.btnAdd.Location = new System.Drawing.Point(334, 30);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(137, 46);
-            this.btnAdd.TabIndex = 57;
-            this.btnAdd.Text = "Add New Employee";
+            this.btnAdd.TabIndex = 0;
+            this.btnAdd.Text = "Add New Customer";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -358,6 +344,22 @@
             this.lbl_custno.TabIndex = 40;
             this.lbl_custno.Text = "Customer Number";
             // 
+            // txtCustPassword
+            // 
+            this.txtCustPassword.Location = new System.Drawing.Point(25, 298);
+            this.txtCustPassword.Name = "txtCustPassword";
+            this.txtCustPassword.PasswordChar = '*';
+            this.txtCustPassword.Size = new System.Drawing.Size(100, 20);
+            this.txtCustPassword.TabIndex = 11;
+            // 
+            // txtCustCreditCard
+            // 
+            this.txtCustCreditCard.Location = new System.Drawing.Point(25, 324);
+            this.txtCustCreditCard.Name = "txtCustCreditCard";
+            this.txtCustCreditCard.PasswordChar = '*';
+            this.txtCustCreditCard.Size = new System.Drawing.Size(100, 20);
+            this.txtCustCreditCard.TabIndex = 12;
+            // 
             // UpdateCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -399,8 +401,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtCustAddress;
         private System.Windows.Forms.TextBox txtCustGender;
-        private System.Windows.Forms.TextBox txtCustPassword;
-        private System.Windows.Forms.TextBox txtCustCreditCard;
         private System.Windows.Forms.TextBox txtCustCSPYMTSTL;
         private System.Windows.Forms.TextBox txtCustPasswordHash;
         private System.Windows.Forms.TextBox txtCustFName;
@@ -428,5 +428,7 @@
         private System.Windows.Forms.Label lbl_custEmail;
         private System.Windows.Forms.Label lbl_custDOB;
         private System.Windows.Forms.Label lbl_custno;
+        private System.Windows.Forms.MaskedTextBox txtCustCreditCard;
+        private System.Windows.Forms.MaskedTextBox txtCustPassword;
     }
 }
