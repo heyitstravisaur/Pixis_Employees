@@ -54,6 +54,8 @@
             this.btn_Update = new System.Windows.Forms.Button();
             this.btn_add = new System.Windows.Forms.Button();
             this.btn_refresh = new System.Windows.Forms.Button();
+            this.lbl8 = new System.Windows.Forms.Label();
+            this.lbl8b = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTOMERBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).BeginInit();
@@ -213,7 +215,7 @@
             // 
             // btn_Update
             // 
-            this.btn_Update.Location = new System.Drawing.Point(256, 465);
+            this.btn_Update.Location = new System.Drawing.Point(534, 465);
             this.btn_Update.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Update.Name = "btn_Update";
             this.btn_Update.Size = new System.Drawing.Size(108, 31);
@@ -224,7 +226,7 @@
             // 
             // btn_add
             // 
-            this.btn_add.Location = new System.Drawing.Point(144, 465);
+            this.btn_add.Location = new System.Drawing.Point(178, 465);
             this.btn_add.Margin = new System.Windows.Forms.Padding(2);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(108, 31);
@@ -244,11 +246,33 @@
             this.btn_refresh.UseVisualStyleBackColor = true;
             this.btn_refresh.Click += new System.EventHandler(this.btn_refresh_Click);
             // 
+            // lbl8
+            // 
+            this.lbl8.AutoSize = true;
+            this.lbl8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl8.Location = new System.Drawing.Point(148, 474);
+            this.lbl8.Name = "lbl8";
+            this.lbl8.Size = new System.Drawing.Size(25, 13);
+            this.lbl8.TabIndex = 15;
+            this.lbl8.Text = "8a.";
+            // 
+            // lbl8b
+            // 
+            this.lbl8b.AutoSize = true;
+            this.lbl8b.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl8b.Location = new System.Drawing.Point(304, 474);
+            this.lbl8b.Name = "lbl8b";
+            this.lbl8b.Size = new System.Drawing.Size(225, 13);
+            this.lbl8b.TabIndex = 16;
+            this.lbl8b.Text = "8b. Choose a record and click update:";
+            // 
             // Customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(802, 507);
+            this.Controls.Add(this.lbl8b);
+            this.Controls.Add(this.lbl8);
             this.Controls.Add(this.btn_refresh);
             this.Controls.Add(this.btn_Update);
             this.Controls.Add(this.btn_add);
@@ -264,6 +288,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eMPLOYEEBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -294,5 +319,7 @@
         private System.Windows.Forms.Button btn_Update;
         private System.Windows.Forms.Button btn_add;
         private System.Windows.Forms.Button btn_refresh;
+        private System.Windows.Forms.Label lbl8;
+        private System.Windows.Forms.Label lbl8b;
     }
 }

@@ -117,25 +117,10 @@ namespace Pixis_Employees
         private void btn_Update_Click(object sender, EventArgs e)
         {
 
-
             try
 
             {
-                //passing Customer to Updatecustomer value
-                selectedCustomer = SelectedCustomer;
-
-                if (selectedCustomer == null)
-                {
-                    throw new ArgumentNullException();
-                }
-
-                else
-                {
-
-                    //show form
-                    UpdateCustomer updateCustomer = new UpdateCustomer(selectedCustomer, connectionString, conn, adapter);
-                    updateCustomer.Show();
-                }
+               
 
 
             }

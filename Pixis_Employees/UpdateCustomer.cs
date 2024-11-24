@@ -384,101 +384,26 @@ namespace Pixis_Employees
         }
 
         //method to update record to customer table
-        private void UpdateCustomerRecord(object sender, EventArgs e)
+        private void UpdateCustomerRecord(object sender, string connectionString, EventArgs ee)
         {
-
+            string cmdText = "UPDATE CUSTOM SET CRSTTL = 'REVISED PROGRAMMING' WHERE COURSE = 987";
 
             try
 
             {
 
-                //sql statement building, taking selectedCustomer from Customer form
-                sql = "Select * from CUSTOMER where CUSTNO " + " LIKE '%" + selectedCustomer + "%'";
-                adapter = new iDB2DataAdapter(sql, conn);
+                conn = new iDB2Connection(connectionString);
+                conn.Open();
 
-                adapter.Fill(dataSet);
+                iDB2Command cmd = new iDB2Command(cmdText, conn);
 
-                adapter.ToString();
-
-
-                //if (dataSet.Tables.Count > 0 && dataSet.Tables[0].Rows.Count > 0)
-                //{
-                //    DataRow row = dataSet.Tables[0].Rows[0];
-
-                //    foreach (GroupBox group in groups)
-                //    {
-
-                //        // Loop through each control inside the GroupBox
-                //        foreach (Control control in group.Controls)
-                //        {
-                //            if (control is TextBox textBox)
-                //            {
-                //                // Use the TextBox Name property to identify which data to assign
-                //                switch (textBox.Name)
-                //                {
-                //                    case "txtEmpNum":
-                //                        textBox.Text = row["EMPNO"].ToString();
-                //                        break;
-                //                    case "txtEmpFName":
-                //                        textBox.Text = row["EFNAME"].ToString();
-                //                        break;
-                //                    case "txtEmpLName":
-                //                        textBox.Text = row["ELNAME"].ToString();
-                //                        break;
-                //                    case "txtEmpAddress":
-                //                        textBox.Text = row["EADDR"].ToString();
-                //                        break;
-                //                    case "txtEmpCity":
-                //                        textBox.Text = row["ECITY"].ToString();
-                //                        break;
-                //                    case "txtEmpState":
-                //                        textBox.Text = row["ESTATE"].ToString();
-                //                        break;
-                //                    case "txtEmpZip":
-                //                        textBox.Text = row["EZIP"].ToString();
-                //                        break;
-                //                    case "txtEmpPhoneNumber":
-                //                        textBox.Text = row["EPHONE"].ToString();
-                //                        break;
-                //                    case "txtEmpEmail":
-                //                        textBox.Text = row["EMAIL"].ToString();
-                //                        break;
-                //                    case "txtEmpDOB":
-                //                        textBox.Text = row["DOB"].ToString();
-                //                        break;
-                //                    case "txtEmpGender":
-                //                        textBox.Text = row["GENDER"].ToString();
-                //                        break;
-                //                    case "txtJobId":
-                //                        textBox.Text = row["JOBID"].ToString();
-                //                        break;
-                //                    case "txtWorkStatus":
-                //                        textBox.Text = row["WRKSTATUS"].ToString();
-                //                        break;
-                //                    case "txtHourlyRate":
-                //                        textBox.Text = row["HRLYRATE"].ToString();
-                //                        break;
-                //                    case "txtEmpHireDate":
-                //                        textBox.Text = row["EMHIREDT"].ToString();
-                //                        break;
-                //                    case "txtEmpStartDate":
-                //                        textBox.Text = row["EMSTARTDT"].ToString();
-                //                        break;
-                //                    case "txtEmpTermDate":
-                //                        textBox.Text = row["EMTERMDT"].ToString();
-                //                        break;
-                //                    case "txtRegionId":
-                //                        textBox.Text = row["REGIONID"].ToString();
-                //                        break;
-                //                        // Add more cases as needed for additional TextBoxes
-                //                }
-
-                //            }
-                //        }
-                //    }
-                //}
-
-
+                var result = MessageBox.Show(
+                "Record has been updated! Please refresh the table to view.",
+                "Record Added",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information
+                );
+                this.Close();
 
             }
 
