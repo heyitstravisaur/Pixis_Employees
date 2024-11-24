@@ -455,7 +455,7 @@ namespace Pixis_Employees
                 conn = new iDB2Connection(connectionString);
                 conn.Open();
 
-                //hard coded cmdText Test example
+                //hard coded cmdText Test example @WORKS
                 //string cmdText = "UPDATE CUSTOMER SET CFNAME = 'JACK' WHERE CUSTNO = 342187361";
 
                 //string cmdText = "UPDATE CUSTOMER SET " +
@@ -475,31 +475,62 @@ namespace Pixis_Employees
                 //    "WHERE CUSTNO = " + txtCustNum.Text;
 
 
-                string cmdText = "UPDATE CUSTOMER SET " +
-                   "COL1 = " + txtCustNum.Text + "," +
-                   "COL2 = '" + txtCustFName.Text + "'," +
-                   "COL3 = '" + txtCustLName.Text + "'," +
-                   "COL4 = '" + txtCustAddress.Text + "'," +
-                   "COL5 = '" + txtCustCity.Text + "'," +
-                   "COL6 = '" + txtCustState.Text + "'," +
-                   "COL7 = " + txtCustZip.Text + "," +
-                   "COL8 = " + txtCustPhoneNumber.Text + "," +
-                   "COL9 = '" + txtCustEmail.Text + "'," +
-                   "COL10 = " + txtCustDOB.Text + "," +
-                   "COL11 = '" + txtCustGender.Text + "'," +
-                   "COL12 = '" + txtCustPassword.Text + "'," +
-                   "COL13 = '" + txtCustCreditCard.Text + "'," +
-                   "COL14 = " + txtCustCSPYMTSTL.Text + "," +
-                   "COL15 = " + txtCustPasswordHash.Text + "," +
-
-                   "WHERE CUSTNO = :" + txtCustNum.Text + ";";
+                //string cmdText = "UPDATE CUSTOMER SET " +
+                //   "COL1 = " + txtCustNum.Text + "," +
+                //   "COL2 = '" + txtCustFName.Text + "'," +
+                //   "COL3 = '" + txtCustLName.Text + "'," +
+                //   "COL4 = '" + txtCustAddress.Text + "'," +
+                //   "COL5 = '" + txtCustCity.Text + "'," +
+                //   "COL6 = '" + txtCustState.Text + "'," +
+                //   "COL7 = " + txtCustZip.Text + "," +
+                //   "COL8 = " + txtCustPhoneNumber.Text + "," +
+                //   "COL9 = '" + txtCustEmail.Text + "'," +
+                //   "COL10 = " + txtCustDOB.Text + "," +
+                //   "COL11 = '" + txtCustGender.Text + "'," +
+                //   "COL12 = '" + txtCustPassword.Text + "'," +
+                //   "COL13 = '" + txtCustCreditCard.Text + "'," +
+                //   "COL14 = " + txtCustCSPYMTSTL.Text + "," +
+                //   "COL15 = " + txtCustPasswordHash.Text + "," +
 
 
-                iDB2Command cmd = new iDB2Command(cmdText, conn);
+                //   "WHERE CUSTNO = :" + txtCustNum.Text + ";";
+
+                string updateQuery = @"UPDATE CUSTOMER SET 
+                                           CUSTNO = @CUSTNO, CFNAME = @CFNAME, 
+                                           CLNAME = @CLNAME, CADDR = @CADDR, 
+                                           CCITY = @CCITY, CSTATE = @CSTATE, 
+                                           CZIP = @CZIP, CPHONE = @CPHONE, CEMAIL = @CEMAIL, 
+                                           CDOB = @CDOB, CGENDER = @CGENDER, 
+                                           CPASSWORD = @CPASSWORD, CSCCARDNO = @CSCCARDNO,
+                                           CSPYMTSTL = @CSPYMTSTL, CPWORDHASH = CPWORDHASH
+                                           WHERE CUSTNO = @CUSTNO";
+
+                iDB2Command cmd = new iDB2Command(updateQuery, conn);
+
+                cmd.Parameters.Add(new iDB2Parameter("@CUSTNO", iDB2DbType.iDB2Integer) { Value = (Convert.ToInt64(txtCustNum.Text))});
+                cmd.Parameters.Add(new iDB2Parameter("@CFNAME", iDB2DbType.iDB2Char) { Value = txtCustFName.Text });
+                cmd.Parameters.Add(new iDB2Parameter("@CLNAME", iDB2DbType.iDB2Char) { Value = txtCustLName.Text });
+                cmd.Parameters.Add(new iDB2Parameter("@CADDR", iDB2DbType.iDB2Char) { Value = txtCustAddress.Text });
+                cmd.Parameters.Add(new iDB2Parameter("@CCITY", iDB2DbType.iDB2Char) { Value = txtCustCity.Text });
+                cmd.Parameters.Add(new iDB2Parameter("@CSTATE", iDB2DbType.iDB2Char) { Value = txtCustState.Text });
+                cmd.Parameters.Add(new iDB2Parameter("@CZIP", iDB2DbType.iDB2Integer) { Value = (Convert.ToInt64(txtCustZip.Text)) });
+                cmd.Parameters.Add(new iDB2Parameter("@CPHONE", iDB2DbType.iDB2Integer) { Value = (Convert.ToInt64(txtCustPhoneNumber.Text)) });
+                cmd.Parameters.Add(new iDB2Parameter("@CEMAIL", iDB2DbType.iDB2Char) { Value = txtCustEmail.Text });
+                cmd.Parameters.Add(new iDB2Parameter("@CDOB", iDB2DbType.iDB2Date) { Value = DateTime.Parse(txtCustDOB.ToString()) });
+                cmd.Parameters.Add(new iDB2Parameter("@CGENDER", iDB2DbType.iDB2Char) { Value = txtCustGender.Text });
+                cmd.Parameters.Add(new iDB2Parameter("@CPASSWORD", iDB2DbType.iDB2Char) { Value = txtCustPassword.Text });
+                cmd.Parameters.Add(new iDB2Parameter("@CSCCARDNO", iDB2DbType.iDB2Char) { Value = txtCustCreditCard.Text });
+                cmd.Parameters.Add(new iDB2Parameter("@CSPYMTSTL", iDB2DbType.iDB2Integer) { Value = (Convert.ToInt64(txtCustCSPYMTSTL.Text)) });
+                cmd.Parameters.Add(new iDB2Parameter("@CPWORDHASH", iDB2DbType.iDB2Integer) { Value = (Convert.ToInt64(txtCustPasswordHash.Text)) });
+
+
+
 
                 cmd.ExecuteNonQuery();
 
-               
+
+
+
 
                 var result2 = MessageBox.Show(
                 cmd.ToString(),
