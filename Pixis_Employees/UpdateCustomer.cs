@@ -32,10 +32,12 @@ namespace Pixis_Employees
             //code if add gets us here, selected customer will be null and let us add record, if not null it's update function and pull customer record
             if (selectedCustomer != null)
             {
+                btnAdd.Hide();
                 listBox1.Items.Add("\nUpdate Customer form, please edit information and then click Update Existing Customer.");
             }
             else
             {
+                btnUpdate.Hide();
                 listBox1.Items.Add("\nAdd Customer form, please fill out all information and then click Add New Customer.");
             }
         }
@@ -444,14 +446,81 @@ namespace Pixis_Employees
             AddCustomerRecord(sender, connectionString, e);  
         }
 
-        private void btn_close_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            try
+            {
 
+                conn = new iDB2Connection(connectionString);
+                conn.Open();
+
+                string cmdText = "UPDATE CUSTOMER SET CFNAME = '@CFNAME' WHERE CUSTNO = " + txtCustNum.Text;
+
+                //hard coded cmdText Test example
+                //string cmdText = "UPDATE CUSTOMER SET CFNAME = 'JACK' WHERE CUSTNO = 342187361";
+
+                //string cmdText = "UPDATE CUSTOMER SET " +
+                //    "CUSTNO = '" + txtCustNum.Text + "', " +
+                //    "CFNAME = '" + txtCustFName.Text + "', " +
+                //    "CLNAME = '" + txtCustLName.Text + "', " +
+                //    "CADDR = '" + txtCustAddress.Text + "', " +
+                //    "CCITY = '" + txtCustCity.Text + "', " +
+                //    "CSTATE = '" + txtCustState.Text + "', " +
+                //    "CZIP = '" + txtCustZip.Text + "', " +
+                //    "CPHONE = '" + txtCustPhoneNumber.Text + "', " +
+                //    "CDOB = '" + txtCustDOB.Text + "', " +
+                //    "CPWORD = '" + txtCustPassword.Text + "', " +
+                //    "CSCCARDNO = '" + txtCustCreditCard.Text + "', " +
+                //    "CSPYMTSTL = '" + txtCustCSPYMTSTL.Text + "', " +
+                //    "CPWORDHASH = '" + txtCustPasswordHash.Text + "', " +
+                //    "WHERE CUSTNO = " + txtCustNum.Text;
+
+
+                iDB2Command cmd = new iDB2Command(cmdText, conn);
+                cmd.DeriveParameters();
+
+                cmd.Parameters["@CFNAME"].Value = txtCustFName.Text;
+
+                cmd.ExecuteNonQuery();
+
+               
+
+                var result2 = MessageBox.Show(
+                cmd.ToString(),
+                "Query sending",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information
+                );
+
+
+                cmd.ExecuteNonQuery();
+
+                var result = MessageBox.Show(
+                "Record has been updated! Please refresh the table to view.",
+                "Record Added",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information
+                );
+                this.Close();
+            }
+            catch(Exception ex)
+            {
+                var result = MessageBox.Show(
+                ex.Message,
+                "Error",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error
+                );
+                this.Close();
+            }
+
+
+        }
+
+        private void btn_close_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
