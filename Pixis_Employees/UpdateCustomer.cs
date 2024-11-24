@@ -455,8 +455,6 @@ namespace Pixis_Employees
                 conn = new iDB2Connection(connectionString);
                 conn.Open();
 
-                string cmdText = "UPDATE CUSTOMER SET CFNAME = '@CFNAME' WHERE CUSTNO = " + txtCustNum.Text;
-
                 //hard coded cmdText Test example
                 //string cmdText = "UPDATE CUSTOMER SET CFNAME = 'JACK' WHERE CUSTNO = 342187361";
 
@@ -477,10 +475,27 @@ namespace Pixis_Employees
                 //    "WHERE CUSTNO = " + txtCustNum.Text;
 
 
-                iDB2Command cmd = new iDB2Command(cmdText, conn);
-                cmd.DeriveParameters();
+                string cmdText = "UPDATE CUSTOMER SET " +
+                   "COL1 = " + txtCustNum.Text + "," +
+                   "COL2 = '" + txtCustFName.Text + "'," +
+                   "COL3 = '" + txtCustLName.Text + "'," +
+                   "COL4 = '" + txtCustAddress.Text + "'," +
+                   "COL5 = '" + txtCustCity.Text + "'," +
+                   "COL6 = '" + txtCustState.Text + "'," +
+                   "COL7 = " + txtCustZip.Text + "," +
+                   "COL8 = " + txtCustPhoneNumber.Text + "," +
+                   "COL9 = '" + txtCustEmail.Text + "'," +
+                   "COL10 = " + txtCustDOB.Text + "," +
+                   "COL11 = '" + txtCustGender.Text + "'," +
+                   "COL12 = '" + txtCustPassword.Text + "'," +
+                   "COL13 = '" + txtCustCreditCard.Text + "'," +
+                   "COL14 = " + txtCustCSPYMTSTL.Text + "," +
+                   "COL15 = " + txtCustPasswordHash.Text + "," +
 
-                cmd.Parameters["@CFNAME"].Value = txtCustFName.Text;
+                   "WHERE CUSTNO = :" + txtCustNum.Text + ";";
+
+
+                iDB2Command cmd = new iDB2Command(cmdText, conn);
 
                 cmd.ExecuteNonQuery();
 

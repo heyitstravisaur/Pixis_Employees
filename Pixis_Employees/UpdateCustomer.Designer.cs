@@ -113,7 +113,6 @@
             // 
             this.txtCustCreditCard.Location = new System.Drawing.Point(25, 324);
             this.txtCustCreditCard.Name = "txtCustCreditCard";
-            this.txtCustCreditCard.PasswordChar = '*';
             this.txtCustCreditCard.Size = new System.Drawing.Size(100, 20);
             this.txtCustCreditCard.TabIndex = 12;
             // 
@@ -128,7 +127,6 @@
             // 
             this.txtCustPassword.Location = new System.Drawing.Point(25, 298);
             this.txtCustPassword.Name = "txtCustPassword";
-            this.txtCustPassword.PasswordChar = '*';
             this.txtCustPassword.Size = new System.Drawing.Size(100, 20);
             this.txtCustPassword.TabIndex = 11;
             // 
