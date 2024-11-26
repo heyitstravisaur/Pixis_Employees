@@ -124,40 +124,98 @@ namespace Pixis_Employees
 
         private void btn_Update_Click(object sender, EventArgs e)
         {
-
             try
             {
-
-
-                if (selectedCustomer == null || selectedCustomer == "")
+                foreach (DataGridViewRow row in dataGridView1.Rows)
                 {
-                    var result = MessageBox.Show(
-                    "Please double click a Customer Number before clicking update.",
-                    "Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error
-                    );
+                    if (row.IsNewRow) continue;
+                    foreach (DataGridViewCell cell in row.Cells)
+                    {
+                        if (cell.Value == null || string.IsNullOrWhiteSpace(cell.Value.ToString()))
+                        {
+                            MessageBox.Show($"Row {row.Index + 1} has empty fields. Please complete all fields before updating.");
+                            return;
+                        }
+                    }
                 }
-                else
+
+                bindingSource.EndEdit();
+
+                using (iDB2Connection conn = new iDB2Connection(connectionString))
                 {
-                    //build SQL query to pass to DB
-                    conn = new iDB2Connection(connectionString);
                     conn.Open();
+                    string updateQuery = @"UPDATE CUSTOMER SET 
+                                           CUSTNO = @CUSTNO, CFNAME = @CFNAME, 
+                                           CLNAME = @CLNAME, CADDR = @CADDR, 
+                                           CCITY = @CCITY, CSTATE = @CSTATE, 
+                                           CZIP = @CZIP, CPHONE = @CPHONE, CEMAIL = @CEMAIL, 
+                                           CDOB = @CDOB, CGENDER = @CGENDER, 
+                                           CPASSWORD = @CPASSWORD, CSCCARDNO = @CSCCARDNO,
+                                           CSPYMTSTL = @CSPYMTSTL, CPWORDHASH = CPWORDHASH
+                                           WHERE CUSTNO = @CUSTNO";
 
-                    string query = "SELECT * FROM CUSTOMER WHERE CUSTNO" + " LIKE '%" + SelectedCustomer + "%'";
-                    iDB2DataAdapter adapter = new iDB2DataAdapter(query, conn);
-                    adapter = new iDB2DataAdapter(sql, conn);
+                    foreach (DataRow row in customerDataSet.Tables["CUSTOMER"].Rows)
+                    {
+                        if (row.RowState == DataRowState.Modified)
+                        {
+                            iDB2Command cmd = new iDB2Command(updateQuery, conn);
+                            cmd.Parameters.Add(new iDB2Parameter("@CUSTNO", iDB2DbType.iDB2Integer) { Value = (int)row["CUSTNO"]});
+                            cmd.Parameters.Add(new iDB2Parameter("@CFNAME", iDB2DbType.iDB2Char) { Value = row["CFNAME"].ToString() });
+                            cmd.Parameters.Add(new iDB2Parameter("@CLNAME", iDB2DbType.iDB2Char) { Value = row["CLNAME"].ToString() });
+                            cmd.Parameters.Add(new iDB2Parameter("@CADDR", iDB2DbType.iDB2Char) { Value = row["CADDR"].ToString() });
+                            cmd.Parameters.Add(new iDB2Parameter("@CCITY", iDB2DbType.iDB2Char) { Value = row["CCITY"].ToString() });
+                            cmd.Parameters.Add(new iDB2Parameter("@CSTATE", iDB2DbType.iDB2Char) { Value = row["CSTATE"].ToString() });
+                            cmd.Parameters.Add(new iDB2Parameter("@CZIP", iDB2DbType.iDB2Integer) { Value = (int)row["CZIP"] });
+                            cmd.Parameters.Add(new iDB2Parameter("@CPHONE", iDB2DbType.iDB2Integer) { Value = (int)row["CPHONE"] });
+                            cmd.Parameters.Add(new iDB2Parameter("@CEMAIL", iDB2DbType.iDB2Char) { Value = row["CEMAIL"].ToString() });
+                            cmd.Parameters.Add(new iDB2Parameter("@CDOB", iDB2DbType.iDB2Char) { Value = row["CDOB"].ToString() });
+                            cmd.Parameters.Add(new iDB2Parameter("@CGENDER", iDB2DbType.iDB2Char) { Value = row["CGENDER"].ToString() });
+                            cmd.Parameters.Add(new iDB2Parameter("@CPASSWORD", iDB2DbType.iDB2Char) { Value = row["CPASSWORD"].ToString() });
+                            cmd.Parameters.Add(new iDB2Parameter("@CSCCARDNO", iDB2DbType.iDB2Char) { Value = row["CSCCARDNO"].ToString() });
+                            cmd.Parameters.Add(new iDB2Parameter("@CSPYMTSTL", iDB2DbType.iDB2Integer) { Value = (int)row["CSPYMTSTL"] });
+                            cmd.Parameters.Add(new iDB2Parameter("@CPWORDHASH", iDB2DbType.iDB2Integer) { Value = (int)row["CPWORDHASH"] });
 
-
-
-                    customerDataSet = new DataSet();
-                    adapter.Fill(customerDataSet);
-
-                    UpdateCustomer updateCustomer = new UpdateCustomer(selectedCustomer, connectionString, conn, adapter, customerDataSet);
-                    updateCustomer.Show();
-
-
+                            cmd.ExecuteNonQuery();
+                        }
+                    }
                 }
+
+                MessageBox.Show("Records updated successfully.");
+
+
+                //try
+                //{
+
+
+                //    if (selectedCustomer == null || selectedCustomer == "")
+                //    {
+                //        var result = MessageBox.Show(
+                //        "Please double click a Customer Number before clicking update.",
+                //        "Error",
+                //        MessageBoxButtons.OK,
+                //        MessageBoxIcon.Error
+                //        );
+                //    }
+                //    else
+                //    {
+                //        //build SQL query to pass to DB
+                //        conn = new iDB2Connection(connectionString);
+                //        conn.Open();
+
+                //        string query = "SELECT * FROM CUSTOMER WHERE CUSTNO" + " LIKE '%" + SelectedCustomer + "%'";
+                //        iDB2DataAdapter adapter = new iDB2DataAdapter(query, conn);
+                //        adapter = new iDB2DataAdapter(sql, conn);
+
+
+
+                //        customerDataSet = new DataSet();
+                //        adapter.Fill(customerDataSet);
+
+                //        UpdateCustomer updateCustomer = new UpdateCustomer(selectedCustomer, connectionString, conn, adapter, customerDataSet);
+                //        updateCustomer.Show();
+
+
+                //    }
             }
 
             catch (Exception ex)
