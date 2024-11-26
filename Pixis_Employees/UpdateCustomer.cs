@@ -523,6 +523,12 @@ namespace Pixis_Employees
                 cmd.Parameters.Add(new iDB2Parameter("@CSPYMTSTL", iDB2DbType.iDB2Integer) { Value = (Convert.ToInt64(txtCustCSPYMTSTL.Text)) });
                 cmd.Parameters.Add(new iDB2Parameter("@CPWORDHASH", iDB2DbType.iDB2Integer) { Value = (Convert.ToInt64(txtCustPasswordHash.Text)) });
 
+                var resultCommandSending = MessageBox.Show(
+                cmd.ToString(),
+                "Query sending" + cmd,
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information
+                );
 
 
 
@@ -530,17 +536,6 @@ namespace Pixis_Employees
 
                 //taking a break -_-
 
-
-
-                var result2 = MessageBox.Show(
-                cmd.ToString(),
-                "Query sending",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information
-                );
-
-
-                cmd.ExecuteNonQuery();
 
                 var result = MessageBox.Show(
                 "Record has been updated! Please refresh the table to view.",
