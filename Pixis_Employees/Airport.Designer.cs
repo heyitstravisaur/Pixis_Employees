@@ -46,6 +46,7 @@
             this.dataSet2 = new Pixis_Employees.DataSet2();
             this.aIRPORTTableAdapter = new Pixis_Employees.DataSet2TableAdapters.AIRPORTTableAdapter();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.btnReload = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aIRPORTBindingSource)).BeginInit();
@@ -167,7 +168,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(217, 11);
+            this.btnAdd.Location = new System.Drawing.Point(452, 11);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(147, 99);
@@ -175,6 +176,17 @@
             this.btnAdd.Text = "Add Data";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnReload
+            // 
+            this.btnReload.Location = new System.Drawing.Point(232, 11);
+            this.btnReload.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReload.Name = "btnReload";
+            this.btnReload.Size = new System.Drawing.Size(147, 99);
+            this.btnReload.TabIndex = 13;
+            this.btnReload.Text = "Reload Table";
+            this.btnReload.UseVisualStyleBackColor = true;
+            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
             // btnUpdate
             // 
@@ -193,6 +205,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1374, 594);
             this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnReload);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnExit);
@@ -226,6 +239,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn aRTIMEZNMDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn aRTIMEZOFDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnReload;
         private System.Windows.Forms.Button btnUpdate;
     }
 }

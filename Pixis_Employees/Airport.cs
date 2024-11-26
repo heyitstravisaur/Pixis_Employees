@@ -33,13 +33,15 @@ namespace Pixis_Employees
         private void Airport_Load(object sender, EventArgs e)
         {
             LoadAirportData();
+            //this.aIRPORTTableAdapter.Fill(this.dataSet2.AIRPORT);
+
         }
 
         private void LoadAirportData()
         {
             try
             {
-                using (iDB2Connection conn = new iDB2Connection(connectionString))
+                using(iDB2Connection conn = new iDB2Connection(connectionString))
                 {
                     conn.Open();
                     string sql = "SELECT * FROM AIRPORT";
@@ -61,28 +63,34 @@ namespace Pixis_Employees
         {
             try
             {
-                // Now update the modified rows
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    if (row.IsNewRow) continue;
+                    foreach (DataGridViewCell cell in row.Cells)
+                    {
+                        if (cell.Value == null || string.IsNullOrWhiteSpace(cell.Value.ToString()))
+                        {
+                            MessageBox.Show($"Row {row.Index + 1} has empty fields. Please complete all fields before updating.");
+                            return;
+                        }
+                    }
+                }
+
                 bindingSource.EndEdit();
 
-                using (iDB2Connection conn = new iDB2Connection(connectionString))
+                using(iDB2Connection conn = new iDB2Connection(connectionString))
                 {
                     conn.Open();
                     string updateQuery = @"UPDATE AIRPORT SET
-                        ARNM = @ARNM, 
-                        ARCITYNM = @ARCITYNM, 
-                        ARCNCD = @ARCNCD,
-                        ARFAACD = @ARFAACD, 
-                        ARICAOCD = @ARICAOCD, 
-                        ARLATITUDE = @ARLATITUDE,
-                        ARLNGITUDE = @ARLNGITUDE, 
-                        ARALTITUDE = @ARALTITUDE, 
-                        ARTIMEZNM = @ARTIMEZNM, 
-                        ARTIMEZOF = @ARTIMEZOF                     
-                    WHERE ARCD = @ARCD";
+                            ARNM = @ARNM, ARCITYNM = @ARCITYNM, ARCNCD = @ARCNCD,
+                            ARFAACD = @ARFAACD, ARICAOCD = @ARICAOCD, ARTIMEZNM = @ARTIMEZNM,
+                            ARLATITUDE = @ARLATITUDE, ARLNGITUDE = @ARLNGITUDE,
+                            ARTIMEZOF = @ARTIMEZOF, ARALTITUDE = @ARALTITUDE
+                            WHERE ARCD = @ARCD";
 
-                    foreach (DataRow row in airportDataSet.Tables["AIRPORT"].Rows)
+                    foreach(DataRow row in airportDataSet.Tables["AIRPORT"].Rows)
                     {
-                        if (row.RowState == DataRowState.Modified)
+                        if(row.RowState == DataRowState.Modified)
                         {
                             iDB2Command cmd = new iDB2Command(updateQuery, conn);
                             cmd.Parameters.Add(new iDB2Parameter("@ARCD", iDB2DbType.iDB2Char) { Value = row["ARCD"].ToString() });
@@ -100,12 +108,10 @@ namespace Pixis_Employees
                         }
                     }
                 }
-
-                MessageBox.Show("Data updated successfully.");
             }
             catch (FormatException fex)
             {
-                MessageBox.Show("Data format error: " + fex.Message);
+                MessageBox.Show("data format error: " + fex.Message);
             }
             catch (Exception ex)
             {
@@ -113,11 +119,15 @@ namespace Pixis_Employees
             }
         }
 
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            LoadAirportData();
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             try
             {
-                // Add a new empty row
                 DataRow newRow = airportDataSet.Tables["AIRPORT"].NewRow();
                 airportDataSet.Tables["AIRPORT"].Rows.Add(newRow);
                 dataGridView1.CurrentCell = dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[0];
