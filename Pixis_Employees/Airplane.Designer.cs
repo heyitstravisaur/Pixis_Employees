@@ -48,7 +48,6 @@
             this.dataSet2 = new Pixis_Employees.DataSet2();
             this.aIRPLANETableAdapter = new Pixis_Employees.DataSet2TableAdapters.AIRPLANETableAdapter();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnReload = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aIRPLANEBindingSource)).BeginInit();
@@ -192,19 +191,9 @@
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // btnReload
-            // 
-            this.btnReload.Location = new System.Drawing.Point(263, 11);
-            this.btnReload.Name = "btnReload";
-            this.btnReload.Size = new System.Drawing.Size(151, 103);
-            this.btnReload.TabIndex = 13;
-            this.btnReload.Text = "Reload Table";
-            this.btnReload.UseVisualStyleBackColor = true;
-            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
-            // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(508, 11);
+            this.btnAdd.Location = new System.Drawing.Point(212, 11);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(151, 103);
             this.btnAdd.TabIndex = 14;
@@ -218,7 +207,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1516, 527);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.btnReload);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnExit);
@@ -254,7 +242,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn sTATUSDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dATEMAINTDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button btnReload;
         private System.Windows.Forms.Button btnAdd;
     }
 }
