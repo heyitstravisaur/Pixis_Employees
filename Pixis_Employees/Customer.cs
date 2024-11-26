@@ -150,7 +150,7 @@ namespace Pixis_Employees
                                            CCITY = @CCITY, CSTATE = @CSTATE, 
                                            CZIP = @CZIP, CPHONE = @CPHONE, CEMAIL = @CEMAIL, 
                                            CDOB = @CDOB, CGENDER = @CGENDER, 
-                                           CPASSWORD = @CPASSWORD, CSCCARDNO = @CSCCARDNO,
+                                           CPWORD = @CPWORD, CSCCARDNO = @CSCCARDNO,
                                            CSPYMTSTL = @CSPYMTSTL, CPWORDHASH = CPWORDHASH
                                            WHERE CUSTNO = @CUSTNO";
 
@@ -159,21 +159,22 @@ namespace Pixis_Employees
                         if (row.RowState == DataRowState.Modified)
                         {
                             iDB2Command cmd = new iDB2Command(updateQuery, conn);
-                            cmd.Parameters.Add(new iDB2Parameter("@CUSTNO", iDB2DbType.iDB2Decimal) { Value = (double)row["CUSTNO"]});
+                            cmd.Parameters.Add(new iDB2Parameter("@CUSTNO", iDB2DbType.iDB2Decimal) { Value = Convert.ToDecimal(row["CUSTNO"]) });
                             cmd.Parameters.Add(new iDB2Parameter("@CFNAME", iDB2DbType.iDB2Char) { Value = row["CFNAME"].ToString() });
                             cmd.Parameters.Add(new iDB2Parameter("@CLNAME", iDB2DbType.iDB2Char) { Value = row["CLNAME"].ToString() });
                             cmd.Parameters.Add(new iDB2Parameter("@CADDR", iDB2DbType.iDB2Char) { Value = row["CADDR"].ToString() });
                             cmd.Parameters.Add(new iDB2Parameter("@CCITY", iDB2DbType.iDB2Char) { Value = row["CCITY"].ToString() });
                             cmd.Parameters.Add(new iDB2Parameter("@CSTATE", iDB2DbType.iDB2Char) { Value = row["CSTATE"].ToString() });
-                            cmd.Parameters.Add(new iDB2Parameter("@CZIP", iDB2DbType.iDB2Decimal) { Value = (double)row["CZIP"] });
-                            cmd.Parameters.Add(new iDB2Parameter("@CPHONE", iDB2DbType.iDB2Decimal) { Value = (double)row["CPHONE"] });
+                            cmd.Parameters.Add(new iDB2Parameter("@CZIP", iDB2DbType.iDB2Decimal) { Value = Convert.ToDecimal(row["CZIP"]) });
+                            cmd.Parameters.Add(new iDB2Parameter("@CPHONE", iDB2DbType.iDB2Decimal) { Value = Convert.ToDecimal(row["CPHONE"]) });
                             cmd.Parameters.Add(new iDB2Parameter("@CEMAIL", iDB2DbType.iDB2Char) { Value = row["CEMAIL"].ToString() });
                             cmd.Parameters.Add(new iDB2Parameter("@CDOB", iDB2DbType.iDB2Date) { Value = DateTime.Parse(row["CDOB"].ToString()) });
                             cmd.Parameters.Add(new iDB2Parameter("@CGENDER", iDB2DbType.iDB2Char) { Value = row["CGENDER"].ToString() });
-                            cmd.Parameters.Add(new iDB2Parameter("@CPASSWORD", iDB2DbType.iDB2Char) { Value = row["CPASSWORD"].ToString() });
+                            cmd.Parameters.Add(new iDB2Parameter("@CPWORD", iDB2DbType.iDB2Char) { Value = row["CPWORD"].ToString() });
                             cmd.Parameters.Add(new iDB2Parameter("@CSCCARDNO", iDB2DbType.iDB2Char) { Value = row["CSCCARDNO"].ToString() });
-                            cmd.Parameters.Add(new iDB2Parameter("@CSPYMTSTL", iDB2DbType.iDB2Decimal) { Value = (double)row["CSPYMTSTL"] });
-                            cmd.Parameters.Add(new iDB2Parameter("@CPWORDHASH", iDB2DbType.iDB2Decimal) { Value = (double)row["CPWORDHASH"] });
+                            cmd.Parameters.Add(new iDB2Parameter("@CSPYMTSTL", iDB2DbType.iDB2Decimal) { Value = Convert.ToDecimal(row["CSPYMTSTL"]) });
+                            cmd.Parameters.Add(new iDB2Parameter("@CPWORDHASH", iDB2DbType.iDB2Decimal) { Value = Convert.ToDecimal(row["CPWORDHASH"]) });
+                            
 
                             cmd.ExecuteNonQuery();
                         }
