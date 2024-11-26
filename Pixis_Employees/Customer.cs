@@ -18,7 +18,7 @@ namespace Pixis_Employees
         //for IBM database querying
         iDB2Connection conn;
         iDB2DataAdapter adapter;
-        DataSet dataSet;
+        DataSet customerDataSet;
 
 
         private PyxisairFlightReservationSystem pfrs;
@@ -52,15 +52,22 @@ namespace Pixis_Employees
             this.Hide();
         }
 
-        private void display(object sender, EventArgs e)
+        private void display(object sender, DataSet customerDataSet, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dataSet2.CUSTOMER' table. You can move, or remove it, as needed.
-            this.cUSTOMERTableAdapter.Fill(this.dataSet2.CUSTOMER);
+            conn = new iDB2Connection(connectionString);
+            conn.Open();
+            iDB2DataAdapter adapter = new iDB2DataAdapter(sql, conn);
+            customerDataSet.Clear();
+            adapter.Fill(customerDataSet, "CUSTOMER");
+
+            bindingSource.DataSource = customerDataSet.Tables["CUSTOMER"];
+            dataGridView1.DataSource = bindingSource;
+
         }
 
         private void Customer_Load(object sender, EventArgs e)
         {
-            display(sender, e);
+            display(sender, customerDataSet, e);
 
         }
 
@@ -103,7 +110,7 @@ namespace Pixis_Employees
 
         private void btn_refresh_Click(object sender, EventArgs e)
         {
-            display(sender, e);
+            display(sender, customerDataSet, e);
         }
 
         private void btn_add_Click(object sender, EventArgs e)
@@ -143,10 +150,10 @@ namespace Pixis_Employees
 
 
 
-                    dataSet = new DataSet();
-                    adapter.Fill(dataSet);
+                    customerDataSet = new DataSet();
+                    adapter.Fill(customerDataSet);
 
-                    UpdateCustomer updateCustomer = new UpdateCustomer(selectedCustomer, connectionString, conn, adapter, dataSet);
+                    UpdateCustomer updateCustomer = new UpdateCustomer(selectedCustomer, connectionString, conn, adapter, customerDataSet);
                     updateCustomer.Show();
 
 
