@@ -10,6 +10,14 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Provider=IBMDA400.DataSource.1;Data Source=deathstar.gtc.edu;User ID=itpa638;Initial Catalog=S101FF5C</Value>
     </Setting>
+    <Setting Name="IBMConnectionString1" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;ConnectionString&gt;Provider=IBMDA400.DataSource.1;Data Source=deathstar.gtc.edu;User ID=itpa641;Initial Catalog=S101FF5C&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.OleDb&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Provider=IBMDA400.DataSource.1;Data Source=deathstar.gtc.edu;User ID=itpa641;Initial Catalog=S101FF5C</Value>
+    </Setting>
     <Setting Name="IBM_DB2_TDUNK" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
