@@ -18,7 +18,7 @@ namespace Pixis_Employees
         //for IBM database querying
         iDB2Connection conn;
         iDB2DataAdapter adapter;
-        DataSet customerDataSet;
+        DataSet customerDataSet = new DataSet();
 
 
         private PyxisairFlightReservationSystem pfrs;
