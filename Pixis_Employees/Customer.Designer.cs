@@ -47,10 +47,10 @@
             this.cSPYMTSTLDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cPWORDHASHDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cUSTOMERBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSet2 = new Pixis_Employees.DataSet2();
+            this.dataSetTD = new Pixis_Employees.DataSetTD();
             this.eMPLOYEEBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.eMPLOYEETableAdapter = new Pixis_Employees.DataSet2TableAdapters.EMPLOYEETableAdapter();
-            this.cUSTOMERTableAdapter = new Pixis_Employees.DataSet2TableAdapters.CUSTOMERTableAdapter();
+            this.eMPLOYEETableAdapter = new Pixis_Employees.DataSetTDTableAdapters.EMPLOYEETableAdapter();
+            this.cUSTOMERTableAdapter = new Pixis_Employees.DataSetTDTableAdapters.CUSTOMERTableAdapter();
             this.btn_Update = new System.Windows.Forms.Button();
             this.btn_add = new System.Windows.Forms.Button();
             this.btn_refresh = new System.Windows.Forms.Button();
@@ -58,7 +58,7 @@
             this.lbl8b = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTOMERBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetTD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eMPLOYEEBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -193,17 +193,17 @@
             // cUSTOMERBindingSource
             // 
             this.cUSTOMERBindingSource.DataMember = "CUSTOMER";
-            this.cUSTOMERBindingSource.DataSource = this.dataSet2;
+            this.cUSTOMERBindingSource.DataSource = this.dataSetTD;
             // 
-            // dataSet2
+            // dataSetTD
             // 
-            this.dataSet2.DataSetName = "DataSet2";
-            this.dataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.dataSetTD.DataSetName = "DataSetTD";
+            this.dataSetTD.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // eMPLOYEEBindingSource
             // 
             this.eMPLOYEEBindingSource.DataMember = "EMPLOYEE";
-            this.eMPLOYEEBindingSource.DataSource = this.dataSet2;
+            this.eMPLOYEEBindingSource.DataSource = this.dataSetTD;
             // 
             // eMPLOYEETableAdapter
             // 
@@ -285,7 +285,7 @@
             this.Load += new System.EventHandler(this.Customer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTOMERBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetTD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eMPLOYEEBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -295,12 +295,12 @@
         #endregion
 
         private System.Windows.Forms.Button btnExit;
-        private DataSet2 dataSet2;
+        private DataSetTD dataSetTD;
         private System.Windows.Forms.BindingSource eMPLOYEEBindingSource;
-        private DataSet2TableAdapters.EMPLOYEETableAdapter eMPLOYEETableAdapter;
+        private DataSetTDTableAdapters.EMPLOYEETableAdapter eMPLOYEETableAdapter;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource cUSTOMERBindingSource;
-        private DataSet2TableAdapters.CUSTOMERTableAdapter cUSTOMERTableAdapter;
+        private DataSetTDTableAdapters.CUSTOMERTableAdapter cUSTOMERTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn cUSTNODataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cFNAMEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cLNAMEDataGridViewTextBoxColumn;
