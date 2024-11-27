@@ -142,7 +142,6 @@ namespace Pixis_Employees
                     }
                 }
 
-                bindingSource.EndEdit();
 
                 using (iDB2Connection conn = new iDB2Connection(connectionString))
                 {
