@@ -260,11 +260,11 @@
             // 
             this.lbl8b.AutoSize = true;
             this.lbl8b.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl8b.Location = new System.Drawing.Point(304, 474);
+            this.lbl8b.Location = new System.Drawing.Point(320, 474);
             this.lbl8b.Name = "lbl8b";
-            this.lbl8b.Size = new System.Drawing.Size(225, 13);
+            this.lbl8b.Size = new System.Drawing.Size(209, 13);
             this.lbl8b.TabIndex = 16;
-            this.lbl8b.Text = "8b. Choose a record and click update:";
+            this.lbl8b.Text = "8b. Modify record and click update:";
             // 
             // Customer
             // 
