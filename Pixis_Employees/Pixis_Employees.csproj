@@ -80,6 +80,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSetTD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetTD.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSet21.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -129,6 +134,12 @@
     <Compile Include="StaffSchedule.Designer.cs">
       <DependentUpon>StaffSchedule.cs</DependentUpon>
     </Compile>
+    <Compile Include="UpdateCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateCustomer.Designer.cs">
+      <DependentUpon>UpdateCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="UpdateEmp.cs" />
     <EmbeddedResource Include="AddUpdate.resx">
       <DependentUpon>AddUpdate.cs</DependentUpon>
@@ -173,6 +184,9 @@
     <EmbeddedResource Include="StaffSchedule.resx">
       <DependentUpon>StaffSchedule.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UpdateCustomer.resx">
+      <DependentUpon>UpdateCustomer.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
@@ -183,6 +197,17 @@
     </None>
     <None Include="DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetTD.xsc">
+      <DependentUpon>DataSetTD.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetTD.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetTD.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetTD.xss">
+      <DependentUpon>DataSetTD.xsd</DependentUpon>
     </None>
     <None Include="DataSet21.xsc">
       <DependentUpon>DataSet21.xsd</DependentUpon>
