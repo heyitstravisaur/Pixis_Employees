@@ -126,6 +126,9 @@ namespace Pixis_Employees
         {
             try
             {
+                // Now update the modified rows
+                bindingSource.EndEdit();
+
                 foreach (DataGridViewRow row in dataGridView1.Rows)
                 {
                     if (row.IsNewRow) continue;
@@ -151,7 +154,7 @@ namespace Pixis_Employees
                                            CZIP = @CZIP, CPHONE = @CPHONE, CEMAIL = @CEMAIL, 
                                            CDOB = @CDOB, CGENDER = @CGENDER, 
                                            CPWORD = @CPWORD, CSCCARDNO = @CSCCARDNO,
-                                           CSPYMTSTL = @CSPYMTSTL, CPWORDHASH = CPWORDHASH
+                                           CSPYMTSTL = @CSPYMTSTL, CPWORDHASH = @CPWORDHASH
                                            WHERE CUSTNO = @CUSTNO";
 
                     foreach (DataRow row in customerDataSet.Tables["CUSTOMER"].Rows)
