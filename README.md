@@ -2,88 +2,51 @@ private void btnUpdate_Click(object sender, EventArgs e)
 {
     try
     {
-        bindingSource.EndEdit(); // Ensure any pending edits are committed to the DataSet.
+        // Validate for empty fields in the DataGridView
+        foreach (DataGridViewRow gridRow in dataGridView1.Rows)
+        {
+            if (gridRow.IsNewRow) continue;
+            foreach (DataGridViewCell cell in gridRow.Cells)
+            {
+                if (cell.Value == null || string.IsNullOrWhiteSpace(cell.Value.ToString()))
+                {
+                    MessageBox.Show($"Row {gridRow.Index + 1} has empty fields. Please complete all fields before updating.");
+                    return;
+                }
+            }
+        }
+
+        bindingSource.EndEdit(); // Commit any pending changes to the DataSet.
 
         using (iDB2Connection conn = new iDB2Connection(connectionString))
         {
             conn.Open();
 
-            // Handle new rows (DataRowState.Added)
-            string insertQuery = @"INSERT INTO AIRPORT 
-                (ARCD, ARNM, ARCITYNM, ARCNCD, ARFAACD, ARICAOCD, ARLATITUDE, ARLNGITUDE, ARALTITUDE, ARTIMEZNM, ARTIMEZOF)
-                VALUES 
-                (@ARCD, @ARNM, @ARCITYNM, @ARCNCD, @ARFAACD, @ARICAOCD, @ARLATITUDE, @ARLNGITUDE, @ARALTITUDE, @ARTIMEZNM, @ARTIMEZOF)";
+            // INSERT query for new rows
+            string insertQuery = @"INSERT INTO AIRPLANE 
+                                   (PLANENO, MAXDIST, FCLASS, CCLASS, PAVAIL, 
+                                    MAINTMILES, PLANEMODEL, PMAKE, APARCD, 
+                                    APACTDT, APIACTDT, STATUS, DATEMAINT) 
+                                   VALUES 
+                                   (@PLANENO, @MAXDIST, @FCLASS, @CCLASS, @PAVAIL, 
+                                    @MAINTMILES, @PLANEMODEL, @PMAKE, @APARCD, 
+                                    @APACTDT, @APIACTDT, @STATUS, @DATEMAINT)";
 
-            foreach (DataRow row in airportDataSet.Tables["AIRPORT"].Rows)
+            // UPDATE query for modified rows
+            string updateQuery = @"UPDATE AIRPLANE SET 
+                                   MAXDIST = @MAXDIST, FCLASS = @FCLASS, 
+                                   CCLASS = @CCLASS, PAVAIL = @PAVAIL, 
+                                   MAINTMILES = @MAINTMILES, PLANEMODEL = @PLANEMODEL, 
+                                   PMAKE = @PMAKE, APARCD = @APARCD, APIACTDT = @APIACTDT, 
+                                   APACTDT = @APACTDT, STATUS = @STATUS, 
+                                   DATEMAINT = @DATEMAINT 
+                                   WHERE PLANENO = @PLANENO";
+
+            foreach (DataRow row in airplaneDataSet.Tables["AIRPLANE"].Rows)
             {
                 if (row.RowState == DataRowState.Added)
                 {
                     using (iDB2Command cmd = new iDB2Command(insertQuery, conn))
                     {
-                        cmd.Parameters.Add(new iDB2Parameter("@ARCD", iDB2DbType.iDB2Char) { Value = row["ARCD"].ToString() });
-                        cmd.Parameters.Add(new iDB2Parameter("@ARNM", iDB2DbType.iDB2Char) { Value = row["ARNM"].ToString() });
-                        cmd.Parameters.Add(new iDB2Parameter("@ARCITYNM", iDB2DbType.iDB2Char) { Value = row["ARCITYNM"].ToString() });
-                        cmd.Parameters.Add(new iDB2Parameter("@ARCNCD", iDB2DbType.iDB2Char) { Value = row["ARCNCD"].ToString() });
-                        cmd.Parameters.Add(new iDB2Parameter("@ARFAACD", iDB2DbType.iDB2Char) { Value = row["ARFAACD"].ToString() });
-                        cmd.Parameters.Add(new iDB2Parameter("@ARICAOCD", iDB2DbType.iDB2Char) { Value = row["ARICAOCD"].ToString() });
-                        cmd.Parameters.Add(new iDB2Parameter("@ARTIMEZNM", iDB2DbType.iDB2Char) { Value = row["ARTIMEZNM"].ToString() });
-                        cmd.Parameters.Add(new iDB2Parameter("@ARLATITUDE", iDB2DbType.iDB2Decimal) { Value = Convert.ToDecimal(row["ARLATITUDE"]) });
-                        cmd.Parameters.Add(new iDB2Parameter("@ARLNGITUDE", iDB2DbType.iDB2Decimal) { Value = Convert.ToDecimal(row["ARLNGITUDE"]) });
-                        cmd.Parameters.Add(new iDB2Parameter("@ARTIMEZOF", iDB2DbType.iDB2Decimal) { Value = Convert.ToDecimal(row["ARTIMEZOF"]) });
-                        cmd.Parameters.Add(new iDB2Parameter("@ARALTITUDE", iDB2DbType.iDB2Integer) { Value = (int)row["ARALTITUDE"] });
-                        cmd.ExecuteNonQuery();
-                    }
-                }
-            }
-
-            // Handle modified rows (DataRowState.Modified)
-            string updateQuery = @"UPDATE AIRPORT SET
-                ARNM = @ARNM, 
-                ARCITYNM = @ARCITYNM, 
-                ARCNCD = @ARCNCD,
-                ARFAACD = @ARFAACD, 
-                ARICAOCD = @ARICAOCD, 
-                ARLATITUDE = @ARLATITUDE,
-                ARLNGITUDE = @ARLNGITUDE, 
-                ARALTITUDE = @ARALTITUDE, 
-                ARTIMEZNM = @ARTIMEZNM, 
-                ARTIMEZOF = @ARTIMEZOF                     
-            WHERE ARCD = @ARCD";
-
-            foreach (DataRow row in airportDataSet.Tables["AIRPORT"].Rows)
-            {
-                if (row.RowState == DataRowState.Modified)
-                {
-                    using (iDB2Command cmd = new iDB2Command(updateQuery, conn))
-                    {
-                        cmd.Parameters.Add(new iDB2Parameter("@ARCD", iDB2DbType.iDB2Char) { Value = row["ARCD"].ToString() });
-                        cmd.Parameters.Add(new iDB2Parameter("@ARNM", iDB2DbType.iDB2Char) { Value = row["ARNM"].ToString() });
-                        cmd.Parameters.Add(new iDB2Parameter("@ARCITYNM", iDB2DbType.iDB2Char) { Value = row["ARCITYNM"].ToString() });
-                        cmd.Parameters.Add(new iDB2Parameter("@ARCNCD", iDB2DbType.iDB2Char) { Value = row["ARCNCD"].ToString() });
-                        cmd.Parameters.Add(new iDB2Parameter("@ARFAACD", iDB2DbType.iDB2Char) { Value = row["ARFAACD"].ToString() });
-                        cmd.Parameters.Add(new iDB2Parameter("@ARICAOCD", iDB2DbType.iDB2Char) { Value = row["ARICAOCD"].ToString() });
-                        cmd.Parameters.Add(new iDB2Parameter("@ARTIMEZNM", iDB2DbType.iDB2Char) { Value = row["ARTIMEZNM"].ToString() });
-                        cmd.Parameters.Add(new iDB2Parameter("@ARLATITUDE", iDB2DbType.iDB2Decimal) { Value = Convert.ToDecimal(row["ARLATITUDE"]) });
-                        cmd.Parameters.Add(new iDB2Parameter("@ARLNGITUDE", iDB2DbType.iDB2Decimal) { Value = Convert.ToDecimal(row["ARLNGITUDE"]) });
-                        cmd.Parameters.Add(new iDB2Parameter("@ARTIMEZOF", iDB2DbType.iDB2Decimal) { Value = Convert.ToDecimal(row["ARTIMEZOF"]) });
-                        cmd.Parameters.Add(new iDB2Parameter("@ARALTITUDE", iDB2DbType.iDB2Integer) { Value = (int)row["ARALTITUDE"] });
-                        cmd.ExecuteNonQuery();
-                    }
-                }
-            }
-
-            
-        }
-
-        // Accept changes to reset the row states in the DataSet.
-        airportDataSet.Tables["AIRPORT"].AcceptChanges();
-    }
-    catch (FormatException fex)
-    {
-        MessageBox.Show("Data format error: " + fex.Message);
-    }
-    catch (Exception ex)
-    {
-        MessageBox.Show("Error while updating records: " + ex.Message);
-    }
-}
+                        cmd.Parameters.Add(new iDB2Parameter("@PLANENO", iDB2DbType.iDB2Char) { Value = row["PLANENO"].ToString() });
+                        cmd.Parameters.Add(new iDB2Parameter("@MAXDIST", iDB2DbType
