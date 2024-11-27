@@ -82,7 +82,7 @@
             this.dataGridView1.DataSource = this.aIRPORTBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 115);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1161, 467);
+            this.dataGridView1.Size = new System.Drawing.Size(1201, 467);
             this.dataGridView1.TabIndex = 11;
             // 
             // aRCDDataGridViewTextBoxColumn
