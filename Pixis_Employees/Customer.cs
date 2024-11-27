@@ -147,7 +147,7 @@ namespace Pixis_Employees
                 {
                     conn.Open();
                     string updateQuery = @"UPDATE CUSTOMER SET 
-                                           CUSTNO = @CUSTNO, CFNAME = @CFNAME, 
+                                           CFNAME = @CFNAME, 
                                            CLNAME = @CLNAME, CADDR = @CADDR, 
                                            CCITY = @CCITY, CSTATE = @CSTATE, 
                                            CZIP = @CZIP, CPHONE = @CPHONE, CEMAIL = @CEMAIL, 
@@ -160,8 +160,7 @@ namespace Pixis_Employees
                     {
                         if (row.RowState == DataRowState.Modified)
                         {
-                            iDB2Command cmd = new iDB2Command(updateQuery, conn);
-                            cmd.Parameters.Add(new iDB2Parameter("@CUSTNO", iDB2DbType.iDB2Decimal) { Value = Convert.ToDecimal(row["CUSTNO"]) });
+                            iDB2Command cmd = new iDB2Command(updateQuery, conn);                         
                             cmd.Parameters.Add(new iDB2Parameter("@CFNAME", iDB2DbType.iDB2Char) { Value = row["CFNAME"].ToString() });
                             cmd.Parameters.Add(new iDB2Parameter("@CLNAME", iDB2DbType.iDB2Char) { Value = row["CLNAME"].ToString() });
                             cmd.Parameters.Add(new iDB2Parameter("@CADDR", iDB2DbType.iDB2Char) { Value = row["CADDR"].ToString() });
@@ -176,7 +175,8 @@ namespace Pixis_Employees
                             cmd.Parameters.Add(new iDB2Parameter("@CSCCARDNO", iDB2DbType.iDB2Char) { Value = row["CSCCARDNO"].ToString() });
                             cmd.Parameters.Add(new iDB2Parameter("@CSPYMTSTL", iDB2DbType.iDB2Decimal) { Value = Convert.ToDecimal(row["CSPYMTSTL"]) });
                             cmd.Parameters.Add(new iDB2Parameter("@CPWORDHASH", iDB2DbType.iDB2Decimal) { Value = Convert.ToDecimal(row["CPWORDHASH"]) });
-                            
+                            cmd.Parameters.Add(new iDB2Parameter("@CUSTNO", iDB2DbType.iDB2Decimal) { Value = Convert.ToDecimal(row["CUSTNO"]) });
+
 
                             cmd.ExecuteNonQuery();
                         }
