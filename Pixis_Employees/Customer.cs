@@ -145,13 +145,13 @@ namespace Pixis_Employees
                 {
                     conn.Open();
                     string updateQuery = @"UPDATE CUSTOMER SET 
-                                           CUSTNO = @CUSTNO, CFNAME = @CFNAME, 
+                                           CFNAME = @CFNAME, 
                                            CLNAME = @CLNAME, CADDR = @CADDR, 
                                            CCITY = @CCITY, CSTATE = @CSTATE, 
                                            CZIP = @CZIP, CPHONE = @CPHONE, CEMAIL = @CEMAIL, 
                                            CDOB = @CDOB, CGENDER = @CGENDER, 
                                            CPWORD = @CPWORD, CSCCARDNO = @CSCCARDNO,
-                                           CSPYMTSTL = @CSPYMTSTL, CPWORDHASH = CPWORDHASH
+                                           CSPYMTSTL = @CSPYMTSTL, CPWORDHASH = @CPWORDHASH
                                            WHERE CUSTNO = @CUSTNO";
 
                     foreach (DataRow row in customerDataSet.Tables["CUSTOMER"].Rows)
@@ -182,7 +182,7 @@ namespace Pixis_Employees
                 }
 
                 MessageBox.Show("Records updated successfully.");
-
+                conn.Close();
 
                 //try
                 //{
