@@ -145,10 +145,10 @@ namespace Pixis_Employees
                 {
                     conn.Open();
                     string updateQuery = @"UPDATE CUSTOMER SET 
-                                           CFNAME = @CFNAME, 
-                                           CLNAME = @CLNAME, CADDR = @CADDR, 
-                                           CCITY = @CCITY, CSTATE = @CSTATE, 
-                                           CZIP = @CZIP, CPHONE = @CPHONE, CEMAIL = @CEMAIL, 
+                                           CFNAME = @CFNAME, CLNAME = @CLNAME,
+                                           CADDR = @CADDR, CCITY = @CCITY, 
+                                           CSTATE = @CSTATE, CZIP = @CZIP,
+                                           CPHONE = @CPHONE, CEMAIL = @CEMAIL, 
                                            CDOB = @CDOB, CGENDER = @CGENDER, 
                                            CPWORD = @CPWORD, CSCCARDNO = @CSCCARDNO,
                                            CSPYMTSTL = @CSPYMTSTL, CPWORDHASH = @CPWORDHASH
