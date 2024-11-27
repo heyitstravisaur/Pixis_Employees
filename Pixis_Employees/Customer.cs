@@ -142,7 +142,7 @@ namespace Pixis_Employees
                 bindingSource.EndEdit();
 
                 using (iDB2Connection conn = new iDB2Connection(connectionString))
-                {
+                {//hi
                     conn.Open();
                     string updateQuery = @"UPDATE CUSTOMER SET 
                                            CFNAME = @CFNAME, CLNAME = @CLNAME,
